@@ -15,7 +15,7 @@ const NAvbar = () => {
                         alt="Flowbite Logo"
                     />
                     <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-                        Flowbite
+                        HR Manager
                     </span>
                 </Navbar.Brand>
                 <Navbar.Toggle />
