@@ -3,19 +3,14 @@ import React from 'react';
 
 const NAvbar = () => {
     return (
-        <div>
+        <div className='text-center'>
             <Navbar
                 fluid={true}
                 rounded={true}
             >
-                <Navbar.Brand href="https://flowbite.com/">
-                    <img
-                        src="https://flowbite.com/docs/images/logo.svg"
-                        className="mr-3 h-6 sm:h-9"
-                        alt="Flowbite Logo"
-                    />
+                <Navbar.Brand>
                     <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-                        Flowbite
+                        HR Manager
                     </span>
                 </Navbar.Brand>
                 <Navbar.Toggle />
@@ -25,6 +20,9 @@ const NAvbar = () => {
                         active={true}
                     >
                         Home
+                    </Navbar.Link>
+                    <Navbar.Link href="/dashboard">
+                        Dashboard
                     </Navbar.Link>
                     <Navbar.Link href="/">
                         About
