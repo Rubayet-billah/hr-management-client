@@ -7,7 +7,7 @@ const Employees = () => {
       .then((res) => res.json())
       .then((data) => setEmployees(data));
   }, []);
-  // change
+  // tarek changed this line 1:31
   return (
     <div>
       <div class='overflow-x-auto relative shadow-md sm:rounded-lg'>
