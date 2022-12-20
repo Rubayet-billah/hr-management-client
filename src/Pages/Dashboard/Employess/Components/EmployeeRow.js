@@ -1,12 +1,14 @@
-import { useState } from 'react';
 import { BiEdit } from 'react-icons/bi';
 import { FiDelete } from 'react-icons/fi';
 import { MdPreview } from 'react-icons/md';
-import DeleteEmployeeModal from './DeleteEmployeeModal';
 
-const EmployeeRow = ({ employee, setViewEmployee, setViewModalVisibility }) => {
-  const [deleteModalVisibility, setDeleteModalVisibility] = useState(false);
-  const [deleteEmployee, setDeleteEmployee] = useState([]);
+const EmployeeRow = ({
+  employee,
+  setViewEmployee,
+  setViewModalVisibility,
+  setDeleteEmployee,
+  setDeleteModalVisibility,
+}) => {
   const { fname, lname, image, email, phone, dept } = employee;
 
   const deleteModalOpen = (employee) => {
@@ -53,11 +55,6 @@ const EmployeeRow = ({ employee, setViewEmployee, setViewModalVisibility }) => {
           </div>
         </td>
       </tr>
-      <DeleteEmployeeModal
-        deleteModalVisibility={deleteModalVisibility}
-        setDeleteModalVisibility={setDeleteModalVisibility}
-        deleteEmployee={deleteEmployee}
-      />
     </>
   );
 };

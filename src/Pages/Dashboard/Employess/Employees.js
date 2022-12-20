@@ -4,6 +4,7 @@ import EmployeeStatistics from './Components/EmployeeStatistics';
 
 import { AiOutlinePlus } from 'react-icons/ai';
 import AddEmployeeModal from './Components/AddEmployeeModal';
+import DeleteEmployeeModal from './Components/DeleteEmployeeModal';
 import ViewEmployeeModal from './Components/ViewEmployeeModal';
 
 const Employees = () => {
@@ -12,6 +13,9 @@ const Employees = () => {
 
   const [viewModalVisibility, setViewModalVisibility] = useState(false);
   const [viewEmployee, setViewEmployee] = useState([]);
+
+  const [deleteModalVisibility, setDeleteModalVisibility] = useState(false);
+  const [deleteEmployee, setDeleteEmployee] = useState([]);
 
   useEffect(() => {
     fetch('/employees.json')
@@ -65,6 +69,8 @@ const Employees = () => {
                   employee={employee}
                   setViewModalVisibility={setViewModalVisibility}
                   setViewEmployee={setViewEmployee}
+                  setDeleteEmployee={setDeleteEmployee}
+                  setDeleteModalVisibility={setDeleteModalVisibility}
                 />
               ))}
             </tbody>
@@ -81,6 +87,12 @@ const Employees = () => {
         viewEmployee={viewEmployee}
         viewModalVisibility={viewModalVisibility}
         setViewModalVisibility={setViewModalVisibility}
+      />
+
+      <DeleteEmployeeModal
+        deleteModalVisibility={deleteModalVisibility}
+        setDeleteModalVisibility={setDeleteModalVisibility}
+        deleteEmployee={deleteEmployee}
       />
     </>
   );
