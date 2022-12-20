@@ -78,7 +78,7 @@ const cardinal = curveCardinal.tension(0.2);
 
 const Dashboard = () => {
     return (
-        <div className='py-10'>
+        <>
             <h3 className='text-3xl'>Welcome Jason Porter!</h3>
             <small className='text-xs'>Measure How Fast You’re Growing Monthly Recurring Revenue. Learn More</small>
             <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 lg:gap-8 mt-5'>
@@ -366,7 +366,7 @@ const Dashboard = () => {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </>
     );
 };
 
