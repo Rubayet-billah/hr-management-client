@@ -2,7 +2,7 @@ import { BiBarChart } from 'react-icons/bi';
 
 const EmployeeStatistics = ({ employees }) => {
   return (
-    <div className='grid grid-cols-3 gap-8 mb-8'>
+    <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-8'>
       <div className='bg-white py-6 px-10 rounded-lg flex items-center justify-between'>
         <div>
           <p className='text-gray-500'>Total Employee</p>
