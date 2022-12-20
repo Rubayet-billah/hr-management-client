@@ -4,10 +4,14 @@ import EmployeeStatistics from './Components/EmployeeStatistics';
 
 import { AiOutlinePlus } from 'react-icons/ai';
 import AddEmployeeModal from './Components/AddEmployeeModal';
+import ViewEmployeeModal from './Components/ViewEmployeeModal';
 
 const Employees = () => {
   const [employees, setEmployees] = useState([]);
   const [addUserModalVisibility, setAddUserModalVisibility] = useState(false);
+
+  const [viewModalVisibility, setViewModalVisibility] = useState(false);
+  const [viewEmployee, setViewEmployee] = useState([]);
 
   useEffect(() => {
     fetch('/employees.json')
@@ -56,7 +60,12 @@ const Employees = () => {
             </thead>
             <tbody>
               {employees.map((employee) => (
-                <EmployeeRow key={employee._id} employee={employee} />
+                <EmployeeRow
+                  key={employee._id}
+                  employee={employee}
+                  setViewModalVisibility={setViewModalVisibility}
+                  setViewEmployee={setViewEmployee}
+                />
               ))}
             </tbody>
           </table>
@@ -66,6 +75,12 @@ const Employees = () => {
       <AddEmployeeModal
         addUserModalVisibility={addUserModalVisibility}
         setAddUserModalVisibility={setAddUserModalVisibility}
+      />
+
+      <ViewEmployeeModal
+        viewEmployee={viewEmployee}
+        viewModalVisibility={viewModalVisibility}
+        setViewModalVisibility={setViewModalVisibility}
       />
     </>
   );
