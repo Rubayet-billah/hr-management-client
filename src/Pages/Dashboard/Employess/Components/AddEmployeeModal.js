@@ -1,12 +1,12 @@
 import { Button, Label, Modal, Select, TextInput } from 'flowbite-react';
 
-const AddEmployeeModal = ({ modalVisibility, setModalVisibility }) => {
-  const onClose = () => {
-    setModalVisibility(false);
+const AddEmployeeModal = ({ addUserModalVisibility, setAddUserModalVisibility }) => {
+  const addModalClose = () => {
+    setAddUserModalVisibility(false);
   };
 
   return (
-    <Modal show={modalVisibility} size='5xl' popup={true} onClose={onClose}>
+    <Modal show={addUserModalVisibility} size='5xl' popup={true} onClose={addModalClose}>
       <Modal.Header />
       <Modal.Body>
         <div className='px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8'>
@@ -107,6 +107,16 @@ const AddEmployeeModal = ({ modalVisibility, setModalVisibility }) => {
                   <Label htmlFor='nid' value='National ID' />
                 </div>
                 <TextInput id='nid' type='text' required={true} />
+              </div>
+
+              <div>
+                <div className='mb-2 block'>
+                  <Label htmlFor='gender' value='Gender' />
+                </div>
+                <Select id='gender' required={true}>
+                  <option>Male</option>
+                  <option>Female</option>
+                </Select>
               </div>
 
               <div>
