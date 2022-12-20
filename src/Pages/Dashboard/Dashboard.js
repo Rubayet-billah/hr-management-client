@@ -26,7 +26,6 @@ import {
 import { Progress } from 'flowbite-react';
 import Btn from '../../components/Btn';
 import { Link } from 'react-router-dom';
-import Employees from './Employess/Employees';
 
 const data = [
     {
@@ -81,32 +80,32 @@ const Dashboard = () => {
         <>
             <h3 className='text-3xl'>Welcome Jason Porter!</h3>
             <small className='text-xs'>Measure How Fast You’re Growing Monthly Recurring Revenue. Learn More</small>
-            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 lg:gap-8 mt-5'>
-                <Link className='bg-white rounded-lg text-gray-500'>
+            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 mt-5'>
+                <Link className='bg-white rounded-lg shadow'>
                     <div className='flex flex-col items-center hover:scale-110 duration-300 overflow-hidden p-8'>
                         <HiOutlineUsers className='w-8 h-8 mb-1' />
                         <p>Users</p>
                     </div>
                 </Link>
-                <Link className='bg-white rounded-lg text-gray-500'>
+                <Link className='bg-white rounded-lg shadow'>
                     <div className='flex flex-col items-center hover:scale-110 duration-300 overflow-hidden p-8'>
                         <BsHandThumbsUp className='w-8 h-8 mb-1' />
                         <p>Holidays</p>
                     </div>
                 </Link>
-                <Link className='bg-white rounded-lg text-gray-500'>
+                <Link className='bg-white rounded-lg shadow'>
                     <div className='flex flex-col items-center hover:scale-110 duration-300 overflow-hidden p-8'>
                         <BsCalendarDate className='w-8 h-8 mb-1' />
                         <p>Events</p>
                     </div>
                 </Link>
-                <Link className='bg-white rounded-lg text-gray-500'>
+                <Link className='bg-white rounded-lg shadow'>
                     <div className='flex flex-col items-center hover:scale-110 duration-300 overflow-hidden p-8'>
                         <HiOutlineUsers className='w-8 h-8 mb-1' />
                         <p>Report</p>
                     </div>
                 </Link>
-                <Link className='bg-white rounded-lg text-gray-500'>
+                <Link className='bg-white rounded-lg shadow'>
                     <div className='flex flex-col items-center hover:scale-110 duration-300 overflow-hidden p-8'>
                         <BsHandThumbsUp className='w-8 h-8 mb-1' />
                         <p>Payroll</p>
@@ -114,9 +113,8 @@ const Dashboard = () => {
                 </Link>
             </div>
 
-            <div className='grid grid-cols-12 mt-8 gap-8'>
-
-                <div className='col-span-12 sm:col-span-12 md:col-span-7 lg:col-span-6 p-5 bg-white rounded-lg'>
+            <div className='grid grid-cols-12 mt-6 gap-5'>
+                <div className='col-span-12 sm:col-span-12 md:col-span-7 lg:col-span-6 p-5 bg-white rounded-lg shadow'>
                     <h3 className='font-medium text-left'>REVENUE</h3>
                     <div className='w-full h-96'>
                         <ResponsiveContainer width="100%" height="100%">
@@ -144,7 +142,7 @@ const Dashboard = () => {
                         </ResponsiveContainer>
                     </div>
                 </div>
-                <div className='col-span-12 sm:col-span-6 md:col-span-5 lg:col-span-3 bg-white rounded-lg p-5 text-center flex flex-col justify-between'>
+                <div className='col-span-12 sm:col-span-6 md:col-span-5 lg:col-span-3 bg-white rounded-lg p-5 text-center flex flex-col justify-between shadow'>
                     <h3 className='font-medium text-left'>REVENUE</h3>
                     <ResponsiveContainer width='100%' height={200}>
                         <PieChart>
@@ -169,7 +167,7 @@ const Dashboard = () => {
                     </div>
                     <Btn color="blue">View More</Btn>
                 </div>
-                <div className='col-span-12 sm:col-span-6 lg:col-span-3 bg-white rounded-lg p-5 flex flex-col justify-between'>
+                <div className='col-span-12 sm:col-span-6 lg:col-span-3 bg-white rounded-lg p-5 flex flex-col justify-between shadow'>
                     <h3 className='font-medium text-left mb-4'>MY BALANCE</h3>
                     <div>
                         <p className='text-sm'>Balance</p>
@@ -220,8 +218,8 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 mt-8 gap-8'>
-                <div className='lg:col-span-4 bg-white rounded-lg p-5'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 mt-6 gap-5'>
+                <div className='lg:col-span-4 bg-white rounded-lg p-5 shadow'>
                     <h3 className='font-medium text-left mb-5'>EMPLOYEE STRUCTURE</h3>
                     <ResponsiveContainer width="100%" height={300}>
                         <ComposedChart
@@ -240,7 +238,7 @@ const Dashboard = () => {
                         </ComposedChart>
                     </ResponsiveContainer>
                 </div>
-                <div className='lg:col-span-4 bg-white rounded-lg p-5 text-center'>
+                <div className='lg:col-span-4 bg-white rounded-lg p-5 text-center shadow'>
                     <h3 className='font-medium text-left mb-10'>EMPLOYEE SATISFACTION</h3>
                     <ResponsiveContainer width="100%" height={200}>
                         <RadarChart outerRadius="80%" data={data}>
@@ -254,7 +252,7 @@ const Dashboard = () => {
                     <p className='text-xs'>Lorem Ipsum is simply dummy text</p>
                     <p className='text-xs mt-2 text-red-400'>Read more</p>
                 </div>
-                <div className='lg:col-span-4 bg-white rounded-lg p-5'>
+                <div className='lg:col-span-4 bg-white rounded-lg p-5 shadow'>
                     <h3 className='font-medium text-left mb-4'>PERFORMANCE</h3>
                     <p className='text-sm my-4'>
                         Measure How Fast You’re Growing Monthly Recurring Revenue. Learn More
@@ -307,59 +305,59 @@ const Dashboard = () => {
             </div>
             {/* table */}
 
-            <div class="overflow-x-auto relative shadow-md sm:rounded-lg mt-8">
-                <div class="p-5 bg-white dark:bg-gray-900">
+            <div className="overflow-x-auto relative shadow-md sm:rounded-lg mt-6">
+                <div className="p-5 bg-white dark:bg-gray-900">
                     <h3 className='font-normal text-left'>EMPLOYEES</h3>
                 </div>
-                <table class="w-full text-xs text-left text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <table className="w-full text-xs text-left text-gray-500 dark:text-gray-400">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" class="p-4">
-                                <div class="flex items-center">
-                                    <input id="checkbox-all-search" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                    <label for="checkbox-all-search" class="sr-only">checkbox</label>
+                            <th scope="col" className="p-4">
+                                <div className="flex items-center">
+                                    <input id="checkbox-all-search" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    <label htmlFor="checkbox-all-search" className="sr-only">checkbox</label>
                                 </div>
                             </th>
-                            <th scope="col" class="py-3 px-6 font-normal">
+                            <th scope="col" className="py-3 px-6 font-normal">
                                 Name
                             </th>
-                            <th scope="col" class="py-3 px-6 font-normal">
+                            <th scope="col" className="py-3 px-6 font-normal">
                                 Position
                             </th>
-                            <th scope="col" class="py-3 px-6 font-normal">
+                            <th scope="col" className="py-3 px-6 font-normal">
                                 Status
                             </th>
-                            <th scope="col" class="py-3 px-6 font-normal">
+                            <th scope="col" className="py-3 px-6 font-normal">
                                 Action
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            [...Array(3).keys()].map(i => <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td class="p-4 w-4">
-                                    <div class="flex items-center">
-                                        <input id="checkbox-table-search-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
+                            [...Array(3).keys()].map(i => <tr key={i} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td className="p-4 w-4">
+                                    <div className="flex items-center">
+                                        <input id="checkbox-table-search-1" type="checkbox" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                        <label htmlFor="checkbox-table-search-1" className="sr-only">checkbox</label>
                                     </div>
                                 </td>
-                                <th scope="row" class="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-                                    <img class="w-10 h-10 rounded-full" src="https://png.pngtree.com/png-vector/20220817/ourmid/pngtree-cartoon-man-avatar-vector-ilustration-png-image_6111064.png" alt="" />
-                                    <div class="pl-3">
-                                        <div class="text-sm font-thin">Neil Sims</div>
-                                        <div class="font-normal text-gray-500">neil.sims@flowbite.com</div>
+                                <th scope="row" className="flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white">
+                                    <img className="w-10 h-10 rounded-full" src="https://png.pngtree.com/png-vector/20220817/ourmid/pngtree-cartoon-man-avatar-vector-ilustration-png-image_6111064.png" alt="" />
+                                    <div className="pl-3">
+                                        <div className="text-sm font-thin">Neil Sims</div>
+                                        <div className="font-normal text-gray-500">neil.sims@flowbite.com</div>
                                     </div>
                                 </th>
-                                <td class="py-4 px-6">
+                                <td className="py-4 px-6">
                                     React Developer
                                 </td>
-                                <td class="py-4 px-6">
-                                    <div class="flex items-center">
-                                        <div class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div> Online
+                                <td className="py-4 px-6">
+                                    <div className="flex items-center">
+                                        <div className="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div> Online
                                     </div>
                                 </td>
-                                <td class="py-4 px-6">
-                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
+                                <td className="py-4 px-6">
+                                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit user</a>
                                 </td>
                             </tr>)
                         }
