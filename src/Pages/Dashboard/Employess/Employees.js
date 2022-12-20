@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import EmployeeRow from './Components/EmployeeRow';
 import EmployeeStatistics from './Components/EmployeeStatistics';
 
-import { Button, Label, Modal, TextInput } from 'flowbite-react';
+import { Button, Label, Modal, Select, TextInput } from 'flowbite-react';
 import { AiOutlinePlus } from 'react-icons/ai';
 
 const Employees = () => {
@@ -70,7 +70,7 @@ const Employees = () => {
           <div className='px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8'>
             <h3 className='text-xl mb-4 font-medium text-gray-900 dark:text-white'>Add New Employee</h3>
             <form>
-              <div className='grid grid-cols-4 gap-4'>
+              <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
                 <div>
                   <div className='mb-2 block'>
                     <Label htmlFor='firstName' value='First Name' />
@@ -105,16 +105,27 @@ const Employees = () => {
 
                 <div>
                   <div className='mb-2 block'>
-                    <Label htmlFor='email' value='Position' />
+                    <Label htmlFor='department' value='Department' />
                   </div>
-                  <TextInput type='email' id='email' placeholder='Email Address' required={true} />
+                  <Select id='department' required={true}>
+                    <option>Information And Technology</option>
+                    <option>Marketing</option>
+                    <option>Creativity And Design</option>
+                    <option>Others</option>
+                  </Select>
                 </div>
 
                 <div>
                   <div className='mb-2 block'>
-                    <Label htmlFor='email' value='Department' />
+                    <Label htmlFor='role' value='Role' />
                   </div>
-                  <TextInput type='email' id='email' placeholder='Email Address' required={true} />
+                  <Select id='role' required={true}>
+                    <option>Front-End Developer</option>
+                    <option>Back-End Developer</option>
+                    <option>Full Stack Developer</option>
+                    <option>App Developer</option>
+                    <option>SQA Engineer</option>
+                  </Select>
                 </div>
 
                 <div>
@@ -126,12 +137,54 @@ const Employees = () => {
 
                 <div>
                   <div className='mb-2 block'>
-                    <Label htmlFor='password' value='Your password' />
+                    <Label htmlFor='fatherName' value='Father Name' />
                   </div>
-                  <TextInput id='password' type='password' required={true} />
+                  <TextInput id='fatherName' type='text' required={true} />
+                </div>
+                <div>
+                  <div className='mb-2 block'>
+                    <Label htmlFor='motherName' value='Mother Name' />
+                  </div>
+                  <TextInput id='motherName' type='text' required={true} />
+                </div>
+                <div>
+                  <div className='mb-2 block'>
+                    <Label htmlFor='presentAddress' value='Present Address' />
+                  </div>
+                  <TextInput id='presentAddress' type='text' required={true} />
+                </div>
+                <div>
+                  <div className='mb-2 block'>
+                    <Label htmlFor='permanentAddress' value='Permanent Address' />
+                  </div>
+                  <TextInput id='permanentAddress' type='text' required={true} />
+                </div>
+
+                <div>
+                  <div className='mb-2 block'>
+                    <Label htmlFor='nid' value='National ID' />
+                  </div>
+                  <TextInput id='nid' type='text' required={true} />
+                </div>
+
+                <div>
+                  <div className='mb-2 block'>
+                    <Label htmlFor='maritalStatus' value='Marital Status' />
+                  </div>
+                  <Select id='maritalStatus' required={true}>
+                    <option>Unmarried</option>
+                    <option>Married</option>
+                  </Select>
+                </div>
+
+                <div>
+                  <div className='mb-2 block'>
+                    <Label htmlFor='spouseName' value='Spouse Name' />
+                  </div>
+                  <TextInput id='spouseName' type='text' required={true} />
                 </div>
               </div>
-              <div className='w-full mt-4'>
+              <div className='w-full mt-4 '>
                 <Button>Add Employee</Button>
               </div>
             </form>
