@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import NAvbar from '../../Shared/Navbar/Navbar';
 import { SlArrowRight } from 'react-icons/sl';
 import { AiOutlineDashboard } from 'react-icons/ai';
 import { FiUsers } from 'react-icons/fi';
@@ -8,6 +7,7 @@ import { ImUserTie } from 'react-icons/im';
 import { FcDepartment } from 'react-icons/fc';
 import { RiAdminLine } from 'react-icons/ri';
 import { Tooltip } from 'flowbite-react';
+import DashboardNavbar from './DashboardNavbar';
 
 const DashboardLayout = () => {
     const [open, setOpen] = useState(false);
@@ -21,14 +21,14 @@ const DashboardLayout = () => {
                 </div>
                 <div className='p-5 flex flex-col justify-between h-full'>
                     <div>
-                        <Link to="/dashboard">
+                        <Link to="/dashboard" onClick={() => setOpen(false)}>
                             <div className={`flex items-center gap-3 ${open ? 'mt-4' : 'mt-1'} duration-100`}>
                                 <img className='w-10' src="https://img.icons8.com/color/48/null/dashboard-layout.png" alt='' />
                                 <h1 className={`origin-left ${!open && 'scale-0'} duration-100 text-2xl font-medium`}>Staff Deck</h1>
                             </div>
                         </Link>
                         <div className='mt-8'>
-                            <Link to="/dashboard" className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'>
+                            <Link to="/dashboard" onClick={() => setOpen(false)} className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'>
                                 {
                                     open
                                         ?
@@ -44,7 +44,7 @@ const DashboardLayout = () => {
                                 }
                                 <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Dashboard</h1>
                             </Link>
-                            <Link to="/dashboard/candidates" className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'>
+                            <Link to="/dashboard/candidates" onClick={() => setOpen(false)} className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'>
                                 {
                                     open
                                         ?
@@ -60,7 +60,7 @@ const DashboardLayout = () => {
                                 }
                                 <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Users</h1>
                             </Link>
-                            <Link to="/dashboard/departments" className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'>
+                            <Link to="/dashboard/departments" onClick={() => setOpen(false)} className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'>
                                 {
                                     open
                                         ?
@@ -76,7 +76,7 @@ const DashboardLayout = () => {
                                 }
                                 <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Department</h1>
                             </Link>
-                            <Link to="/dashboard/employees" className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'>
+                            <Link to="/dashboard/employees" onClick={() => setOpen(false)} className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'>
                                 {
                                     open
                                         ?
@@ -92,7 +92,7 @@ const DashboardLayout = () => {
                                 }
                                 <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Employees</h1>
                             </Link>
-                            <Link to="/dashboard/admins" className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'>
+                            <Link to="/dashboard/admins" onClick={() => setOpen(false)} className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'>
                                 {
                                     open
                                         ?
@@ -121,7 +121,9 @@ const DashboardLayout = () => {
             </div>
 
             <div className='md:ml-20'>
-                <NAvbar />
+                <div className='px-7'>
+                    <DashboardNavbar />
+                </div>
                 <div className='p-4 md:p-7'>
                     <Outlet />
                 </div>

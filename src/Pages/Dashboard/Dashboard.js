@@ -116,7 +116,7 @@ const Dashboard = () => {
             <div className='grid grid-cols-12 mt-6 gap-5'>
                 <div className='col-span-12 sm:col-span-12 md:col-span-7 lg:col-span-6 p-5 bg-white rounded-lg shadow'>
                     <h3 className='font-medium text-left'>REVENUE</h3>
-                    <div className='w-full h-96'>
+                    <div className='w-full h-80 md:h-96'>
                         <ResponsiveContainer width="100%" height="100%">
                             <ComposedChart
                                 data={data}
