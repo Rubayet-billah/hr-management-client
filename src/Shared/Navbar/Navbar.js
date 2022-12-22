@@ -1,11 +1,13 @@
 import { Navbar } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 
-const NAvbar = () => {
+const NAvbar = ({ logoHidden }) => {
   return (
     <Navbar className='!px-4 md:!px-7 !py-5' fluid={true} rounded={true}>
       <Navbar.Brand>
-        <span className='self-center whitespace-nowrap text-2xl font-semibold dark:text-white'>HR Manager</span>
+        {logoHidden ? null : (
+          <span className='self-center whitespace-nowrap text-2xl font-semibold dark:text-white'>HR Manager</span>
+        )}
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className='!items-center'>
