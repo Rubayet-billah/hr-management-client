@@ -6,6 +6,7 @@ import Register from "../../Pages/Authentication/Register/Register";
 import Admins from "../../Pages/Dashboard/Admins/Admins";
 import Candidates from "../../Pages/Dashboard/Candidates/Candidates";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
+import Departments from "../../Pages/Dashboard/Departments/Departments";
 import Employees from "../../Pages/Dashboard/Employess/Employees";
 import Home from "../../Pages/Homepage/Home/Home";
 
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/candidates",
                 element: <Candidates></Candidates>,
+            },
+            {
+                path: "/dashboard/departments",
+                element: <Departments></Departments>,
             },
         ],
     },
