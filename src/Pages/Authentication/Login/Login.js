@@ -4,6 +4,8 @@ import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
+import image_hr from "../../../assets/loginPage/hr1.PNG";
+
 const Login = () => {
   const {
     register,
@@ -40,11 +42,17 @@ const Login = () => {
   };
   return (
     <>
-      <div className="h-[800px] flex justify-center items-center ">
-        <div className=" w-96 p-8 bg-green-500 rounded-lg">
-          <h3 className="text-xl text-center">Login</h3>
-          <form onSubmit={handleSubmit(handleLogin)}>
-            <div className="form-control w-full max-w-xs">
+      <div
+        className=" grid grid-cols-1 gap-10 lg:grid-cols-2   "
+        // style={{ backgroundImage: `url(${image_bg})` }}
+      >
+        <div>
+          <img src={image_hr} alt="hr" />
+        </div>
+        <div className="  p-8  rounded-lg ">
+          <h3 className="text-5xl text-center">Login</h3>
+          <form className="" onSubmit={handleSubmit(handleLogin)}>
+            <div className="form-control text-xl w-full ">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
@@ -55,13 +63,13 @@ const Login = () => {
                 })}
                 placeholder="email"
                 type="email"
-                className="input input-bordered w-full max-w-xs"
+                className="input  rounded-lg input-bordered w-full "
               />
               {errors.email && (
                 <p className="text-red-600">{errors.email?.message}</p>
               )}
             </div>
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control text-xl  w-full ">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
@@ -76,7 +84,7 @@ const Login = () => {
                 })}
                 placeholder="password"
                 type="password"
-                className="input input-bordered w-full max-w-xs"
+                className="input  rounded-lg input-bordered w-full "
               />
               {errors.password && (
                 <p className="text-red-600">{errors.password?.message}</p>
@@ -87,7 +95,7 @@ const Login = () => {
             </div>
 
             <button
-              className="btn bg-green-600 hover:bg-green-700 w-full"
+              className="btn my-2 text-white text-xl bg-blue-500   hover:bg-blue-600 rounded-lg w-full p-3"
               value="Login"
               type="submit"
             >
@@ -97,9 +105,9 @@ const Login = () => {
           <div>
             {loginError && <p className="text-red-600">{loginError}</p>}
           </div>
-          <p>
+          <p className="text-xl">
             New to HR ?
-            <Link to="/register" className="text-primary">
+            <Link to="/register" className=" text-blue-600 hover:font-bold ">
               Create new account
             </Link>
           </p>
