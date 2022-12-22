@@ -1,6 +1,8 @@
 # Project Overview
 
-[HR Mangement](https://github.com/facebook/create-react-app).
+[HR Mangement](https://hr-management-client-2a430.web.app/).
+
+[Server Repository](https://github.com/Rubayet-billah/hr-management-server)
 
 ## Contributors
 
@@ -9,3 +11,4 @@
 - Fahad Mridha
 - Maruf Hossain
 - Rajib Das
+- Naem Hossain

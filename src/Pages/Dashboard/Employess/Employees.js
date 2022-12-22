@@ -29,14 +29,14 @@ const Employees = () => {
 
   return (
     <>
-      <div className='py-6 min-h-screen'>
+      <div className='min-h-screen'>
         <div className='flex justify-end mb-6'>
           <button
             onClick={addHandler}
             type='button'
             className='flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'
           >
-            <AiOutlinePlus className='mr-2 text-white' /> Add
+            <AiOutlinePlus className='mr-2 text-white' /> Add Employee
           </button>
         </div>
 
