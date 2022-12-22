@@ -1,10 +1,16 @@
 import { Table } from 'flowbite-react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Candidates = () => {
     const [candidates, setCandidates] = useState([]);
 
-
+    useEffect(() => {
+        fetch('candidates.json')
+            .then(res => res.json())
+            .then(data => {
+                setCandidates(data)
+            })
+    }, [])
     return (
         <div>
             <Table striped={true}>
@@ -28,6 +34,10 @@ const Candidates = () => {
                     </Table.HeadCell>
                 </Table.Head>
                 <Table.Body className="divide-y">
+                    {
+                        candidates?.map()
+                    }
+
                     <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                         <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                             Apple MacBook Pro 17"
