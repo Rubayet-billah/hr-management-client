@@ -42,14 +42,11 @@ const Login = () => {
   };
   return (
     <>
-      <div
-        className=" grid grid-cols-1 gap-10 lg:grid-cols-2   "
-        // style={{ backgroundImage: `url(${image_bg})` }}
-      >
+      <div className=" grid grid-cols-1 gap-10 lg:grid-cols-2">
         <div>
           <img src={image_hr} alt="hr" />
         </div>
-        <div className="  p-8  rounded-lg ">
+        <div className=" w-96 p-8 rounded-lg lg:ml-32">
           <h3 className="text-5xl text-center">Login</h3>
           <form className="" onSubmit={handleSubmit(handleLogin)}>
             <div className="form-control text-xl w-full ">
@@ -107,7 +104,10 @@ const Login = () => {
           </div>
           <p className="text-xl">
             New to HR ?
-            <Link to="/register" className=" text-blue-600 hover:font-bold ">
+            <Link
+              to="/register"
+              className=" ml-2 text-blue-600 hover:font-bold "
+            >
               Create new account
             </Link>
           </p>
