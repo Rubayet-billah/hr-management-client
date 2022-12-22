@@ -5,8 +5,9 @@ import CandidateRow from './Components/CandidateRow';
 
 const Candidates = () => {
     const [candidates, setCandidates] = useState([]);
+
     const [candidateDetailsModalVisibility, setCandidateDetailsModalVisibility] = useState(false)
-    console.log(candidateDetailsModalVisibility)
+    const [viewCandidateDetails, setViewCandidateDetails] = useState({})
 
 
     useEffect(() => {
@@ -43,7 +44,9 @@ const Candidates = () => {
                 </Table.Head>
                 <Table.Body className="divide-y">
                     {
-                        candidates?.map(candidate => <CandidateRow candidate={candidate}
+                        candidates?.map(candidate => <CandidateRow
+                            candidate={candidate}
+                            setViewCandidateDetails={setViewCandidateDetails}
                             setCandidateDetailsModalVisibility={setCandidateDetailsModalVisibility}
                         ></CandidateRow>)
                     }
@@ -53,6 +56,7 @@ const Candidates = () => {
             </Table>
 
             <CandidateDetailsModal
+                viewCandidateDetails={viewCandidateDetails}
                 candidateDetailsModalVisibility={candidateDetailsModalVisibility}
                 setCandidateDetailsModalVisibility={setCandidateDetailsModalVisibility}
             />

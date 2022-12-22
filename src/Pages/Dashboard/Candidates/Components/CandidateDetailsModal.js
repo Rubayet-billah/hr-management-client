@@ -1,27 +1,25 @@
 import { Button, Modal } from 'flowbite-react';
 import React from 'react';
 
-const CandidateDetailsModal = ({ candidateDetailsModalVisibility, setCandidateDetailsModalVisibility }) => {
+const CandidateDetailsModal = ({
+    viewCandidateDetails,
+    candidateDetailsModalVisibility,
+    setCandidateDetailsModalVisibility
+}) => {
+    const { name } = viewCandidateDetails
 
     const onClick = () => {
 
-
     };
-
-    const handleDetailsModal = () => {
-    }
     return (
         <div>
             <React.Fragment>
-                <Button onClick={onClick}>
-                    Toggle modal
-                </Button>
                 <Modal
                     show={candidateDetailsModalVisibility}
                     onClose={() => setCandidateDetailsModalVisibility(false)}
                 >
                     <Modal.Header>
-
+                        {name}
                     </Modal.Header>
                     <Modal.Body>
                         <div className="space-y-6">
@@ -31,7 +29,7 @@ const CandidateDetailsModal = ({ candidateDetailsModalVisibility, setCandidateDe
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={onClick}>
-                            I accept
+                            Shortlist
                         </Button>
                         <Button
                             color="gray"
