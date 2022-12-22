@@ -7,7 +7,7 @@ const Hero = () => {
             The smart HR software for growing businesses!
           </h1>
           <p class='max-w-xl mb-6 text-gray-500 text-sm lg:mb-8 md:text-lg dark:text-gray-400'>
-            Modernize your HR. Manage your hiring, onboarding, time-off, employee data, and HR workflows in one place.
+            Modernize your HR, Manage your hiring, Onboarding, Employee Data, and HR Workflows in one place.
           </p>
         </div>
         <div class='hidden lg:mt-0 lg:col-span-4 lg:flex'>
