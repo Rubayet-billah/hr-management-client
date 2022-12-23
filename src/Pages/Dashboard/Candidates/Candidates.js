@@ -1,7 +1,9 @@
 import { Table } from 'flowbite-react';
 import React, { useEffect, useState } from 'react';
+import { Toaster } from 'react-hot-toast';
 import CandidateDetailsModal from './Components/CandidateDetailsModal';
 import CandidateRow from './Components/CandidateRow';
+import CandidateStatistics from './Components/CandidateStatistics';
 
 const Candidates = () => {
     const [candidates, setCandidates] = useState([]);
@@ -19,6 +21,9 @@ const Candidates = () => {
     }, [])
     return (
         <div>
+            <section>
+                <CandidateStatistics candidates={candidates} />
+            </section>
             <Table striped={true}>
                 <Table.Head>
                     <Table.HeadCell>
@@ -31,15 +36,13 @@ const Candidates = () => {
                         Address
                     </Table.HeadCell>
                     <Table.HeadCell>
-                        Expected Salary
+                        Phone
                     </Table.HeadCell>
                     <Table.HeadCell>
                         Experience (y)
                     </Table.HeadCell>
                     <Table.HeadCell>
-                        <span className="sr-only">
-                            Edit
-                        </span>
+                        Expected Salary
                     </Table.HeadCell>
                 </Table.Head>
                 <Table.Body className="divide-y">
@@ -60,6 +63,7 @@ const Candidates = () => {
                 candidateDetailsModalVisibility={candidateDetailsModalVisibility}
                 setCandidateDetailsModalVisibility={setCandidateDetailsModalVisibility}
             />
+            <Toaster></Toaster>
         </div>
     );
 };

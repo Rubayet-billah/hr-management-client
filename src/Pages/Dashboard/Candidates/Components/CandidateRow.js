@@ -13,7 +13,7 @@ const CandidateRow = ({ candidate, setViewCandidateDetails, setCandidateDetailsM
             className="bg-white dark:border-gray-700 dark:bg-gray-800">
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                 <div className='flex items-center'>
-                    <img class="w-10 h-10 rounded-full" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Rounded avatar" />
+                    <img class="w-10 h-10 rounded-full" src={candidate.image} alt="Rounded avatar" />
                     <span className='ml-2'>{candidate.name}</span>
                 </div>
             </Table.Cell>
@@ -24,18 +24,13 @@ const CandidateRow = ({ candidate, setViewCandidateDetails, setCandidateDetailsM
                 {candidate.address}
             </Table.Cell>
             <Table.Cell>
-                ${candidate.expectedSalary}
+                {candidate.phone}
             </Table.Cell>
             <Table.Cell>
                 {candidate.experience}
             </Table.Cell>
             <Table.Cell>
-                <a
-                    href="/tables"
-                    className="font-medium text-blue-600 hover:underline dark:text-blue-500"
-                >
-                    Edit
-                </a>
+                ${candidate.expectedSalary}
             </Table.Cell>
         </Table.Row>
     );
