@@ -27,7 +27,7 @@ const DashboardLayout = () => {
         </div>
         <div className='p-5 flex flex-col justify-between h-full'>
           <div>
-            <Link to='/dashboard' onClick={() => setOpen(false)}>
+            <Link to='/' onClick={() => setOpen(false)}>
               <div className={`flex items-center gap-3 ${open ? 'mt-4' : 'mt-1'} duration-100`}>
                 <img className='w-10' src='https://img.icons8.com/color/48/null/dashboard-layout.png' alt='' />
                 <h1 className={`origin-left ${!open && 'scale-0'} duration-100 text-2xl font-medium`}>Staff Deck</h1>
