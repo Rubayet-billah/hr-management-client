@@ -8,7 +8,7 @@
     "designation": "Frontend Developer",
     "expectedSalary": "20000",
     "experience": "2",
-    "resumeUrl": ""
+    "resumeUrl": "https://drive.google.com/file/d/1V8r_viLpTSHNcx10_cIsy3Reox-S6_WR/view"
   },
   {
     "name": "Ruby Odom",
@@ -19,7 +19,7 @@
     "designation": "Backend Developer",
     "expectedSalary": "35000",
     "experience": "4",
-    "resumeUrl": ""
+    "resumeUrl": "https://drive.google.com/file/d/1V8r_viLpTSHNcx10_cIsy3Reox-S6_WR/view"
   },
   {
     "name": "Theodore Levine",
@@ -30,6 +30,6 @@
     "designation": "Web Developer",
     "expectedSalary": "14000",
     "experience": "N/A",
-    "resumeUrl": ""
+    "resumeUrl": "https://drive.google.com/file/d/1V8r_viLpTSHNcx10_cIsy3Reox-S6_WR/view"
   }
 ]
