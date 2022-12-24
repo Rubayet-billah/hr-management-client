@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 const CandidateDetailsModal = ({
     viewCandidateDetails,
     candidateDetailsModalVisibility,
-    setCandidateDetailsModalVisibility
+    setCandidateDetailsModalVisibility,
+    refetch
 }) => {
     const { name, image, phone, email, designation, address, expectedSalary, experience, resumeUrl } = viewCandidateDetails
 
@@ -22,6 +23,7 @@ const CandidateDetailsModal = ({
                 if (result.acknowledged) {
                     setCandidateDetailsModalVisibility(false)
                     toast.success(`${shortListedCandidate.name} Shortlisted Successfully`)
+                    refetch();
                 }
             })
     }

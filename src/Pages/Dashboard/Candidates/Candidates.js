@@ -64,6 +64,7 @@ const Candidates = () => {
                 viewCandidateDetails={viewCandidateDetails}
                 candidateDetailsModalVisibility={candidateDetailsModalVisibility}
                 setCandidateDetailsModalVisibility={setCandidateDetailsModalVisibility}
+                refetch={refetch}
             />
             <Toaster></Toaster>
         </div>
