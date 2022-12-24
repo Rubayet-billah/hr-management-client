@@ -17,13 +17,18 @@ const Candidates = () => {
         }
     })
 
+    const [showShortlistedCandidate, setShortlistedCandidates] = useState(false)
+
     const [candidateDetailsModalVisibility, setCandidateDetailsModalVisibility] = useState(false)
     const [viewCandidateDetails, setViewCandidateDetails] = useState({})
 
     return (
         <div>
             <section>
-                <CandidateStatistics candidates={candidates} />
+                <CandidateStatistics
+                    candidates={candidates}
+                    setShortlistedCandidates={setShortlistedCandidates}
+                />
             </section>
             <Table striped={true}>
                 <Table.Head>
