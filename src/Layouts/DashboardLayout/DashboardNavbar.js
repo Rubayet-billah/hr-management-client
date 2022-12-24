@@ -1,5 +1,7 @@
 import { Navbar } from 'flowbite-react';
 import React from 'react';
+import { FaEnvelope, FaUser } from 'react-icons/fa';
+import { BsFillBellFill } from 'react-icons/bs';
 
 const DashboardNavbar = () => {
     return (
@@ -15,26 +17,14 @@ const DashboardNavbar = () => {
                 </Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse>
-                    <Navbar.Link
-                        href="/"
-                        active={true}
-                    >
-                        Home
+                    <Navbar.Link href="#">
+                        <FaEnvelope />
                     </Navbar.Link>
-                    <Navbar.Link href="/dashboard">
-                        Dashboard
+                    <Navbar.Link href="#">
+                        <BsFillBellFill />
                     </Navbar.Link>
-                    <Navbar.Link href="/">
-                        About
-                    </Navbar.Link>
-                    <Navbar.Link href="/">
-                        Services
-                    </Navbar.Link>
-                    <Navbar.Link href="/login">
-                        Login
-                    </Navbar.Link>
-                    <Navbar.Link href="/register">
-                        Register
+                    <Navbar.Link href="#">
+                        <FaUser />
                     </Navbar.Link>
                 </Navbar.Collapse>
             </Navbar>
