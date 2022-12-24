@@ -55,6 +55,14 @@ const router = createBrowserRouter([
                 path: "/dashboard/departments",
                 element: <Departments></Departments>,
             },
+            {
+                path: "/dashboard/profile",
+                element: <Profile></Profile>
+            },
+            {
+                path: "/dashboard/holidays",
+                element: <Holidays></Holidays>,
+            },
         ],
     },
 ]);
