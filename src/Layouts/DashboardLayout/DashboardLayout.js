@@ -8,6 +8,7 @@ import { RiAdminLine } from 'react-icons/ri';
 import { SlArrowRight } from 'react-icons/sl';
 import { Link, Outlet } from 'react-router-dom';
 import DashboardNavbar from './DashboardNavbar';
+import staffDeck from '../../assets/icons/staff-deck.png';
 
 const DashboardLayout = () => {
   const [open, setOpen] = useState(false);
@@ -28,7 +29,7 @@ const DashboardLayout = () => {
           <div>
             <Link to='/' onClick={() => setOpen(false)}>
               <div className={`flex items-center gap-3 ${open ? 'mt-4' : 'mt-1'} duration-100`}>
-                <img className='w-10' src='https://img.icons8.com/color/48/null/dashboard-layout.png' alt='' />
+                <img className='w-10' src={staffDeck} alt='' />
                 <h1 className={`origin-left ${!open && 'scale-0'} duration-100 text-2xl font-medium`}>Staff Deck</h1>
               </div>
             </Link>
