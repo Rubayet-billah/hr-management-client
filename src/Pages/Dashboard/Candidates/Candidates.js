@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import { Table } from 'flowbite-react';
 import React, { useEffect, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
@@ -6,19 +7,19 @@ import CandidateRow from './Components/CandidateRow';
 import CandidateStatistics from './Components/CandidateStatistics';
 
 const Candidates = () => {
-    const [candidates, setCandidates] = useState([]);
+    const { data: candidates = [], refetch } = useQuery({
+        queryKey: [],
+        queryFn: async () => {
+            const res = await fetch('http://localhost:5000/candidates');
+            const data = await res.json();
+            console.log(data)
+            return data
+        }
+    })
 
     const [candidateDetailsModalVisibility, setCandidateDetailsModalVisibility] = useState(false)
     const [viewCandidateDetails, setViewCandidateDetails] = useState({})
 
-
-    useEffect(() => {
-        fetch('/candidates.json')
-            .then(res => res.json())
-            .then(data => {
-                setCandidates(data)
-            })
-    }, [])
     return (
         <div>
             <section>
@@ -48,6 +49,7 @@ const Candidates = () => {
                 <Table.Body className="divide-y">
                     {
                         candidates?.map(candidate => <CandidateRow
+                            key={candidate._id}
                             candidate={candidate}
                             setViewCandidateDetails={setViewCandidateDetails}
                             setCandidateDetailsModalVisibility={setCandidateDetailsModalVisibility}
@@ -62,6 +64,7 @@ const Candidates = () => {
                 viewCandidateDetails={viewCandidateDetails}
                 candidateDetailsModalVisibility={candidateDetailsModalVisibility}
                 setCandidateDetailsModalVisibility={setCandidateDetailsModalVisibility}
+                refetch={refetch}
             />
             <Toaster></Toaster>
         </div>

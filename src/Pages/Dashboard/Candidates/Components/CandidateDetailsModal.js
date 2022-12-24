@@ -6,19 +6,26 @@ import { Link } from 'react-router-dom';
 const CandidateDetailsModal = ({
     viewCandidateDetails,
     candidateDetailsModalVisibility,
-    setCandidateDetailsModalVisibility
+    setCandidateDetailsModalVisibility,
+    refetch
 }) => {
     const { name, image, phone, email, designation, address, expectedSalary, experience, resumeUrl } = viewCandidateDetails
 
     const handleShortList = (shortListedCandidate) => {
-        fetch('url', {
+        fetch('http://localhost:5000/shortlistedCandidate', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(shortListedCandidate)
-        })
-        toast.success(`${shortListedCandidate.name} Shortlisted Successfully`)
+        }).then(res => res.json())
+            .then(result => {
+                if (result.acknowledged) {
+                    setCandidateDetailsModalVisibility(false)
+                    toast.success(`${shortListedCandidate.name} Shortlisted Successfully`)
+                    refetch();
+                }
+            })
     }
     const onClick = () => {
 

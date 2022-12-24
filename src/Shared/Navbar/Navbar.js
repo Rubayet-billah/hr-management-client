@@ -24,7 +24,6 @@ const NAvbar = () => {
             <Navbar.Link href='/'>
               <Link to='/login'>Services</Link>
             </Navbar.Link>
-
             <Navbar.Link href='/login'>
               <Link to='/login'>Login</Link>
             </Navbar.Link>
