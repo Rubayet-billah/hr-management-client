@@ -8,6 +8,7 @@ import Candidates from "../../Pages/Dashboard/Candidates/Candidates";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import Departments from "../../Pages/Dashboard/Departments/Departments";
 import Employees from "../../Pages/Dashboard/Employess/Employees";
+import Holidays from "../../Pages/Dashboard/Holidays/Holidays";
 import Home from "../../Pages/Homepage/Home/Home";
 
 const router = createBrowserRouter([
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/departments",
                 element: <Departments></Departments>,
+            },
+            {
+                path: "/dashboard/holidays",
+                element: <Holidays></Holidays>,
             },
         ],
     },
