@@ -9,6 +9,7 @@ import { SlArrowRight } from 'react-icons/sl';
 import { Link, Outlet } from 'react-router-dom';
 import DashboardNavbar from './DashboardNavbar';
 import staffDeck from '../../assets/icons/staff-deck.png';
+import { BsHandThumbsUp } from 'react-icons/bs';
 
 const DashboardLayout = () => {
   const [open, setOpen] = useState(false);
@@ -40,10 +41,10 @@ const DashboardLayout = () => {
                 className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'
               >
                 {open ? (
-                  <AiOutlineDashboard className={`w-5 h-5`} />
+                  <AiOutlineDashboard className={`w-5 h-5 text-purple-800`} />
                 ) : (
                   <Tooltip content='Dashboard' placement='right' style='light'>
-                    <AiOutlineDashboard className={`w-5 h-5`} />
+                    <AiOutlineDashboard className={`w-5 h-5 text-purple-800`} />
                   </Tooltip>
                 )}
                 <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Dashboard</h1>
@@ -54,10 +55,10 @@ const DashboardLayout = () => {
                 className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'
               >
                 {open ? (
-                  <FiUsers className={`w-5 h-5`} />
+                  <FiUsers className={`w-5 h-5 text-yellow-500`} />
                 ) : (
                   <Tooltip content='Candidates' placement='right' style='light'>
-                    <FiUsers className={`w-5 h-5`} />
+                    <FiUsers className={`w-5 h-5 text-yellow-500`} />
                   </Tooltip>
                 )}
                 <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Users</h1>
@@ -96,10 +97,24 @@ const DashboardLayout = () => {
                 className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'
               >
                 {open ? (
-                  <RiAdminLine className={`w-5 h-5 text-green-500`} />
+                  <RiAdminLine className={`w-5 h-5 text-green-600`} />
                 ) : (
                   <Tooltip content='Admins' placement='right' style='light'>
-                    <RiAdminLine className={`w-5 h-5 text-green-500`} />
+                    <RiAdminLine className={`w-5 h-5 text-green-600`} />
+                  </Tooltip>
+                )}
+                <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Admins</h1>
+              </Link>
+              <Link
+                to='/dashboard/holidays'
+                onClick={() => setOpen(false)}
+                className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'
+              >
+                {open ? (
+                  <BsHandThumbsUp className={`w-5 h-5 text-slate-700`} />
+                ) : (
+                  <Tooltip content='Holidays' placement='right' style='light'>
+                    <BsHandThumbsUp className={`w-5 h-5 text-slate-700`} />
                   </Tooltip>
                 )}
                 <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Admins</h1>
@@ -107,7 +122,7 @@ const DashboardLayout = () => {
             </div>
           </div>
           <div>
-            <Link className='flex items-center gap-3'>
+            <Link to="/dashboard/profile" className='flex items-center gap-3'>
               <img
                 className='w-9'
                 src='https://w7.pngwing.com/pngs/481/915/png-transparent-computer-icons-user-avatar-woman-avatar-computer-business-conversation-thumbnail.png'

@@ -9,6 +9,7 @@ import Dashboard from "../../Pages/Dashboard/Dashboard";
 import Departments from "../../Pages/Dashboard/Departments/Departments";
 import Employees from "../../Pages/Dashboard/Employess/Employees";
 import Home from "../../Pages/Homepage/Home/Home";
+import Profile from "../../Pages/Profile/Profile";
 
 const router = createBrowserRouter([
     {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/departments",
                 element: <Departments></Departments>,
+            },
+            {
+                path: "/dashboard/profile",
+                element: <Profile></Profile>,
             },
         ],
     },
