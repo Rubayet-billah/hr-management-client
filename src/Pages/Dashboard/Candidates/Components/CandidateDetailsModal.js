@@ -10,8 +10,15 @@ const CandidateDetailsModal = ({
 }) => {
     const { name, image, phone, email, designation, address, expectedSalary, experience, resumeUrl } = viewCandidateDetails
 
-    const handleShortList = () => {
-        toast.success('Applicant Shortlisted Successfully')
+    const handleShortList = (shortListedCandidate) => {
+        fetch('url', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(shortListedCandidate)
+        })
+        toast.success(`${shortListedCandidate.name} Shortlisted Successfully`)
     }
     const onClick = () => {
 
@@ -43,11 +50,11 @@ const CandidateDetailsModal = ({
                                             <span className="text-sm text-gray-500 dark:text-gray-400">
                                                 {designation}
                                             </span>
-                                            <div className="my-4 grid grid-cols-2 gap-x-5 lg:mt-6">
+                                            <div className="my-4 grid md:grid-cols-2 gap-x-5 lg:mt-6">
                                                 <p>Email: {email}</p>
                                                 <p>Phone: {phone}</p>
                                                 <p>Address: {address}</p>
-                                                <p>Experience: {experience} years</p>
+                                                <p>Experience: {experience}+ years</p>
                                             </div>
                                             <a href={resumeUrl} target='_blank' rel="noreferrer">
                                                 <Button>View Resume</Button>
@@ -59,7 +66,7 @@ const CandidateDetailsModal = ({
                         </div>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button onClick={handleShortList}>
+                        <Button onClick={() => handleShortList(viewCandidateDetails)}>
                             Shortlist
                         </Button>
                         <Button
