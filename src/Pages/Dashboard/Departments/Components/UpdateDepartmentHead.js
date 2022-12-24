@@ -23,7 +23,9 @@ const UpdateDepartmentHead = ({
             <Modal.Body>
                 <div className='px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8'>
                     <h3 className='text-xl mb-4 font-medium text-gray-900 dark:text-white'>Add New Department</h3>
-                    <form onSubmit={handleUpdateDepartmentHead}>
+                    <form
+
+                        onSubmit={handleUpdateDepartmentHead}>
                         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4'>
 
                             <div>
