@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import { Table } from 'flowbite-react';
 import React, { useEffect, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
@@ -6,6 +7,15 @@ import CandidateRow from './Components/CandidateRow';
 import CandidateStatistics from './Components/CandidateStatistics';
 
 const Candidates = () => {
+    // const { data: candidates } = useQuery({
+    //     queryKey: 'candidates',
+    //     queryFn: async () => {
+    //         const res = await fetch('http://localhost:5000/candidates');
+    //         const data = await res.json();
+    //         console.log(data)
+    //         return data
+    //     }
+    // })
     const [candidates, setCandidates] = useState([]);
 
     const [candidateDetailsModalVisibility, setCandidateDetailsModalVisibility] = useState(false)
@@ -13,7 +23,7 @@ const Candidates = () => {
 
 
     useEffect(() => {
-        fetch('/candidates.json')
+        fetch('http://localhost:5000/candidates')
             .then(res => res.json())
             .then(data => {
                 setCandidates(data)
@@ -48,6 +58,7 @@ const Candidates = () => {
                 <Table.Body className="divide-y">
                     {
                         candidates?.map(candidate => <CandidateRow
+                            key={candidate._id}
                             candidate={candidate}
                             setViewCandidateDetails={setViewCandidateDetails}
                             setCandidateDetailsModalVisibility={setCandidateDetailsModalVisibility}
