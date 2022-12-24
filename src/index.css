@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-#search{
-    border-radius: 0.3rem !important;
+#search, form input, select, textarea{
+    border-radius: 0.2rem !important;
 }
