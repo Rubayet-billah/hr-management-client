@@ -7,20 +7,19 @@ import { ImUserTie } from 'react-icons/im';
 import { RiAdminLine } from 'react-icons/ri';
 import { SlArrowRight } from 'react-icons/sl';
 import { Link, Outlet } from 'react-router-dom';
+import DashboardNavbar from './DashboardNavbar';
 
 const DashboardLayout = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className='bg-[#EDEFF3]'>
       <div
-        className={`${
-          open ? 'w-64 left-0' : 'w-20 -left-20 md:left-0'
-        } duration-100 bg-white border-r h-screen fixed top-0 z-50`}
+        className={`${open ? 'w-64 left-0' : 'w-20 -left-20 md:left-0'
+          } duration-100 bg-white border-r h-screen fixed top-0 z-50`}
       >
         <div
-          className={`absolute cursor-pointer right-0 translate-x-1/2 top-9 p-2 border-2 bg-red-700 text-white rounded-full ${
-            open && 'rotate-180'
-          } duration-300`}
+          className={`absolute cursor-pointer right-0 translate-x-1/2 top-9 p-2 border-2 bg-red-700 text-white rounded-full ${open && 'rotate-180'
+            } duration-300`}
           onClick={() => setOpen(!open)}
         >
           <SlArrowRight className='w-4 h-4' />
@@ -120,6 +119,9 @@ const DashboardLayout = () => {
       </div>
 
       <div className='md:ml-20'>
+        <div className='px-4 md:px-7'>
+          <DashboardNavbar />
+        </div>
         <div className='p-4 md:p-7'>
           <Outlet />
         </div>
