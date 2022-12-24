@@ -7,28 +7,19 @@ import CandidateRow from './Components/CandidateRow';
 import CandidateStatistics from './Components/CandidateStatistics';
 
 const Candidates = () => {
-    // const { data: candidates } = useQuery({
-    //     queryKey: 'candidates',
-    //     queryFn: async () => {
-    //         const res = await fetch('http://localhost:5000/candidates');
-    //         const data = await res.json();
-    //         console.log(data)
-    //         return data
-    //     }
-    // })
-    const [candidates, setCandidates] = useState([]);
+    const { data: candidates = [], refetch } = useQuery({
+        queryKey: [],
+        queryFn: async () => {
+            const res = await fetch('http://localhost:5000/candidates');
+            const data = await res.json();
+            console.log(data)
+            return data
+        }
+    })
 
     const [candidateDetailsModalVisibility, setCandidateDetailsModalVisibility] = useState(false)
     const [viewCandidateDetails, setViewCandidateDetails] = useState({})
 
-
-    useEffect(() => {
-        fetch('http://localhost:5000/candidates')
-            .then(res => res.json())
-            .then(data => {
-                setCandidates(data)
-            })
-    }, [])
     return (
         <div>
             <section>
