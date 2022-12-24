@@ -4,15 +4,17 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import AddDepartment from './AddDepartment';
 import DeleteDepartmentModal from './DeleteDepartmentModal';
 import DepartmentRow from './DepartmentRow';
+import DepartmentStatistics from './DepartmentStatistics';
+import UpdateDepartmentHead from './UpdateDepartmentHead';
 
 
 const Departments = () => {
     const [addUserModalVisibility, setAddUserModalVisibility] = useState(false);
+    const [addDepartmentHeadModalVisibility, setAddDepartmentHeadModalVisibility] = useState(false);
     const [departments, setDepartments] = useState([])
 
     const [viewDepartmentsDeleteModal, setViewDepartmentsDeleteModal] = useState(false)
     const [deletedDepartment, setDeletedDepartment] = useState({})
-
     useEffect(() => {
         fetch('/Department.json')
             .then((res) => res.json())
@@ -22,9 +24,11 @@ const Departments = () => {
     const handleAddDepartment = () => {
         setAddUserModalVisibility(true);
     }
+
     return (
         <>
             <div className='min-h-screen'>
+
                 <div className='flex justify-end mb-6'>
                     <button
                         onClick={handleAddDepartment}
@@ -34,8 +38,12 @@ const Departments = () => {
                         <AiOutlinePlus className='mr-2 text-white' /> Add Department
                     </button>
                 </div>
+                <DepartmentStatistics
+                    departments={departments}
+                ></DepartmentStatistics>
+
                 <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
-                    <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
+                    <table striped={true} className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
                         <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
                             <tr>
                                 <th scope='col' className='py-3 px-6'>
@@ -60,6 +68,7 @@ const Departments = () => {
                                     departments={departments}
                                     setViewDepartmentsDeleteModal={setViewDepartmentsDeleteModal}
                                     setDeletedDepartment={setDeletedDepartment}
+                                    setAddDepartmentHeadModalVisibility={setAddDepartmentHeadModalVisibility}
                                 />
                             ))}
                         </tbody>
@@ -70,14 +79,19 @@ const Departments = () => {
             <AddDepartment
                 addUserModalVisibility={addUserModalVisibility}
                 setAddUserModalVisibility={setAddUserModalVisibility}
-
             />
+            <UpdateDepartmentHead
+                addDepartmentHeadModalVisibility={addDepartmentHeadModalVisibility}
+                setAddDepartmentHeadModalVisibility={setAddDepartmentHeadModalVisibility}
+            >
+
+            </UpdateDepartmentHead>
             <DeleteDepartmentModal
                 deletedDepartment={deletedDepartment}
                 setViewDepartmentsDeleteModal={setViewDepartmentsDeleteModal}
                 viewDepartmentsDeleteModal={viewDepartmentsDeleteModal}
-
             />
+
             <Toaster />
         </>
     );

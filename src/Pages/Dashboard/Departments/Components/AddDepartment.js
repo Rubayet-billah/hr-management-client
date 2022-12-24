@@ -1,9 +1,11 @@
-import { Button, Label, Modal, Select, TextInput } from 'flowbite-react';
+import { Button, Label, Modal, TextInput } from 'flowbite-react';
 import React from 'react';
 import { toast } from 'react-hot-toast';
 
 const AddDepartment = ({ addUserModalVisibility, setAddUserModalVisibility }) => {
-    const addModalClose = () => {
+
+
+    const addDepartmentModalClose = () => {
         setAddUserModalVisibility(false);
     };
     const handleAddDepartment = (e) => {
@@ -13,7 +15,7 @@ const AddDepartment = ({ addUserModalVisibility, setAddUserModalVisibility }) =>
 
     return (
 
-        <Modal show={addUserModalVisibility} size='5xl' popup={true} onClose={addModalClose}>
+        <Modal show={addUserModalVisibility} size='5xl' popup={true} onClose={addDepartmentModalClose}>
             <Modal.Header />
             <Modal.Body>
                 <div className='px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8'>
