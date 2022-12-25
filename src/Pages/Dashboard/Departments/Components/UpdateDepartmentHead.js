@@ -1,20 +1,21 @@
 import { Button, Label, Modal, TextInput } from 'flowbite-react';
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 
 const UpdateDepartmentHead = ({
     setAddDepartmentHeadModalVisibility,
     addDepartmentHeadModalVisibility }) => {
-
-
-
     const addDepartmentHeadModalClose = () => {
         setAddDepartmentHeadModalVisibility(false);
     };
+    const { register, handleSubmit } = useForm();
 
-    const handleUpdateDepartmentHead = (e) => {
-        e.preventDefault()
-        toast.success('Department head added Successfully ')
+
+
+    const handleUpdateDepartmentHead = (data) => {
+
+
     }
 
     return (
@@ -24,20 +25,23 @@ const UpdateDepartmentHead = ({
                 <div className='px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8'>
                     <h3 className='text-xl mb-4 font-medium text-gray-900 dark:text-white'>Add New Department</h3>
                     <form
-
-                        onSubmit={handleUpdateDepartmentHead}>
-                        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4'>
+                        onSubmit={handleSubmit(handleUpdateDepartmentHead)}
+                    // onSubmit={handleUpdateDepartmentHead}
+                    >
+                        <div className='grid grid-cols-1 gap-4'>
 
                             <div>
                                 <div className='mb-2 block'>
-                                    <Label htmlFor='department' value='Department name' />
+                                    <Label htmlFor='department' value='Department Head Name ' />
                                 </div>
-                                <TextInput id='firstName' placeholder='Department name' required={true} />
+                                <TextInput
+                                    {...register("departmentHeadName")}
+                                    defaultValue={addDepartmentHeadModalVisibility.fname}
+                                />
                             </div>
                         </div>
                         <div className='w-full mt-4 '>
                             <Button type='submit'
-
                             >Update Department  Head</Button>
                         </div>
                     </form>

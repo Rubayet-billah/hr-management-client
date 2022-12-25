@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 import { Tooltip } from 'flowbite-react';
 import React, { useState } from 'react';
 import { AiOutlineDashboard } from 'react-icons/ai';

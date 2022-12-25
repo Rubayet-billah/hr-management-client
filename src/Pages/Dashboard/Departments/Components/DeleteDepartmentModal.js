@@ -6,12 +6,14 @@ const DeleteDepartmentModal = ({
     viewDepartmentsDeleteModal,
     setViewDepartmentsDeleteModal,
     deletedDepartment
-
 }) => {
+
+    const deleteDepartment = (data) => {
+        console.log(data)
+    }
     return (
         <Modal show={viewDepartmentsDeleteModal} size='md' popup={true} onClose={() => {
             setViewDepartmentsDeleteModal(false)
-
         }}>
             <Modal.Header />
             <Modal.Body>
@@ -21,10 +23,14 @@ const DeleteDepartmentModal = ({
                         Are you sure you want to delete {deletedDepartment.dept}?
                     </h3>
                     <div className='flex justify-center gap-4'>
-                        <Button color='failure' onClick={() => { }}>
+                        <Button color='failure' onClick={() => {
+                            deleteDepartment(deletedDepartment)
+                        }}>
                             Yes, I'm Sure!
                         </Button>
-                        <Button color='gray' onClick={() => { }}>
+                        <Button color='gray'
+                            onClick={() => setViewDepartmentsDeleteModal(false)}
+                        >
                             No, Cancel.
                         </Button>
                     </div>
