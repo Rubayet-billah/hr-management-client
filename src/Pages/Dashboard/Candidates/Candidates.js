@@ -29,7 +29,9 @@ const Candidates = () => {
             <section>
                 <CandidateStatistics
                     candidates={candidates}
+                    showShortlistedCandidate={showShortlistedCandidate}
                     setShowShortlistedCandidates={setShowShortlistedCandidates}
+                    refetch={refetch}
                 />
             </section>
             {!showShortlistedCandidate ? <Table striped={true}>
