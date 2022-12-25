@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../../Layouts/DashboardLayout/DashboardLayout";
 import MainlayOut from "../../Layouts/MainLayout/MainlayOut";
+import Accounts from "../../Pages/Accounts/Accounts";
 import Login from "../../Pages/Authentication/Login/Login";
 import Register from "../../Pages/Authentication/Register/Register";
 import Admins from "../../Pages/Dashboard/Admins/Admins";
@@ -10,7 +11,6 @@ import Departments from "../../Pages/Dashboard/Departments/Components/Department
 import Employees from "../../Pages/Dashboard/Employess/Employees";
 import Holidays from "../../Pages/Dashboard/Holidays/Holidays";
 import Home from "../../Pages/Homepage/Home/Home";
-import Profile from "../../Pages/Profile/Profile";
 
 const router = createBrowserRouter([
     {
@@ -56,8 +56,8 @@ const router = createBrowserRouter([
                 element: <Departments></Departments>,
             },
             {
-                path: "/dashboard/profile",
-                element: <Profile></Profile>
+                path: "/dashboard/accounts",
+                element: <Accounts></Accounts>
             },
             {
                 path: "/dashboard/holidays",

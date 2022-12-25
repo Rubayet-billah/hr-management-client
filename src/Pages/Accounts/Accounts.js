@@ -4,9 +4,9 @@ import { SlCalender } from 'react-icons/sl';
 import { TfiWorld } from 'react-icons/tfi';
 import Btn from '../../components/Btn';
 
-const Profile = () => {
+const Accounts = () => {
     return (
-        <section className='grid grid-cols-12 gap-5 items-start'>
+        <section className='accounts grid grid-cols-12 gap-5 items-start'>
             <div className='col-span-12 lg:col-span-4 bg-white rounded shadow text-sm'>
                 <div className='flex items-center gap-2 p-2 border-b'>
                     <div>
@@ -184,4 +184,4 @@ const Profile = () => {
     );
 };
 
-export default Profile;
+export default Accounts;
