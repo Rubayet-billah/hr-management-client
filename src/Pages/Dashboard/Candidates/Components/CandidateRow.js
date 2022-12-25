@@ -10,7 +10,7 @@ const CandidateRow = ({ candidate, setViewCandidateDetails, setCandidateDetailsM
                 setCandidateDetailsModalVisibility(true);
                 setViewCandidateDetails(candidate);
             }}
-            className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            className="bg-white dark:border-gray-700 dark:bg-gray-800 cursor-pointer hover:bg-gray-100">
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                 <div className='flex items-center'>
                     <img className="w-10 h-10 rounded-full" src={candidate.image} alt="Rounded avatar" />

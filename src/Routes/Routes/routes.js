@@ -6,7 +6,7 @@ import Register from "../../Pages/Authentication/Register/Register";
 import Admins from "../../Pages/Dashboard/Admins/Admins";
 import Candidates from "../../Pages/Dashboard/Candidates/Candidates";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
-import Departments from "../../Pages/Dashboard/Departments/Departments";
+import Departments from "../../Pages/Dashboard/Departments/Components/Departments";
 import Employees from "../../Pages/Dashboard/Employess/Employees";
 import Holidays from "../../Pages/Dashboard/Holidays/Holidays";
 import Home from "../../Pages/Homepage/Home/Home";

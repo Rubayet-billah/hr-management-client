@@ -5,7 +5,8 @@ import { BsTrash } from 'react-icons/bs';
 const DepartmentRow = ({
     departments,
     setViewDepartmentsDeleteModal,
-    setDeletedDepartment
+    setDeletedDepartment,
+    setAddDepartmentHeadModalVisibility
 
 }) => {
 
@@ -24,7 +25,11 @@ const DepartmentRow = ({
             </td>
             <td className='py-4 px-6'>
                 <div className='flex'>
-                    <button className='text-lg mr-2'>
+                    <button
+                        onClick={() => {
+                            setAddDepartmentHeadModalVisibility(departments)
+                        }}
+                        className='text-lg mr-2'>
                         <MdPreview />
                     </button>
                     <button

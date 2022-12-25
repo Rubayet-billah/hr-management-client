@@ -5,6 +5,7 @@ import { Toaster } from 'react-hot-toast';
 import CandidateDetailsModal from './Components/CandidateDetailsModal';
 import CandidateRow from './Components/CandidateRow';
 import CandidateStatistics from './Components/CandidateStatistics';
+import ShortlistedCandidates from './Components/ShortlistedCandidates';
 
 const Candidates = () => {
     const { data: candidates = [], refetch } = useQuery({
@@ -17,15 +18,21 @@ const Candidates = () => {
         }
     })
 
+    const [showShortlistedCandidate, setShowShortlistedCandidates] = useState(false)
+    console.log(showShortlistedCandidate)
+
     const [candidateDetailsModalVisibility, setCandidateDetailsModalVisibility] = useState(false)
     const [viewCandidateDetails, setViewCandidateDetails] = useState({})
 
     return (
         <div>
             <section>
-                <CandidateStatistics candidates={candidates} />
+                <CandidateStatistics
+                    candidates={candidates}
+                    setShowShortlistedCandidates={setShowShortlistedCandidates}
+                />
             </section>
-            <Table striped={true}>
+            {!showShortlistedCandidate ? <Table striped={true}>
                 <Table.Head>
                     <Table.HeadCell>
                         Applicant's Name
@@ -58,7 +65,9 @@ const Candidates = () => {
 
 
                 </Table.Body>
-            </Table>
+            </Table> : <ShortlistedCandidates />
+            }
+
 
             <CandidateDetailsModal
                 viewCandidateDetails={viewCandidateDetails}
