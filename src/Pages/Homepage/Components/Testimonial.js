@@ -54,7 +54,7 @@ const Testimonial = () => {
                 <p className='text-center'>{review.review}</p>
                 <div className='mt-6 text-center'>
                   <p className='font-medium'>{review.fullName}</p>
-                  <p className='text-sm'>{review.position}</p>
+                  <p className='text-sm text-gray-600'>{review.position}</p>
                 </div>
                 <p className='absolute top-1 left-2 text-7xl opacity-10'>🙶</p>
               </div>
