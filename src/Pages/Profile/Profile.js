@@ -75,16 +75,18 @@ const Profile = () => {
                                 </option>
                             </Select>
                             <TextInput
-                                placeholder="Bonnie Green"
+                                placeholder="Date of bith"
                                 required={true}
                                 addon={<SlCalender />}
                                 sizing="sm"
+                                id="rounded-l-0"
                             />
                             <TextInput
-                                placeholder="Bonnie Green"
+                                placeholder="Website"
                                 required={true}
                                 addon={<TfiWorld />}
                                 sizing="sm"
+                                id="rounded-l-0"
                             />
                         </div>
                         <div className='grid grid-cols-3 gap-2'>
@@ -118,8 +120,7 @@ const Profile = () => {
                         </div>
                         <div>
                             <Textarea
-                                id="comment"
-                                placeholder="Leave a comment..."
+                                placeholder="Add a bio..."
                                 required={true}
                                 rows={4}
                                 className="text-xs"
@@ -137,8 +138,6 @@ const Profile = () => {
                                 required={true}
                                 defaultValue="Maruf"
                                 sizing="sm"
-                                disabled
-                                className="bg-gray-200 rounded"
                             />
                             <TextInput
                                 type="email"
@@ -146,6 +145,8 @@ const Profile = () => {
                                 required={true}
                                 sizing="sm"
                                 defaultValue="maruf@gamil.com"
+                                disabled
+                                className="bg-gray-200 rounded"
                             />
                             <TextInput
                                 type="number"
