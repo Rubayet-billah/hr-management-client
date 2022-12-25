@@ -1,0 +1,21 @@
+Apllicants information
+
+{
+    "name": "Keefe Wyatt",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIKcTkARlljahDz7xR5gq-lwY3NSwsYMQdl_AlXfua4Yc2QcQ9QIG38gxtEiMGNAdoEck&usqp=CAU",
+    "phone": "1-212-304-1638",
+    "email": "urna@yahoo.org",
+    "address": "P.O. Box 335, 5744 Taciti Ave",
+    "designation": "Frontend Developer",
+    "jobType":"Full Time",
+    "applyDate":"04 Jan 2019",
+    "expectedSalary": "20000",
+    "experience": "2",
+    "hiringReason":"I am hard-working person",
+    "coverLetter":"I am hard-working person",
+    "linkedIn":"",
+    "gitHub":"",
+    "portfolio":"",
+    "resumeUrl": "https://drive.google.com/file/d/1V8r_viLpTSHNcx10_cIsy3Reox-S6_WR/view"
+},
+

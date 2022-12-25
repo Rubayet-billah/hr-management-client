@@ -1,12 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../../Layouts/DashboardLayout/DashboardLayout";
 import MainlayOut from "../../Layouts/MainLayout/MainlayOut";
+import Accounts from "../../Pages/Accounts/Accounts";
 import Login from "../../Pages/Authentication/Login/Login";
 import Register from "../../Pages/Authentication/Register/Register";
 import Admins from "../../Pages/Dashboard/Admins/Admins";
 import Candidates from "../../Pages/Dashboard/Candidates/Candidates";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
+import Departments from "../../Pages/Dashboard/Departments/Components/Departments";
 import Employees from "../../Pages/Dashboard/Employess/Employees";
+import Holidays from "../../Pages/Dashboard/Holidays/Holidays";
 import Home from "../../Pages/Homepage/Home/Home";
 
 const router = createBrowserRouter([
@@ -47,6 +50,18 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/candidates",
                 element: <Candidates></Candidates>,
+            },
+            {
+                path: "/dashboard/departments",
+                element: <Departments></Departments>,
+            },
+            {
+                path: "/dashboard/accounts",
+                element: <Accounts></Accounts>
+            },
+            {
+                path: "/dashboard/holidays",
+                element: <Holidays></Holidays>,
             },
         ],
     },

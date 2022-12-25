@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Keefe Wyatt",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIKcTkARlljahDz7xR5gq-lwY3NSwsYMQdl_AlXfua4Yc2QcQ9QIG38gxtEiMGNAdoEck&usqp=CAU",
+    "phone": "1-212-304-1638",
+    "email": "urna@yahoo.org",
+    "address": "P.O. Box 335, 5744 Taciti Ave",
+    "designation": "Frontend Developer",
+    "expectedSalary": "20000",
+    "experience": "2",
+    "resumeUrl": "https://drive.google.com/file/d/1V8r_viLpTSHNcx10_cIsy3Reox-S6_WR/view"
+  },
+  {
+    "name": "Ruby Odom",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIKcTkARlljahDz7xR5gq-lwY3NSwsYMQdl_AlXfua4Yc2QcQ9QIG38gxtEiMGNAdoEck&usqp=CAU",
+    "phone": "1-221-566-2279",
+    "email": "vulputate.dui@icloud.ca",
+    "address": "943-4066 Sit Ave",
+    "designation": "Backend Developer",
+    "expectedSalary": "35000",
+    "experience": "4",
+    "resumeUrl": "https://drive.google.com/file/d/1V8r_viLpTSHNcx10_cIsy3Reox-S6_WR/view"
+  },
+  {
+    "name": "Theodore Levine",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIKcTkARlljahDz7xR5gq-lwY3NSwsYMQdl_AlXfua4Yc2QcQ9QIG38gxtEiMGNAdoEck&usqp=CAU",
+    "phone": "(244) 701-7292",
+    "email": "nulla.eget.metus@outlook.org",
+    "address": "P.O. Box 292, 6069 Luctus Ave",
+    "designation": "Web Developer",
+    "expectedSalary": "14000",
+    "experience": "N/A",
+    "resumeUrl": "https://drive.google.com/file/d/1V8r_viLpTSHNcx10_cIsy3Reox-S6_WR/view"
+  }
+]
