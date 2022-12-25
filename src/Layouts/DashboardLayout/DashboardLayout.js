@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 import { Tooltip } from 'flowbite-react';
 import React, { useState } from 'react';
 import { AiOutlineDashboard } from 'react-icons/ai';
@@ -122,7 +123,7 @@ const DashboardLayout = () => {
             </div>
           </div>
           <div>
-            <Link to="/dashboard/profile" className='flex items-center gap-3'>
+            <Link to="/dashboard/accounts" className='flex items-center gap-3'>
               <img
                 className='w-9'
                 src='https://w7.pngwing.com/pngs/481/915/png-transparent-computer-icons-user-avatar-woman-avatar-computer-business-conversation-thumbnail.png'

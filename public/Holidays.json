@@ -1,0 +1,92 @@
+[
+  {
+    "_id": "01",
+    "day": "Tuesday",
+    "date": " 01 Jan, 2019",
+    "holiday": "New Year's Day"
+  },
+  {
+    "_id": "02",
+    "day": "Monday",
+    "date": " 14 Jan, 2023",
+    "holiday": "Makar Sankranti / Pongal"
+  },
+  {
+    "_id": "03",
+    "day": "Saturday",
+    "date": " 26 Jan, 2023",
+    "holiday": "Republic Day"
+  },
+  {
+    "_id": "04",
+    "day": "Monday",
+    "date": " 04 Mar, 2023",
+    "holiday": "Maha Shivaratri"
+  },
+  {
+    "_id": "05",
+    "day": "Thursday",
+    "date": " 21 Mar, 2023",
+    "holiday": "Holi"
+  },
+  {
+    "_id": "06",
+    "day": "Friday",
+    "date": " 14 Jan, 2023",
+    "holiday": "Good Friday"
+  },
+  {
+    "_id": "07",
+    "day": "Wednesday",
+    "date": " 05 june, 2023",
+    "holiday": "Eid-ul-Fitar"
+  },
+  {
+    "_id": "08",
+    "day": "Thursday",
+    "date": " 36 Mar, 2023",
+    "holiday": "Independence Day"
+  },
+  {
+    "_id": "09",
+    "day": "Monday",
+    "date": " 02 Oct, 2023",
+    "holiday": "Mathatma Gandhi Jayanti"
+  },
+  {
+    "_id": "10",
+    "day": "Monday",
+    "date": " 25 dec, 2023",
+    "holiday": "Christmas"
+  },
+  {
+    "_id": "11",
+    "day": "Monday",
+    "date": " 17 Mar, 2023",
+    "holiday": "Shab e‑Barat"
+  },
+  {
+    "_id": "12",
+    "day": "Monday",
+    "date": " 14 Jan, 2023",
+    "holiday": "Sheikh Mujibur Rahman's Birthday"
+  },
+  {
+    "_id": "13",
+    "day": "Monday",
+    "date": " 14 Jan, 2023",
+    "holiday": "Makar Sankranti / Pongal"
+  },
+  {
+    "_id": "14",
+    "day": "Monday",
+    "date": " 21 Feb, 2023",
+    "holiday": "Shaheed Day"
+  },
+  {
+    "_id": "15",
+    "day": "Monday",
+    "date": " 14 Jan, 2023",
+    "holiday": "Makar Sankranti / Pongal"
+  }
+]

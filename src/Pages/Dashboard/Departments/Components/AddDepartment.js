@@ -1,39 +1,65 @@
 import { Button, Label, Modal, TextInput } from 'flowbite-react';
 import React from 'react';
 import { toast } from 'react-hot-toast';
+import { useForm } from "react-hook-form";
 
 const AddDepartment = ({ addUserModalVisibility, setAddUserModalVisibility }) => {
-
+    const { register, handleSubmit } = useForm();
 
     const addDepartmentModalClose = () => {
         setAddUserModalVisibility(false);
     };
-    const handleAddDepartment = (e) => {
-        e.preventDefault()
-        toast.success('Department Added Successfully ')
+    const handleAddDepartment = (data) => {
+        fetch('http://localhost:5000/department', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.acknowledged) {
+                    toast.success('Department Added Successfully ')
+                    console.log('Success:', data);
+                }
+
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
     }
 
     return (
 
-        <Modal show={addUserModalVisibility} size='5xl' popup={true} onClose={addDepartmentModalClose}>
+        <Modal show={addUserModalVisibility} size='2xl' popup={true} onClose={addDepartmentModalClose}>
             <Modal.Header />
             <Modal.Body>
                 <div className='px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8'>
                     <h3 className='text-xl mb-4 font-medium text-gray-900 dark:text-white'>Add New Department</h3>
-                    <form onSubmit={handleAddDepartment}>
-                        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4'>
+                    <form
+                        onSubmit={handleSubmit(handleAddDepartment)}
+                    >
+                        <div className='grid grid-cols-1  gap-4'>
 
                             <div>
                                 <div className='mb-2 block'>
                                     <Label htmlFor='department' value='Department name' />
                                 </div>
-                                <TextInput id='firstName' placeholder='Department name' required={true} />
+                                <TextInput id='departmentName'
+                                    {...register("departmentName", { required: true })}
+                                    placeholder='Department name'
+                                />
                             </div>
                             <div>
                                 <div className='mb-2 block'>
-                                    <Label htmlFor='department' value='Department Head' />
+                                    <Label htmlFor='department-head' value='Department Head' />
                                 </div>
-                                <TextInput id='firstName' placeholder='Department Head' required={true} />
+                                <TextInput
+                                    {...register("departmentHeadName", { required: true })}
+                                    id='department-head'
+                                    placeholder='Department Head'
+                                />
                             </div>
                         </div>
                         <div className='w-full mt-4 '>
