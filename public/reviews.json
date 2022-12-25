@@ -19,7 +19,7 @@
     "id": 3,
     "fullName": "Bob Johnson",
     "position": "HR Director",
-    "review": "I've been using this HR management software for a few years now and it has consistently exceeded my expectations. The interface is easy to use and the customer support team is always quick to resolve any issues. I would highly recommend this software to any HR department looking to streamline their processes.",
+    "review": "I've been using this HR management software for a few years now and it has consistently exceeded my expectations. The interface is easy to use and the customer support team is always quick to resolve any issues. I would highly recommend this software to any HR department.",
     "star": 5,
     "image": "https://www.example.com/images/bob-johnson.jpg"
   },
@@ -27,7 +27,7 @@
     "id": 4,
     "fullName": "Samantha Williams",
     "position": "HR Consultant",
-    "review": "I recently started using this HR management software and have been really impressed with its capabilities. It's made it much easier to manage employee information and track important HR metrics. The user interface is intuitive and the customer support has been top-notch. I would definitely recommend it to other HR professionals.",
+    "review": "I recently started using this HR management software and have been really impressed with its capabilities. It's made it much easier to manage employee information and track important HR metrics. The user interface is intuitive and the customer support has been top-notch. Highly recommend!",
     "star": 4,
     "image": "https://www.example.com/images/samantha-williams.jpg"
   },

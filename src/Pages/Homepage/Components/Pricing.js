@@ -8,8 +8,8 @@ const Pricing = () => {
         <h3 className='text-4xl font-bold mb-1'>Our Pricing Plans</h3>
         <p className='capitalize'>Every plan starts with a 14-day free trail. No Credit card Require.</p>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-12 mt-12'>
-        <div className='shadow-lg bg-gray-100 p-10'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-12 mt-12'>
+        <div className='shadow-lg bg-gray-100 p-10 md:p-6 rounded-lg'>
           <div className=''>
             <h4 className='text-xl font-medium'>Startup</h4>
             <p className='text-3xl font-bold mt-6'>
@@ -32,9 +32,11 @@ const Pricing = () => {
             </li>
           </ul>
 
-          <Button className='mt-8 w-full rounded-sm'>Get Started</Button>
+          <Button fullSized className='mt-8 rounded-sm'>
+            Get Started
+          </Button>
         </div>
-        <div className='shadow-lg bg-gray-100 p-10'>
+        <div className='shadow-lg bg-gray-100 p-10 md:p-6 rounded-lg'>
           <div className=''>
             <h4 className='text-xl font-medium'>Standard</h4>
             <p className='text-3xl font-bold mt-6'>
@@ -59,7 +61,7 @@ const Pricing = () => {
 
           <Button className='mt-8 w-full rounded-sm'>Get Started</Button>
         </div>
-        <div className='shadow-lg bg-gray-100 p-10'>
+        <div className='shadow-lg bg-gray-100 p-10 md:p-6 rounded-lg'>
           <div className=''>
             <h4 className='text-xl font-medium'>Enterprise</h4>
             <p className='text-3xl font-bold mt-6'>
