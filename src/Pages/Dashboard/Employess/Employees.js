@@ -29,7 +29,7 @@ const Employees = () => {
 
   return (
     <>
-      <div className='min-h-screen'>
+      <div>
         <div className='flex justify-end mb-6'>
           <button
             onClick={addHandler}

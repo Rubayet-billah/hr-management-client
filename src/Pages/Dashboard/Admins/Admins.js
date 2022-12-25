@@ -5,26 +5,23 @@ import { TextInput } from 'flowbite-react';
 import AdminCard from './Components/AdminCard';
 import AddAdminModal from './Components/AddAdminModal';
 import DeleteModal from '../../../components/Modals/DeleteModal';
+import ViewAdminModal from './Components/ViewAdminModal';
 
 const Admins = () => {
-    // const [admins, setAdmins] = useState([]);
+    const [admins, setAdmins] = useState([]);
     const [addAdminModalVisibility, setAddAdminModalVisibility] = useState(false);
 
-    // const [viewModalVisibility, setViewModalVisibility] = useState(false);
-    // const [viewEmployee, setViewEmployee] = useState([]);
+    const [viewModalVisibility, setViewModalVisibility] = useState(false);
+    const [viewAdmin, setViewAdmin] = useState([]);
 
     const [deleteModalVisibility, setDeleteModalVisibility] = useState(false);
     const [deleteAdmin, setDeleteAdmin] = useState([]);
 
-    // useEffect(() => {
-    //     fetch('/employees.json')
-    //         .then((res) => res.json())
-    //         .then((data) => setEmployees(data));
-    // }, []);
-
-    // const addHandler = () => {
-    //     setAddUserModalVisibility(true);
-    // };
+    useEffect(() => {
+        fetch('/admins.json')
+            .then((res) => res.json())
+            .then((data) => setAdmins(data));
+    }, []);
 
     return (
         <section>
@@ -40,16 +37,17 @@ const Admins = () => {
                     />
                     <Btn color="blue" className="w-fit px-4">Search</Btn>
                 </div>
-                <div onClick={() => setAddAdminModalVisibility(!addAdminModalVisibility)} className="ml-auto">
-                    <Btn color="blue" className="w-fit px-4 flex items-center gap-2">Add New <FaPlus /></Btn>
-                </div>
+                <Btn onClick={() => setAddAdminModalVisibility(!addAdminModalVisibility)} color="blue" className="w-fit ml-auto px-4 flex items-center gap-2 ">Add New <FaPlus /></Btn>
             </div>
             <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
                 {
-                    [...Array(8).keys()].map(idx => <AdminCard
-                        key={idx}
+                    admins.map(admin => <AdminCard
+                        key={admin._id}
+                        data={admin}
                         setDeleteModalVisibility={setDeleteModalVisibility}
                         setDeleteAdmin={setDeleteAdmin}
+                        setViewAdmin={setViewAdmin}
+                        setViewModalVisibility={setViewModalVisibility}
                     ></AdminCard>)
                 }
             </div>
@@ -57,6 +55,12 @@ const Admins = () => {
             <AddAdminModal
                 addAdminModalVisibility={addAdminModalVisibility}
                 setAddAdminModalVisibility={setAddAdminModalVisibility}
+            />
+
+            <ViewAdminModal
+                viewAdmin={viewAdmin}
+                viewModalVisibility={viewModalVisibility}
+                setViewModalVisibility={setViewModalVisibility}
             />
 
             <DeleteModal

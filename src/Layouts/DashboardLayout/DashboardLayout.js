@@ -61,7 +61,7 @@ const DashboardLayout = () => {
                     <FiUsers className={`w-5 h-5 text-yellow-500`} />
                   </Tooltip>
                 )}
-                <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Users</h1>
+                <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Candidates</h1>
               </Link>
               <Link
                 to='/dashboard/departments'
@@ -75,7 +75,7 @@ const DashboardLayout = () => {
                     <FcDepartment className={`w-5 h-5`} />
                   </Tooltip>
                 )}
-                <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Department</h1>
+                <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Departments</h1>
               </Link>
               <Link
                 to='/dashboard/employees'
@@ -117,7 +117,7 @@ const DashboardLayout = () => {
                     <BsHandThumbsUp className={`w-5 h-5 text-slate-700`} />
                   </Tooltip>
                 )}
-                <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Admins</h1>
+                <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Holidays</h1>
               </Link>
             </div>
           </div>
@@ -127,6 +127,7 @@ const DashboardLayout = () => {
                 className='w-9'
                 src='https://w7.pngwing.com/pngs/481/915/png-transparent-computer-icons-user-avatar-woman-avatar-computer-business-conversation-thumbnail.png'
                 alt=''
+                title='Accounts'
               />
               <h1 className={`origin-left ${!open && 'scale-0'} duration-200 text-xs font-medium`}>Md Maruf Hossain</h1>
             </Link>
@@ -138,7 +139,7 @@ const DashboardLayout = () => {
         <div className='px-4 md:px-7'>
           <DashboardNavbar />
         </div>
-        <div className='p-4 md:p-7'>
+        <div className='p-4 md:p-7 min-h-screen'>
           <Outlet />
         </div>
       </div>
