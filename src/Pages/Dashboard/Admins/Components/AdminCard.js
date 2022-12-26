@@ -3,20 +3,25 @@ import Btn from '../../../../components/Btn';
 import { FaFacebookF, FaLinkedinIn, FaTrash } from 'react-icons/fa';
 import { AiOutlineTwitter } from 'react-icons/ai';
 import { GoMarkGithub } from 'react-icons/go';
+import avatar from '../../../../assets/icons/avatar.png'
 
-const AdminCard = ({ setDeleteModalVisibility, setDeleteAdmin }) => {
+const AdminCard = ({ setDeleteModalVisibility, setDeleteAdmin, setViewModalVisibility, setViewAdmin, admin }) => {
+    const { _id, firstName, lastName, image, email } = admin;
     const deleteModalOpen = () => {
         setDeleteModalVisibility(true);
-        // This name must be dynamic
-        setDeleteAdmin("Abdulla al habib");
+        setDeleteAdmin({firstName, _id });
     };
+    const handleViewBtn = () => {
+        setViewModalVisibility(true);
+        setViewAdmin(admin);
+    }
     return (
         <div className="flex flex-col justify-center p-6 shadow-md rounded-xl px-12 bg-white relative">
-            <img src="https://media.licdn.com/dms/image/C5603AQHtyb_sj3wslA/profile-displayphoto-shrink_800_800/0/1663162296906?e=1677110400&v=beta&t=bcuOvt-ePwvXWj7C6PPhDRCdjuVA7qwpDXABJuCoIhc" alt="" className="w-20 h-20 mx-auto rounded-full border p-1 aspect-square" />
+            <img src={image || avatar} alt="" className="w-20 h-20 mx-auto rounded-full border p-1 aspect-square" />
             <div className="text-center">
                 <div className="my-2">
-                    <h2 className="font-semibold">Abdullah Al Habib</h2>
-                    <p className="text-sm">jason-porter@info.com</p>
+                    <h2 className="font-semibold">{firstName +" "+ lastName}</h2>
+                    <p className="text-sm">{email}</p>
                 </div>
                 <div className="flex justify-center pt-2 space-x-4 align-center text-gray-500">
                     <a href="#!"><FaLinkedinIn /></a>
@@ -25,7 +30,7 @@ const AdminCard = ({ setDeleteModalVisibility, setDeleteAdmin }) => {
                     <a href="#!"><GoMarkGithub /></a>
                 </div>
                 <div className='flex gap-1 mt-4'>
-                    <Btn className="text-gray-500 border border-gray-500">View Profile</Btn>
+                    <Btn onClick={handleViewBtn} className="text-gray-500 border border-gray-500">View Profile</Btn>
                     <Btn className="text-gray-500 border border-gray-500">Message</Btn>
                 </div>
                 <div className='text-center flex justify-center gap-6 divide-x mt-5'>

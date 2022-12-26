@@ -51,8 +51,8 @@ const Login = () => {
             <h3 className="text-xl text-center mb-8">LOGIN TO YOUR ACCOUNT</h3>
             <form className="" onSubmit={handleSubmit(handleLogin)}>
               <div className="form-control  w-full">
-                <label className="label ">
-                  <span className="label-text mb-2">Email</span>
+                <label className="label mb-2 font-semibold">
+                  <span className="label-text">Email</span>
                 </label>
 
                 <input
@@ -68,7 +68,7 @@ const Login = () => {
                 )}
               </div>
               <div className="form-control  w-full ">
-                <label className="label mt-3 mb-2 flex justify-between">
+                <label className="label my-2  flex justify-between items-center">
                   <span className="label-text font-semibold ">Password</span>
                   <span className="label-text text-sm text-red-400">
                     <Link to=""> I forgot password</Link>

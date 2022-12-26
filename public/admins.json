@@ -1,0 +1,26 @@
+[
+    {
+        "_id": 1,
+        "name": "Keefe Wyatt",
+        "image": "https://media.licdn.com/dms/image/C5603AQHtyb_sj3wslA/profile-displayphoto-shrink_800_800/0/1663162296906?e=1677110400&v=beta&t=bcuOvt-ePwvXWj7C6PPhDRCdjuVA7qwpDXABJuCoIhc",
+        "phone": "1-212-304-1638",
+        "email": "urna@yahoo.org",
+        "address": "P.O. Box 335, 5744 Taciti Ave"
+    },
+    {
+        "_id": 2,
+        "name": "Ruby Odom",
+        "image": "https://media.licdn.com/dms/image/C5603AQHtyb_sj3wslA/profile-displayphoto-shrink_800_800/0/1663162296906?e=1677110400&v=beta&t=bcuOvt-ePwvXWj7C6PPhDRCdjuVA7qwpDXABJuCoIhc",
+        "phone": "1-221-566-2279",
+        "email": "vulputate.dui@icloud.ca",
+        "address": "943-4066 Sit Ave"
+    },
+    {
+        "_id": 3,
+        "name": "Theodore Levine",
+        "image": "https://media.licdn.com/dms/image/C5603AQHtyb_sj3wslA/profile-displayphoto-shrink_800_800/0/1663162296906?e=1677110400&v=beta&t=bcuOvt-ePwvXWj7C6PPhDRCdjuVA7qwpDXABJuCoIhc",
+        "phone": "(244) 701-7292",
+        "email": "nulla.eget.metus@outlook.org",
+        "address": "P.O. Box 292, 6069 Luctus Ave"
+    }
+]

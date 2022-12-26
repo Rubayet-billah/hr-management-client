@@ -81,6 +81,7 @@ const DashboardLayout = () => {
                     <FiUsers className={`w-5 h-5 text-yellow-500`} />
                   </Tooltip>
                 )}
+<<<<<<< HEAD
                 <h1
                   className={`origin-left ${
                     !open && "scale-0"
@@ -88,6 +89,9 @@ const DashboardLayout = () => {
                 >
                   Users
                 </h1>
+=======
+                <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Candidates</h1>
+>>>>>>> 305d946bbb592788220e6fc5127d804b0a0c084c
               </Link>
               <Link
                 to="/dashboard/departments"
@@ -105,6 +109,7 @@ const DashboardLayout = () => {
                     <FcDepartment className={`w-5 h-5`} />
                   </Tooltip>
                 )}
+<<<<<<< HEAD
                 <h1
                   className={`origin-left ${
                     !open && "scale-0"
@@ -112,6 +117,9 @@ const DashboardLayout = () => {
                 >
                   Department
                 </h1>
+=======
+                <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Departments</h1>
+>>>>>>> 305d946bbb592788220e6fc5127d804b0a0c084c
               </Link>
               <Link
                 to="/dashboard/employees"
@@ -185,6 +193,7 @@ const DashboardLayout = () => {
                     <BsHandThumbsUp className={`w-5 h-5 text-slate-700`} />
                   </Tooltip>
                 )}
+<<<<<<< HEAD
                 <h1
                   className={`origin-left ${
                     !open && "scale-0"
@@ -192,15 +201,25 @@ const DashboardLayout = () => {
                 >
                   Admins
                 </h1>
+=======
+                <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Holidays</h1>
+>>>>>>> 305d946bbb592788220e6fc5127d804b0a0c084c
               </Link>
             </div>
           </div>
           <div>
             <Link to="/dashboard/accounts" className="flex items-center gap-3">
               <img
+<<<<<<< HEAD
                 className="w-9"
                 src="https://w7.pngwing.com/pngs/481/915/png-transparent-computer-icons-user-avatar-woman-avatar-computer-business-conversation-thumbnail.png"
                 alt=""
+=======
+                className='w-9'
+                src='https://w7.pngwing.com/pngs/481/915/png-transparent-computer-icons-user-avatar-woman-avatar-computer-business-conversation-thumbnail.png'
+                alt=''
+                title='Accounts'
+>>>>>>> 305d946bbb592788220e6fc5127d804b0a0c084c
               />
               <h1
                 className={`origin-left ${
@@ -218,7 +237,11 @@ const DashboardLayout = () => {
         <div className="px-4 md:px-7">
           <DashboardNavbar />
         </div>
+<<<<<<< HEAD
         <div className="p-4 md:p-7">
+=======
+        <div className='p-4 md:p-7 min-h-screen'>
+>>>>>>> 305d946bbb592788220e6fc5127d804b0a0c084c
           <Outlet />
         </div>
       </div>
