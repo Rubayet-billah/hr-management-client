@@ -1,7 +1,7 @@
 import { Button, Label, Modal, Select, TextInput } from 'flowbite-react';
 import { useForm } from 'react-hook-form';
 
-const AddEmployeeModal = ({ addUserModalVisibility, setAddUserModalVisibility }) => {
+const AddEmployeeModal = ({ addUserModalVisibility, setAddUserModalVisibility, refetch }) => {
   const { register, handleSubmit } = useForm();
 
   const addModalClose = () => {
@@ -19,6 +19,7 @@ const AddEmployeeModal = ({ addUserModalVisibility, setAddUserModalVisibility })
       .then((result) => {
         if (result.acknowledged) {
           addModalClose();
+          refetch();
         }
       });
   };
