@@ -13,7 +13,11 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_appId,
 };
 
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Secondary App
+export const secondaryApp = initializeApp(firebaseConfig, "Secondary");
 
 export default app;
