@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FaPlus } from 'react-icons/fa';
 import Btn from '../../../components/Btn';
 import { TextInput } from 'flowbite-react';
@@ -35,6 +35,9 @@ const Admins = () => {
                     setDeleteModalVisibility(false);
                     toast.success(`${deleteAdmin.firstName} deleted`);
                     refetch();
+                    fetch(`http://localhost:5000/firebase/deleteUser/${deleteAdmin.email}`)
+                        .then((res) => res.json())
+                        .then(data => { })
                 }
             });
     };

@@ -15,7 +15,7 @@ const AddAdminModal = ({ addAdminModalVisibility, setAddAdminModalVisibility, re
     const onSubmit = data => {
         setError(null);
         console.log(data);
-        const { firstName, lastName, email, password, repeatPassword } = data;
+        const { firstName, lastName, email, phone, password, repeatPassword } = data;
         if (password !== repeatPassword) {
             setError("Password didn't match");
             return;
@@ -33,7 +33,9 @@ const AddAdminModal = ({ addAdminModalVisibility, setAddAdminModalVisibility, re
                             headers: {
                                 "content-type": "application/json"
                             },
-                            body: JSON.stringify(data)
+                            body: JSON.stringify({
+                                firstName, lastName, email, phone
+                            })
                         })
                             .then(res => res.json())
                             .then(data => {
