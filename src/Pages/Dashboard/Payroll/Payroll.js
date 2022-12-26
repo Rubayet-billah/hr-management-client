@@ -3,6 +3,7 @@ import EmployeeRow from "./Components/EmployeeRow";
 
 const Payroll = () => {
   const [employees, setEmployees] = useState([]);
+  // const [absent, setAbsent] = useState
 
   useEffect(() => {
     fetch("/employees.json")
@@ -33,7 +34,13 @@ const Payroll = () => {
                   Salary
                 </th>
                 <th scope="col" className="py-3 px-6">
-                  Action
+                  Deduction Amount
+                </th>
+                <th scope="col" className="py-3 px-6">
+                  Net Payable
+                </th>
+                <th scope="col" className="py-3 px-6">
+                  Salary Process
                 </th>
               </tr>
             </thead>
