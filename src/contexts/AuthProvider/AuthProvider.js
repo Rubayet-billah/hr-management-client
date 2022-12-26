@@ -30,6 +30,10 @@ const AuthProvider = ({ children }) => {
     return signOut(secondaryAuth);
   }
 
+  const updateSecondaryAuth = (userInfo) => {
+    return updateProfile(secondaryAuth.currentUser, userInfo);
+  };
+
   const updateUser = (userInfo) => {
     return updateProfile(auth.currentUser, userInfo);
   };
@@ -58,6 +62,7 @@ const AuthProvider = ({ children }) => {
     signIn,
     logOut,
     secondaryAuthSignOut,
+    updateSecondaryAuth,
     loading,
   };
   return (

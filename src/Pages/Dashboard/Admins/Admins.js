@@ -57,20 +57,21 @@ const Admins = () => {
             </div>
             <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
                 {
-                   admins.length < 1
-                   ? <h3>No Admin Found!</h3>
-                   : admins.map(admin => <AdminCard
-                        key={admin._id}
-                        admin={admin}
-                        setDeleteModalVisibility={setDeleteModalVisibility}
-                        setDeleteAdmin={setDeleteAdmin}
-                        setViewAdmin={setViewAdmin}
-                        setViewModalVisibility={setViewModalVisibility}
-                    ></AdminCard>)
+                    admins.length < 1
+                        ? <h3>No Admin Found!</h3>
+                        : admins.map(admin => <AdminCard
+                            key={admin._id}
+                            admin={admin}
+                            setDeleteModalVisibility={setDeleteModalVisibility}
+                            setDeleteAdmin={setDeleteAdmin}
+                            setViewAdmin={setViewAdmin}
+                            setViewModalVisibility={setViewModalVisibility}
+                        ></AdminCard>)
                 }
             </div>
 
             <AddAdminModal
+                refetch={refetch}
                 addAdminModalVisibility={addAdminModalVisibility}
                 setAddAdminModalVisibility={setAddAdminModalVisibility}
             />

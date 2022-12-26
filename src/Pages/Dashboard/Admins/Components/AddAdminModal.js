@@ -6,7 +6,7 @@ import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 
 const AddAdminModal = ({ addAdminModalVisibility, setAddAdminModalVisibility, refetch }) => {
     const [error, setError] = useState(null);
-    const { createUser, updateUser, secondaryAuthSignOut } = useContext(AuthContext);
+    const { createUser, updateSecondaryAuth, secondaryAuthSignOut } = useContext(AuthContext);
     const addModalClose = () => {
         setAddAdminModalVisibility(false);
     };
@@ -22,7 +22,7 @@ const AddAdminModal = ({ addAdminModalVisibility, setAddAdminModalVisibility, re
         }
         createUser(email, password)
             .then(result => {
-                updateUser({ displayName: firstName + " " + lastName })
+                updateSecondaryAuth({ displayName: firstName + " " + lastName })
                     .then(() => {
                         console.log(result.user);
                         secondaryAuthSignOut();
@@ -37,7 +37,8 @@ const AddAdminModal = ({ addAdminModalVisibility, setAddAdminModalVisibility, re
                         })
                             .then(res => res.json())
                             .then(data => {
-                                if(data.insertedId > 0){
+                                console.log(data);
+                                if (data.insertedId) {
                                     refetch();
                                 }
                             })
