@@ -39,9 +39,9 @@ const ShortlistedCandidates = ({ setShortlistedCandidate }) => {
                 </Table.Head>
                 <Table.Body className="divide-y">
                     {
-                        shortlistedCandidates?.map(candidate => <ShortlistedCandidateRow
-                            key={candidate._id}
-                            shortlistedCandidate={candidate}
+                        shortlistedCandidates?.map(shortlistedCandidate => <ShortlistedCandidateRow
+                            key={shortlistedCandidate._id}
+                            shortlistedCandidate={shortlistedCandidate}
                         />)
                     }
 

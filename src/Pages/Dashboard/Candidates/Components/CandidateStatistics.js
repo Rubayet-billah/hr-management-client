@@ -7,7 +7,7 @@ const CandidateStatistics = ({ candidates, shortlistedCandidates, showShortliste
             <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-8'>
                 <div onClick={() => {
                     setShowShortlistedCandidates(false);
-                    refetch();
+                    refetch()
                 }} className={`${showShortlistedCandidate ? '' : 'border-blue-600 border-b-4 '}bg-white hover:bg-gray-100 py-6 px-10 rounded-lg flex items-center justify-between cursor-pointer`}>
                     <div>
                         <p className='text-gray-500'>Total Candidates</p>

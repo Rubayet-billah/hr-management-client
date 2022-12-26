@@ -18,7 +18,9 @@ const Candidates = () => {
         }
     })
 
+    // To use tab toggle state
     const [showShortlistedCandidate, setShowShortlistedCandidates] = useState(false)
+    // to set the quantity of all shortlisted candidate
     const [shortlistedCandidates, setShortlistedCandidate] = useState([])
 
     const [candidateDetailsModalVisibility, setCandidateDetailsModalVisibility] = useState(false)
