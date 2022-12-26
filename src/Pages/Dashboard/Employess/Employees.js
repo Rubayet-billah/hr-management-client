@@ -18,7 +18,7 @@ const Employees = () => {
   const [deleteEmployee, setDeleteEmployee] = useState([]);
 
   useEffect(() => {
-    fetch('/employees.json')
+    fetch('http://localhost:5000/employees')
       .then((res) => res.json())
       .then((data) => setEmployees(data));
   }, []);

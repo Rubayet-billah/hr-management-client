@@ -1,5 +1,7 @@
 import DevsCard from './DevsCard';
 
+import badsha from '../../../assets/devs/Md.Badsha fahadh.jpg';
+
 const devs = [
   {
     id: 1,
@@ -33,10 +35,9 @@ const devs = [
   },
   {
     id: 4,
-    name: 'Fahad Mridha',
+    name: 'Md. Badsha Fahadh',
     position: 'Web Developer',
-    image:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cG90cmFpdHxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60',
+    image: badsha,
     githubLink: '/',
     linkedInLink: '/',
     skills: ['html, css, javascript, react, node, mongoDB'],
