@@ -18,8 +18,10 @@ const Candidates = () => {
         }
     })
 
+    // To use tab toggle state
     const [showShortlistedCandidate, setShowShortlistedCandidates] = useState(false)
-    console.log(showShortlistedCandidate)
+    // to set the quantity of all shortlisted candidate
+    const [shortlistedCandidates, setShortlistedCandidate] = useState([])
 
     const [candidateDetailsModalVisibility, setCandidateDetailsModalVisibility] = useState(false)
     const [viewCandidateDetails, setViewCandidateDetails] = useState({})
@@ -29,6 +31,7 @@ const Candidates = () => {
             <section>
                 <CandidateStatistics
                     candidates={candidates}
+                    shortlistedCandidates={shortlistedCandidates}
                     showShortlistedCandidate={showShortlistedCandidate}
                     setShowShortlistedCandidates={setShowShortlistedCandidates}
                     refetch={refetch}
@@ -67,7 +70,7 @@ const Candidates = () => {
 
 
                 </Table.Body>
-            </Table> : <ShortlistedCandidates />
+            </Table> : <ShortlistedCandidates setShortlistedCandidate={setShortlistedCandidate} />
             }
 
 
