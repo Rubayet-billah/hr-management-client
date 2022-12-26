@@ -35,6 +35,9 @@ const Admins = () => {
                     setDeleteModalVisibility(false);
                     toast.success(`${deleteAdmin.firstName} deleted`);
                     refetch();
+                    fetch(`http://localhost:5000/firebase/deleteUser/${deleteAdmin.email}`)
+                        .then((res) => res.json())
+                        .then(data => { })
                 }
             });
     };
