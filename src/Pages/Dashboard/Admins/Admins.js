@@ -6,9 +6,16 @@ import AdminCard from './Components/AdminCard';
 import AddAdminModal from './Components/AddAdminModal';
 import DeleteModal from '../../../components/Modals/DeleteModal';
 import ViewAdminModal from './Components/ViewAdminModal';
+import { useQuery } from '@tanstack/react-query';
+import { toast } from 'react-hot-toast';
 
 const Admins = () => {
-    const [admins, setAdmins] = useState([]);
+    const { data: admins = [], refetch } = useQuery({
+        queryKey: ['admins'],
+        queryFn: () => fetch('http://localhost:5000/admins')
+            .then(res => res.json())
+    })
+
     const [addAdminModalVisibility, setAddAdminModalVisibility] = useState(false);
 
     const [viewModalVisibility, setViewModalVisibility] = useState(false);
@@ -17,11 +24,20 @@ const Admins = () => {
     const [deleteModalVisibility, setDeleteModalVisibility] = useState(false);
     const [deleteAdmin, setDeleteAdmin] = useState([]);
 
-    useEffect(() => {
-        fetch('/admins.json')
+    const handleDelete = () => {
+        fetch(`http://localhost:5000/admins/${deleteAdmin._id}`, {
+            method: "DELETE"
+        })
             .then((res) => res.json())
-            .then((data) => setAdmins(data));
-    }, []);
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount > 0) {
+                    setDeleteModalVisibility(false);
+                    toast.success(`${deleteAdmin.firstName} deleted`);
+                    refetch();
+                }
+            });
+    };
 
     return (
         <section>
@@ -41,18 +57,21 @@ const Admins = () => {
             </div>
             <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
                 {
-                    admins.map(admin => <AdminCard
-                        key={admin._id}
-                        data={admin}
-                        setDeleteModalVisibility={setDeleteModalVisibility}
-                        setDeleteAdmin={setDeleteAdmin}
-                        setViewAdmin={setViewAdmin}
-                        setViewModalVisibility={setViewModalVisibility}
-                    ></AdminCard>)
+                    admins.length < 1
+                        ? <h3>No Admin Found!</h3>
+                        : admins.map(admin => <AdminCard
+                            key={admin._id}
+                            admin={admin}
+                            setDeleteModalVisibility={setDeleteModalVisibility}
+                            setDeleteAdmin={setDeleteAdmin}
+                            setViewAdmin={setViewAdmin}
+                            setViewModalVisibility={setViewModalVisibility}
+                        ></AdminCard>)
                 }
             </div>
 
             <AddAdminModal
+                refetch={refetch}
                 addAdminModalVisibility={addAdminModalVisibility}
                 setAddAdminModalVisibility={setAddAdminModalVisibility}
             />
@@ -66,7 +85,8 @@ const Admins = () => {
             <DeleteModal
                 deleteModalVisibility={deleteModalVisibility}
                 setDeleteModalVisibility={setDeleteModalVisibility}
-                deleteItem={deleteAdmin}
+                handleDelete={handleDelete}
+                deleteItemName={deleteAdmin.firstName}
             />
 
         </section>

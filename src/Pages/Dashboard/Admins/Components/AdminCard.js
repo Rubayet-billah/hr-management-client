@@ -3,23 +3,24 @@ import Btn from '../../../../components/Btn';
 import { FaFacebookF, FaLinkedinIn, FaTrash } from 'react-icons/fa';
 import { AiOutlineTwitter } from 'react-icons/ai';
 import { GoMarkGithub } from 'react-icons/go';
+import avatar from '../../../../assets/icons/avatar.png'
 
-const AdminCard = ({ setDeleteModalVisibility, setDeleteAdmin, setViewModalVisibility, setViewAdmin, data }) => {
-    const { name, image, email } = data;
+const AdminCard = ({ setDeleteModalVisibility, setDeleteAdmin, setViewModalVisibility, setViewAdmin, admin }) => {
+    const { _id, firstName, lastName, image, email } = admin;
     const deleteModalOpen = () => {
         setDeleteModalVisibility(true);
-        setDeleteAdmin(name);
+        setDeleteAdmin({firstName, _id });
     };
     const handleViewBtn = () => {
         setViewModalVisibility(true);
-        setViewAdmin(data);
+        setViewAdmin(admin);
     }
     return (
         <div className="flex flex-col justify-center p-6 shadow-md rounded-xl px-12 bg-white relative">
-            <img src={image} alt="" className="w-20 h-20 mx-auto rounded-full border p-1 aspect-square" />
+            <img src={image || avatar} alt="" className="w-20 h-20 mx-auto rounded-full border p-1 aspect-square" />
             <div className="text-center">
                 <div className="my-2">
-                    <h2 className="font-semibold">{name}</h2>
+                    <h2 className="font-semibold">{firstName +" "+ lastName}</h2>
                     <p className="text-sm">{email}</p>
                 </div>
                 <div className="flex justify-center pt-2 space-x-4 align-center text-gray-500">
