@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FaPlus } from 'react-icons/fa';
 import Btn from '../../../components/Btn';
 import { TextInput } from 'flowbite-react';
