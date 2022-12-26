@@ -6,10 +6,10 @@ import { GoMarkGithub } from 'react-icons/go';
 import avatar from '../../../../assets/icons/avatar.png'
 
 const AdminCard = ({ setDeleteModalVisibility, setDeleteAdmin, setViewModalVisibility, setViewAdmin, admin }) => {
-    const { _id, firstName, lastName, image, email } = admin;
+    const { firstName, lastName, image, email } = admin;
     const deleteModalOpen = () => {
         setDeleteModalVisibility(true);
-        setDeleteAdmin({firstName, _id });
+        setDeleteAdmin(admin);
     };
     const handleViewBtn = () => {
         setViewModalVisibility(true);
