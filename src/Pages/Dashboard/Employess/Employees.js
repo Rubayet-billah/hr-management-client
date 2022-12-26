@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import EmployeeRow from './Components/EmployeeRow';
 import EmployeeStatistics from './Components/EmployeeStatistics';
 
 import { AiOutlinePlus } from 'react-icons/ai';
+
+import { useQuery } from '@tanstack/react-query';
 import AddEmployeeModal from './Components/AddEmployeeModal';
 import DeleteEmployeeModal from './Components/DeleteEmployeeModal';
 import ViewEmployeeModal from './Components/ViewEmployeeModal';
 
 const Employees = () => {
-  const [employees, setEmployees] = useState([]);
   const [addUserModalVisibility, setAddUserModalVisibility] = useState(false);
 
   const [viewModalVisibility, setViewModalVisibility] = useState(false);
@@ -17,11 +18,14 @@ const Employees = () => {
   const [deleteModalVisibility, setDeleteModalVisibility] = useState(false);
   const [deleteEmployee, setDeleteEmployee] = useState([]);
 
-  useEffect(() => {
-    fetch('/employees.json')
-      .then((res) => res.json())
-      .then((data) => setEmployees(data));
-  }, []);
+  const { data: employees = [], refetch } = useQuery({
+    queryKey: [],
+    queryFn: async () => {
+      const res = await fetch('http://localhost:5000/employees');
+      const data = await res.json();
+      return data;
+    },
+  });
 
   const addHandler = () => {
     setAddUserModalVisibility(true);
@@ -79,6 +83,7 @@ const Employees = () => {
       </div>
 
       <AddEmployeeModal
+        refetch={refetch}
         addUserModalVisibility={addUserModalVisibility}
         setAddUserModalVisibility={setAddUserModalVisibility}
       />
@@ -90,6 +95,7 @@ const Employees = () => {
       />
 
       <DeleteEmployeeModal
+        refetch={refetch}
         deleteModalVisibility={deleteModalVisibility}
         setDeleteModalVisibility={setDeleteModalVisibility}
         deleteEmployee={deleteEmployee}

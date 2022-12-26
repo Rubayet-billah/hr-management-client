@@ -29,7 +29,7 @@ const HomeAccordion = () => {
   ];
 
   return (
-    <div className='container mx-auto px-2 py-6'>
+    <div className='container mx-auto px-2 py-12'>
       <h3 className='text-center text-3xl font-bold'>Why Stuff Deck?</h3>
       <div className='max-w-5xl mx-auto mt-12'>
         <Accordion alwaysOpen>
