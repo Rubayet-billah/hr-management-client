@@ -104,7 +104,9 @@ const DashboardLayout = () => {
                 {open ? (
                   <FaDollarSign className={`w-5 h-5 text-sky-500`} />
                 ) : (
-                  <Tooltip content='Payroll' placement='right' style='light'>
+                  <Tooltip content='Employees' placement='right' style='light'>
+                    <Tooltip content='Payroll' placement='right' style='light' />
+
                     <FaDollarSign className={`w-5 h-5 text-sky-500`} />
                   </Tooltip>
                 )}
