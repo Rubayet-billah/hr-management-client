@@ -19,7 +19,7 @@ const Candidates = () => {
     })
 
     const [showShortlistedCandidate, setShowShortlistedCandidates] = useState(false)
-    console.log(showShortlistedCandidate)
+    const [shortlistedCandidates, setShortlistedCandidate] = useState([])
 
     const [candidateDetailsModalVisibility, setCandidateDetailsModalVisibility] = useState(false)
     const [viewCandidateDetails, setViewCandidateDetails] = useState({})
@@ -29,6 +29,7 @@ const Candidates = () => {
             <section>
                 <CandidateStatistics
                     candidates={candidates}
+                    shortlistedCandidates={shortlistedCandidates}
                     showShortlistedCandidate={showShortlistedCandidate}
                     setShowShortlistedCandidates={setShowShortlistedCandidates}
                     refetch={refetch}
@@ -67,7 +68,7 @@ const Candidates = () => {
 
 
                 </Table.Body>
-            </Table> : <ShortlistedCandidates />
+            </Table> : <ShortlistedCandidates setShortlistedCandidate={setShortlistedCandidate} />
             }
 
 
