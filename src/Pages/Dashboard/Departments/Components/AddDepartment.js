@@ -4,7 +4,7 @@ import { toast } from 'react-hot-toast';
 import { useForm } from "react-hook-form";
 
 const AddDepartment = ({ addUserModalVisibility, setAddUserModalVisibility }) => {
-
+    const { register, handleSubmit } = useForm();
 
     const addDepartmentModalClose = () => {
         setAddUserModalVisibility(false);
@@ -28,14 +28,8 @@ const AddDepartment = ({ addUserModalVisibility, setAddUserModalVisibility }) =>
             .catch((error) => {
                 console.error('Error:', error);
             });
-
-        console.log(data)
-
-
     }
 
-    const { register, handleSubmit } = useForm();
-    // const onSubmit = data => console.log(data);
     return (
 
         <Modal show={addUserModalVisibility} size='2xl' popup={true} onClose={addDepartmentModalClose}>
@@ -45,7 +39,6 @@ const AddDepartment = ({ addUserModalVisibility, setAddUserModalVisibility }) =>
                     <h3 className='text-xl mb-4 font-medium text-gray-900 dark:text-white'>Add New Department</h3>
                     <form
                         onSubmit={handleSubmit(handleAddDepartment)}
-                    // onSubmit={handleAddDepartment}
                     >
                         <div className='grid grid-cols-1  gap-4'>
 
@@ -56,8 +49,6 @@ const AddDepartment = ({ addUserModalVisibility, setAddUserModalVisibility }) =>
                                 <TextInput id='departmentName'
                                     {...register("departmentName", { required: true })}
                                     placeholder='Department name'
-                                    required={true}
-
                                 />
                             </div>
                             <div>
@@ -66,9 +57,9 @@ const AddDepartment = ({ addUserModalVisibility, setAddUserModalVisibility }) =>
                                 </div>
                                 <TextInput
                                     {...register("departmentHeadName", { required: true })}
-                                    id='firstName'
+                                    id='department-head'
                                     placeholder='Department Head'
-                                    required={true} />
+                                />
                             </div>
                         </div>
                         <div className='w-full mt-4 '>

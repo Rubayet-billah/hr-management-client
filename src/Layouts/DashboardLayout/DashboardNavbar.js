@@ -1,9 +1,11 @@
 import { Navbar } from 'flowbite-react';
-import React from 'react';
-import { FaEnvelope, FaUser } from 'react-icons/fa';
+import React, { useContext } from 'react';
+import { FaEnvelope, FaSignOutAlt, FaUser } from 'react-icons/fa';
 import { BsFillBellFill } from 'react-icons/bs';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const DashboardNavbar = () => {
+    const { user, logOut } = useContext(AuthContext);
     return (
         <div className='dashboard-nav text-center md:border-b border-white py-4'>
             <Navbar
@@ -25,6 +27,14 @@ const DashboardNavbar = () => {
                     </Navbar.Link>
                     <Navbar.Link href="#">
                         <FaUser />
+                    </Navbar.Link>
+                    <Navbar.Link href="#">
+                        <button onClick={logOut}>
+                            <FaSignOutAlt />
+                        </button>
+                    </Navbar.Link>
+                    <Navbar.Link href="#">
+                        {user?.email}
                     </Navbar.Link>
                 </Navbar.Collapse>
             </Navbar>
