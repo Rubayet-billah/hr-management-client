@@ -5,7 +5,7 @@ import { toast } from 'react-hot-toast';
 const Career = () => {
     const { register, handleSubmit } = useForm();
     const handleApplierForm = (data) => {
-        fetch('http://localhost:5000', {
+        fetch('http://localhost:5000/candidates', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -15,7 +15,7 @@ const Career = () => {
             .then((res) => res.json())
             .then((data) => {
                 if (data.acknowledged) {
-                    toast.success('Apply successfully done ')
+                    toast.success('Apply successfully done')
                     console.log('Success:', data);
                 }
 
@@ -23,6 +23,7 @@ const Career = () => {
             .catch((error) => {
                 console.error('Error:', error);
             });
+        console.log('Success:', data);
     }
 
     return (
