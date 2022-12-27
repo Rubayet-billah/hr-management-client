@@ -11,6 +11,7 @@ import Holidays from "../../Pages/Dashboard/Holidays/Holidays";
 import Home from "../../Pages/Homepage/Home/Home";
 import Payroll from "../../Pages/Dashboard/Payroll/Payroll";
 import Accounts from "../../Pages/Dashboard/Accounts/Accounts";
+import AdminRoute from "../AdminRoute/AdminRoute";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: <AdminRoute><DashboardLayout></DashboardLayout></AdminRoute>,
     children: [
       {
         path: "/dashboard",

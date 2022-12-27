@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 import image_hr from "../../../assets/loginPage/slider2.svg";
@@ -16,6 +16,11 @@ const Login = () => {
   const { signIn, loading } = useContext(AuthContext);
 
   const [loginError, setLoginError] = useState("");
+
+  // using location
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (data) => {
     console.log(data);
@@ -34,6 +39,7 @@ const Login = () => {
             color: "#fff",
           },
         });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error.massage);
@@ -60,7 +66,7 @@ const Login = () => {
                   })}
                   placeholder="Enter email"
                   type="email"
-                  className="input  rounded input-bordered w-full "
+                  className="input  rounded input-bordered w-full mt-2 "
                 />
                 {errors.email && (
                   <p className="text-red-600 text-sm mt-1">{errors.email?.message}</p>
