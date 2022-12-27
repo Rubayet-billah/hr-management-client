@@ -10,7 +10,7 @@ const AddDepartment = ({ addUserModalVisibility, setAddUserModalVisibility }) =>
         setAddUserModalVisibility(false);
     };
     const handleAddDepartment = (data) => {
-        fetch('https://hr-management-server.vercel.app/department', {
+        fetch('http://localhost:5000/department', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
