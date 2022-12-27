@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../../Layouts/DashboardLayout/DashboardLayout";
 import MainlayOut from "../../Layouts/MainLayout/MainlayOut";
 import Login from "../../Pages/Authentication/Login/Login";
-import Register from "../../Pages/Authentication/Register/Register";
 import Admins from "../../Pages/Dashboard/Admins/Admins";
 import Candidates from "../../Pages/Dashboard/Candidates/Candidates";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
@@ -25,11 +24,7 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
-      },
-      {
-        path: "/register",
-        element: <Register></Register>,
-      },
+      }
     ],
   },
   {

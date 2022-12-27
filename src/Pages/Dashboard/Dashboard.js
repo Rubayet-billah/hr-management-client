@@ -1,7 +1,9 @@
 import React from 'react';
-import { HiOutlineUsers } from 'react-icons/hi';
-import { BsCalendarDate, BsHandThumbsUp } from 'react-icons/bs';
 import { curveCardinal } from 'd3-shape';
+import employees from '../../assets/dashboard/employees.png';
+import candidates from '../../assets/dashboard/candidates.png';
+import payroll from '../../assets/dashboard/payroll.png';
+import holidays from '../../assets/dashboard/holidays.png';
 
 import {
     ComposedChart,
@@ -27,6 +29,7 @@ import { Progress } from 'flowbite-react';
 import Btn from '../../components/Btn';
 import { Link } from 'react-router-dom';
 import { useUtils } from '../../contexts/UtilsProvider';
+import { FcDepartment } from 'react-icons/fc';
 
 const data = [
     {
@@ -80,40 +83,40 @@ const Dashboard = () => {
     // Change title
     const { setDashboardTitle } = useUtils();
     setDashboardTitle("Dashboard");
-    
+
     return (
         <>
             <h3 className='text-3xl'>Welcome Jason Porter!</h3>
             <small className='text-xs'>Measure How Fast You’re Growing Monthly Recurring Revenue. Learn More</small>
             <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 mt-5'>
-                <Link className='bg-white rounded-lg shadow'>
+                <Link to="/dashboard/employees" className='bg-white rounded-lg shadow'>
                     <div className='flex flex-col items-center hover:scale-110 duration-300 overflow-hidden p-8'>
-                        <HiOutlineUsers className='w-8 h-8 mb-1' />
-                        <p>Users</p>
+                        <img className='w-8 h-8' src={employees} alt='Employees' />
+                        <p>Employees</p>
                     </div>
                 </Link>
-                <Link className='bg-white rounded-lg shadow'>
+                <Link to="/dashboard/departments" className='bg-white rounded-lg shadow'>
                     <div className='flex flex-col items-center hover:scale-110 duration-300 overflow-hidden p-8'>
-                        <BsHandThumbsUp className='w-8 h-8 mb-1' />
-                        <p>Holidays</p>
+                        <FcDepartment className='w-8 h-8 mb-1' />
+                        <p>Departments</p>
                     </div>
                 </Link>
-                <Link className='bg-white rounded-lg shadow'>
+                <Link to="/dashboard/candidates" className='bg-white rounded-lg shadow'>
                     <div className='flex flex-col items-center hover:scale-110 duration-300 overflow-hidden p-8'>
-                        <BsCalendarDate className='w-8 h-8 mb-1' />
-                        <p>Events</p>
+                        <img className='w-9 h-9' src={candidates} alt='Candidates' />
+                        <p>Candidates</p>
                     </div>
                 </Link>
-                <Link className='bg-white rounded-lg shadow'>
+                <Link to="/dashboard/payroll" className='bg-white rounded-lg shadow'>
                     <div className='flex flex-col items-center hover:scale-110 duration-300 overflow-hidden p-8'>
-                        <HiOutlineUsers className='w-8 h-8 mb-1' />
-                        <p>Report</p>
-                    </div>
-                </Link>
-                <Link className='bg-white rounded-lg shadow'>
-                    <div className='flex flex-col items-center hover:scale-110 duration-300 overflow-hidden p-8'>
-                        <BsHandThumbsUp className='w-8 h-8 mb-1' />
+                        <img className='w-9 h-9' src={payroll} alt='Payroll' />
                         <p>Payroll</p>
+                    </div>
+                </Link>
+                <Link to="/dashboard/holidays" className='bg-white rounded-lg shadow'>
+                    <div className='flex flex-col items-center hover:scale-110 duration-300 overflow-hidden p-8'>
+                        <img className='w-9 h-9' src={holidays} alt='Holidays' />
+                        <p>Holidays</p>
                     </div>
                 </Link>
             </div>

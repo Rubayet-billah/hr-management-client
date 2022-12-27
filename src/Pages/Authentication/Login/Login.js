@@ -42,19 +42,18 @@ const Login = () => {
   };
   return (
     <>
-      <div className=" grid grid-cols-1 gap-10 lg:grid-cols-2  bg-lime-100">
-        <div className="lg:flex justify-center items-center hidden ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center bg-lime-100 py-16 lg:pl-16">
+        <div className="hidden lg:block">
           <img src={image_hr} alt="hrPic" />
         </div>
-        <div className=" w-96 mt-8 p-8 rounded-lg flex justify-center items-center bg-white ">
-          <div className="w-72">
-            <h3 className="text-xl text-center mb-8">LOGIN TO YOUR ACCOUNT</h3>
+        <div className="w-96 mx-auto p-8 rounded-lg flex justify-center items-center bg-white ">
+          <div className="w-72 py-8">
+            <h3 className="text-xl text-center mb-8">ADMIN LOGIN</h3>
             <form className="" onSubmit={handleSubmit(handleLogin)}>
-              <div className="form-control  w-full">
+              <div className="form-control w-full mb-4">
                 <label className="label mb-2 font-semibold">
                   <span className="label-text">Email</span>
                 </label>
-
                 <input
                   {...register("email", {
                     required: "Email Address is required",
@@ -64,14 +63,14 @@ const Login = () => {
                   className="input  rounded input-bordered w-full "
                 />
                 {errors.email && (
-                  <p className="text-red-600">{errors.email?.message}</p>
+                  <p className="text-red-600 text-sm mt-1">{errors.email?.message}</p>
                 )}
               </div>
-              <div className="form-control  w-full ">
+              <div className="form-control w-full">
                 <label className="label my-2  flex justify-between items-center">
                   <span className="label-text font-semibold ">Password</span>
-                  <span className="label-text text-sm text-red-400">
-                    <Link to=""> I forgot password</Link>
+                  <span className="label-text text-sm hover:underline">
+                    <Link to="">Forgot password?</Link>
                   </span>
                 </label>
 
@@ -80,33 +79,33 @@ const Login = () => {
                     required: "Password is required",
                     minLength: {
                       value: 6,
-                      message: "password should be at least 6 charecter must",
+                      message: "password must be at least 6 charecters or longer",
                     },
                   })}
                   placeholder="password"
                   type="password"
-                  className="input  rounded input-bordered w-full "
+                  className="input rounded input-bordered w-full "
                 />
                 {errors.password && (
-                  <p className="text-red-600">{errors.password?.message}</p>
+                  <p className="text-red-600 text-sm mt-1">{errors.password?.message}</p>
                 )}
               </div>
 
               <button
-                className="btn mb-3 mt-5 text-white  bg-blue-800  hover:bg-blue-700 rounded-lg w-full py-2"
+                className="btn mb-3 mt-5 text-white  bg-blue-700  hover:bg-blue-800 rounded-lg w-full py-2"
                 value="Login"
                 type="submit"
               >
-                Sign in
+                Login
               </button>
             </form>
             <div>
               {loginError && <p className="text-red-600">{loginError}</p>}
             </div>
-            <p className="text">
-              Don't have account yet?
-              <Link to="/register" className=" ml-2 text-red-400 ">
-                Sign up
+            <p className="mt-2 text-sm">
+              Don't have an account yet?
+              <Link to="/" className=" ml-1 text-blue-600 hover:underline">
+                Contact Us
               </Link>
             </p>
           </div>
