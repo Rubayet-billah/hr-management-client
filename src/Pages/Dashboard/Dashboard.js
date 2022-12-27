@@ -26,6 +26,7 @@ import {
 import { Progress } from 'flowbite-react';
 import Btn from '../../components/Btn';
 import { Link } from 'react-router-dom';
+import { useUtils } from '../../contexts/UtilsProvider';
 
 const data = [
     {
@@ -76,6 +77,10 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 const cardinal = curveCardinal.tension(0.2);
 
 const Dashboard = () => {
+    // Change title
+    const { setDashboardTitle } = useUtils();
+    setDashboardTitle("Dashboard");
+    
     return (
         <>
             <h3 className='text-3xl'>Welcome Jason Porter!</h3>

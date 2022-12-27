@@ -8,6 +8,7 @@ import { useQuery } from '@tanstack/react-query';
 import AddEmployeeModal from './Components/AddEmployeeModal';
 import DeleteEmployeeModal from './Components/DeleteEmployeeModal';
 import ViewEmployeeModal from './Components/ViewEmployeeModal';
+import { useUtils } from '../../../contexts/UtilsProvider';
 
 const Employees = () => {
   const [addUserModalVisibility, setAddUserModalVisibility] = useState(false);
@@ -30,6 +31,10 @@ const Employees = () => {
   const addHandler = () => {
     setAddUserModalVisibility(true);
   };
+
+  // Change title
+  const { setDashboardTitle } = useUtils();
+  setDashboardTitle("Employees");
 
   return (
     <>
