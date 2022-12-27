@@ -13,7 +13,7 @@ const CandidateDetailsModal = ({
     const { name, image, phone, email, designation, address, expectedSalary, experience, resumeUrl } = viewCandidateDetails
 
     const handleShortList = (shortListedCandidate) => {
-        fetch('https://hr-management-server.vercel.app/shortlistedCandidate', {
+        fetch('http://localhost:5000/shortlistedCandidate', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
