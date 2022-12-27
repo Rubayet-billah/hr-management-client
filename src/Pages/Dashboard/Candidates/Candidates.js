@@ -9,19 +9,30 @@ import ShortlistedCandidates from './Components/ShortlistedCandidates';
 
 const Candidates = () => {
     const { data: candidates = [], refetch } = useQuery({
-        queryKey: [],
+        queryKey: ['candidates'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/candidates');
             const data = await res.json();
-            console.log(data)
             return data
         }
     })
 
+    const { data: shortlistedCandidates = [], refetch: shorlistedRefetch } = useQuery({
+        queryKey: ['shortlistedCandidate'],
+        queryFn: async () => {
+            const res = await fetch('http://localhost:5000/shortlistedCandidate');
+            const data = await res.json();
+            return data
+        }
+    })
+
+    console.log('shortlisted', shortlistedCandidates)
+    console.log('candidates', candidates)
+
     // To use tab toggle state
     const [showShortlistedCandidate, setShowShortlistedCandidates] = useState(false)
     // to set the quantity of all shortlisted candidate
-    const [shortlistedCandidates, setShortlistedCandidate] = useState([])
+    // const [shortlistedCandidates, setShortlistedCandidate] = useState([])
 
     const [candidateDetailsModalVisibility, setCandidateDetailsModalVisibility] = useState(false)
     const [viewCandidateDetails, setViewCandidateDetails] = useState({})
@@ -35,6 +46,7 @@ const Candidates = () => {
                     showShortlistedCandidate={showShortlistedCandidate}
                     setShowShortlistedCandidates={setShowShortlistedCandidates}
                     refetch={refetch}
+                    shorlistedRefetch={shorlistedRefetch}
                 />
             </section>
             {!showShortlistedCandidate ? <Table striped={true}>
@@ -70,7 +82,7 @@ const Candidates = () => {
 
 
                 </Table.Body>
-            </Table> : <ShortlistedCandidates setShortlistedCandidate={setShortlistedCandidate} />
+            </Table> : <ShortlistedCandidates shortlistedCandidates={shortlistedCandidates} />
             }
 
 
@@ -79,6 +91,7 @@ const Candidates = () => {
                 candidateDetailsModalVisibility={candidateDetailsModalVisibility}
                 setCandidateDetailsModalVisibility={setCandidateDetailsModalVisibility}
                 refetch={refetch}
+                shorlistedRefetch={shorlistedRefetch}
             />
             <Toaster></Toaster>
         </div>
