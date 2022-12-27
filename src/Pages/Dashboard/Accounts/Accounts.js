@@ -2,9 +2,14 @@ import { Progress, Select, Textarea, TextInput } from 'flowbite-react';
 import React from 'react';
 import { SlCalender } from 'react-icons/sl';
 import { TfiWorld } from 'react-icons/tfi';
-import Btn from '../../components/Btn';
+import Btn from '../../../components/Btn';
+import { useUtils } from '../../../contexts/UtilsProvider';
 
 const Accounts = () => {
+    // Change title
+    const { setDashboardTitle } = useUtils();
+    setDashboardTitle("Account Settings");
+
     return (
         <section className='accounts grid grid-cols-12 gap-5 items-start'>
             <div className='col-span-12 lg:col-span-4 bg-white rounded shadow text-sm'>

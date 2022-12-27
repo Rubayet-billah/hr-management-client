@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useUtils } from "../../../contexts/UtilsProvider";
 import EmployeeRow from "./Components/EmployeeRow";
 
 const Payroll = () => {
@@ -10,6 +11,10 @@ const Payroll = () => {
       .then((res) => res.json())
       .then((data) => setEmployees(data));
   }, []);
+
+  // Change title
+  const { setDashboardTitle } = useUtils();
+  setDashboardTitle("Payroll");
 
   return (
     <>

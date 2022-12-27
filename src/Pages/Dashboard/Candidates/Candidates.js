@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Table } from 'flowbite-react';
 import React, { useEffect, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
+import { useUtils } from '../../../contexts/UtilsProvider';
 import CandidateDetailsModal from './Components/CandidateDetailsModal';
 import CandidateRow from './Components/CandidateRow';
 import CandidateStatistics from './Components/CandidateStatistics';
@@ -36,6 +37,10 @@ const Candidates = () => {
 
     const [candidateDetailsModalVisibility, setCandidateDetailsModalVisibility] = useState(false)
     const [viewCandidateDetails, setViewCandidateDetails] = useState({})
+
+    // Change title
+    const { setDashboardTitle } = useUtils();
+    setDashboardTitle("Candidates");
 
     return (
         <div>

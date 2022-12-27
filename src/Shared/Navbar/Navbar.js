@@ -7,24 +7,25 @@ const NAvbar = () => {
       <div className='container mx-auto px-2'>
         <Navbar className='bg-transparent !px-0 !py-5' fluid={true} rounded={true}>
           <Navbar.Brand>
-            <span className='self-center whitespace-nowrap text-2xl font-bold dark:text-white'>
-              <span className='bg-blue-500 text-white px-2 py-1 rounded'>Stuff</span> Deck
-            </span>
+            <Link to="/">
+              <span className='self-center whitespace-nowrap text-2xl font-bold dark:text-white'>
+                <span className='bg-blue-500 text-white px-2 py-1 rounded'>Stuff</span> Deck
+              </span>
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className='!items-center'>
             <Navbar.Link>
               <Link to='/'>Home</Link>
             </Navbar.Link>
-
             <Navbar.Link>
               <Link to='/dashboard'>Dashboard</Link>
             </Navbar.Link>
             <Navbar.Link href='/'>
-              <Link to='/login'>About</Link>
+              <Link to='/'>About</Link>
             </Navbar.Link>
             <Navbar.Link href='/'>
-              <Link to='/login'>Services</Link>
+              <Link to='/'>Services</Link>
             </Navbar.Link>
             <Navbar.Link href='/login'>
               <Link to='/login'>Login</Link>
