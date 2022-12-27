@@ -3,9 +3,11 @@ import React, { useContext } from 'react';
 import { FaEnvelope, FaSignOutAlt, FaUser } from 'react-icons/fa';
 import { BsFillBellFill } from 'react-icons/bs';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { useUtils } from '../../contexts/UtilsProvider';
 
 const DashboardNavbar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const { dashboardTitle } = useUtils();
     return (
         <div className='dashboard-nav text-center md:border-b border-white py-4'>
             <Navbar
@@ -14,7 +16,7 @@ const DashboardNavbar = () => {
             >
                 <Navbar.Brand>
                     <span className="self-center whitespace-nowrap text-primary dark:text-white">
-                        Dashboard
+                        {dashboardTitle || "Dashboard"}
                     </span>
                 </Navbar.Brand>
                 <Navbar.Toggle />

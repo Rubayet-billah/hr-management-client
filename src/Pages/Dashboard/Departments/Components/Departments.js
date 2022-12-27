@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { AiOutlinePlus } from 'react-icons/ai';
+import { useUtils } from '../../../../contexts/UtilsProvider';
 import Career from '../../../Career/Career';
 import AddDepartment from './AddDepartment';
 import DeleteDepartmentModal from './DeleteDepartmentModal';
@@ -25,6 +26,10 @@ const Departments = () => {
     const handleAddDepartment = () => {
         setAddUserModalVisibility(true);
     }
+
+    // Change title
+    const { setDashboardTitle } = useUtils();
+    setDashboardTitle("Departments");
 
     return (
         <>
