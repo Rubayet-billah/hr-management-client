@@ -74,7 +74,8 @@ const jobs = [
 
 const Careers = () => {
     return (
-        <section className='container mx-auto px-2 py-12'>
+        <section className='container mx-auto px-2 pt-10 pb-20'>
+            <h1 className='text-3xl font-thin mb-10'>Our openings</h1>
             <div className='grid lg:grid-cols-2 gap-8'>
                 {
                     jobs.map(job => (
