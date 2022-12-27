@@ -7,7 +7,8 @@ const CandidateDetailsModal = ({
     viewCandidateDetails,
     candidateDetailsModalVisibility,
     setCandidateDetailsModalVisibility,
-    refetch
+    refetch,
+    shorlistedRefetch
 }) => {
     const { name, image, phone, email, designation, address, expectedSalary, experience, resumeUrl } = viewCandidateDetails
 
@@ -24,6 +25,7 @@ const CandidateDetailsModal = ({
                     setCandidateDetailsModalVisibility(false)
                     toast.success(`${shortListedCandidate.name} Shortlisted Successfully`)
                     refetch();
+                    shorlistedRefetch();
                 }
             })
     }

@@ -1,5 +1,6 @@
 import { Table } from "flowbite-react";
 import React, { useEffect, useState } from "react";
+import { useUtils } from "../../../contexts/UtilsProvider";
 import HolidayRows from "./HolidayRows";
 
 const Holidays = () => {
@@ -9,6 +10,10 @@ const Holidays = () => {
       .then((res) => res.json())
       .then((data) => setHolidayLinst(data));
   }, []);
+
+  // Change title
+  const { setDashboardTitle } = useUtils();
+  setDashboardTitle("Holidays");
 
   return (
     <Table>

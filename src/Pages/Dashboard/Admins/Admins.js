@@ -8,6 +8,7 @@ import DeleteModal from '../../../components/Modals/DeleteModal';
 import ViewAdminModal from './Components/ViewAdminModal';
 import { useQuery } from '@tanstack/react-query';
 import { toast } from 'react-hot-toast';
+import { useUtils } from '../../../contexts/UtilsProvider';
 
 const Admins = () => {
     const { data: admins = [], refetch } = useQuery({
@@ -41,6 +42,10 @@ const Admins = () => {
                 }
             });
     };
+
+    // Change title
+    const { setDashboardTitle } = useUtils();
+    setDashboardTitle("Admins");
 
     return (
         <section>

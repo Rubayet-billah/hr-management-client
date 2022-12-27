@@ -1,4 +1,3 @@
-/* eslint-disable react/style-prop-object */
 import { Tooltip } from 'flowbite-react';
 import React, { useState } from 'react';
 import { Toaster } from 'react-hot-toast';
@@ -88,10 +87,10 @@ const DashboardLayout = () => {
                 className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'
               >
                 {open ? (
-                  <ImUserTie className={`w-5 h-5 text-sky-500`} />
+                  <ImUserTie className={`w-5 h-5 text-blue-600`} />
                 ) : (
                   <Tooltip content='Employees' placement='right' style='light'>
-                    <ImUserTie className={`w-5 h-5 text-sky-500`} />
+                    <ImUserTie className={`w-5 h-5 text-blue-600`} />
                   </Tooltip>
                 )}
                 <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Employees</h1>
@@ -104,10 +103,8 @@ const DashboardLayout = () => {
                 {open ? (
                   <FaDollarSign className={`w-5 h-5 text-sky-500`} />
                 ) : (
-                  <Tooltip content='Employees' placement='right' style='light'>
-                    <Tooltip content='Payroll' placement='right' style='light' />
-
-                    <FaDollarSign className={`w-5 h-5 text-sky-500`} />
+                  <Tooltip content='Payroll' placement='right' style='light'>
+                    <FaDollarSign className={`w-5 h-5 text-green-500`} />
                   </Tooltip>
                 )}
                 <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Payroll</h1>
@@ -118,10 +115,10 @@ const DashboardLayout = () => {
                 className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'
               >
                 {open ? (
-                  <RiAdminLine className={`w-5 h-5 text-green-600`} />
+                  <RiAdminLine className={`w-5 h-5 text-green-900`} />
                 ) : (
                   <Tooltip content='Admins' placement='right' style='light'>
-                    <RiAdminLine className={`w-5 h-5 text-green-600`} />
+                    <RiAdminLine className={`w-5 h-5 text-green-900`} />
                   </Tooltip>
                 )}
                 <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Admins</h1>

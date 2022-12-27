@@ -6,7 +6,7 @@ import { AuthContext } from '../../../../contexts/AuthProvider/AuthProvider';
 
 const AddAdminModal = ({ addAdminModalVisibility, setAddAdminModalVisibility, refetch }) => {
     const [error, setError] = useState(null);
-    const { createUser, updateSecondaryAuth, secondaryAuthSignOut } = useContext(AuthContext);
+    const { createUser, setLoading, updateSecondaryAuth, secondaryAuthSignOut } = useContext(AuthContext);
     const addModalClose = () => {
         setAddAdminModalVisibility(false);
     };
@@ -27,6 +27,7 @@ const AddAdminModal = ({ addAdminModalVisibility, setAddAdminModalVisibility, re
                         console.log(result.user);
                         secondaryAuthSignOut();
                         setAddAdminModalVisibility(false);
+                        setLoading(false);
                         // SAVE ADMIN TO DB
                         fetch('http://localhost:5000/admins', {
                             method: "POST",
