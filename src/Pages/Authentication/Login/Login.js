@@ -20,7 +20,7 @@ const Login = () => {
   // using location
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/dashboard";
 
   const handleLogin = (data) => {
     console.log(data);

@@ -1,7 +1,10 @@
 import { Navbar } from 'flowbite-react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const NAvbar = () => {
+  const { user } = useContext(AuthContext)
   return (
     <div className='bg-white border-b'>
       <div className='container mx-auto px-2'>
@@ -18,8 +21,14 @@ const NAvbar = () => {
             <Navbar.Link>
               <Link to='/'>Home</Link>
             </Navbar.Link>
+            {
+              user?.uid && <Navbar.Link>
+                <Link to='/dashboard'>Dashboard</Link>
+              </Navbar.Link>
+            }
+
             <Navbar.Link>
-              <Link to='/dashboard'>Dashboard</Link>
+              <Link to='/career'>Career</Link>
             </Navbar.Link>
             <Navbar.Link href='/'>
               <Link to='/'>About</Link>

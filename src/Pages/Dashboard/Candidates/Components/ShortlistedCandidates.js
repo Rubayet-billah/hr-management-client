@@ -8,7 +8,7 @@ const ShortlistedCandidates = ({ shortlistedCandidates }) => {
     // const { data: shortlistedCandidates = [], refetch: shorlistedRefetch } = useQuery({
     //     queryKey: [],
     //     queryFn: async () => {
-    //         const res = await fetch('http://localhost:5000/shortlistedCandidate');
+    //         const res = await fetch('https://hr-management-server.vercel.app/shortlistedCandidate');
     //         const data = await res.json();
     //         console.log(data)
     //         setShortlistedCandidate(data)

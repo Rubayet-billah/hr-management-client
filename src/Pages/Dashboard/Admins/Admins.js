@@ -13,7 +13,7 @@ import { useUtils } from '../../../contexts/UtilsProvider';
 const Admins = () => {
     const { data: admins = [], refetch } = useQuery({
         queryKey: ['admins'],
-        queryFn: () => fetch('http://localhost:5000/admins')
+        queryFn: () => fetch('https://hr-management-server.vercel.app/admins')
             .then(res => res.json())
     })
 
@@ -26,7 +26,7 @@ const Admins = () => {
     const [deleteAdmin, setDeleteAdmin] = useState([]);
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/admins/${deleteAdmin._id}`, {
+        fetch(`https://hr-management-server.vercel.app/admins/${deleteAdmin._id}`, {
             method: "DELETE"
         })
             .then((res) => res.json())
@@ -36,7 +36,7 @@ const Admins = () => {
                     setDeleteModalVisibility(false);
                     toast.success(`${deleteAdmin.firstName} deleted`);
                     refetch();
-                    fetch(`http://localhost:5000/firebase/deleteUser/${deleteAdmin.email}`)
+                    fetch(`https://hr-management-server.vercel.app/firebase/deleteUser/${deleteAdmin.email}`)
                         .then((res) => res.json())
                         .then(data => { })
                 }
