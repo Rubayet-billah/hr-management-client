@@ -7,12 +7,13 @@ const CandidateDetailsModal = ({
     viewCandidateDetails,
     candidateDetailsModalVisibility,
     setCandidateDetailsModalVisibility,
-    refetch
+    refetch,
+    shorlistedRefetch
 }) => {
     const { name, image, phone, email, designation, address, expectedSalary, experience, resumeUrl } = viewCandidateDetails
 
     const handleShortList = (shortListedCandidate) => {
-        fetch('http://localhost:5000/shortlistedCandidate', {
+        fetch('https://hr-management-server.vercel.app/shortlistedCandidate', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -24,6 +25,7 @@ const CandidateDetailsModal = ({
                     setCandidateDetailsModalVisibility(false)
                     toast.success(`${shortListedCandidate.name} Shortlisted Successfully`)
                     refetch();
+                    shorlistedRefetch();
                 }
             })
     }

@@ -11,6 +11,8 @@ import Holidays from "../../Pages/Dashboard/Holidays/Holidays";
 import Home from "../../Pages/Homepage/Home/Home";
 import Payroll from "../../Pages/Dashboard/Payroll/Payroll";
 import Accounts from "../../Pages/Dashboard/Accounts/Accounts";
+import AdminRoute from "../AdminRoute/AdminRoute";
+import Career from "../../Pages/Career/Career";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,10 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
+        path: "/career",
+        element: <Career></Career>,
+      },
+      {
         path: "/login",
         element: <Login></Login>,
       }
@@ -29,7 +35,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: <AdminRoute><DashboardLayout></DashboardLayout></AdminRoute>,
     children: [
       {
         path: "/dashboard",

@@ -3,17 +3,20 @@ import { Table } from 'flowbite-react';
 import React from 'react';
 import ShortlistedCandidateRow from './ShortlistedCandidateRow';
 
-const ShortlistedCandidates = ({ setShortlistedCandidate }) => {
-    const { data: shortlistedCandidates = [], refetch } = useQuery({
-        queryKey: [],
-        queryFn: async () => {
-            const res = await fetch('http://localhost:5000/shortlistedCandidate');
-            const data = await res.json();
-            console.log(data)
-            return data
-        }
-    })
-    setShortlistedCandidate(shortlistedCandidates)
+const ShortlistedCandidates = ({ shortlistedCandidates }) => {
+
+    // const { data: shortlistedCandidates = [], refetch: shorlistedRefetch } = useQuery({
+    //     queryKey: [],
+    //     queryFn: async () => {
+    //         const res = await fetch('https://hr-management-server.vercel.app/shortlistedCandidate');
+    //         const data = await res.json();
+    //         console.log(data)
+    //         setShortlistedCandidate(data)
+    //         return data
+    //     }
+    // })
+
+
     return (
         <div>
             <Table striped={true}>
