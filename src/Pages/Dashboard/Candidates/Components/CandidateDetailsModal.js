@@ -2,7 +2,6 @@ import { Button, Card, Modal } from 'flowbite-react';
 import React from 'react';
 import { toast } from 'react-hot-toast';
 import { AiFillTool } from 'react-icons/ai';
-import { FiDelete } from 'react-icons/fi';
 import { IoLocation } from 'react-icons/io5';
 import { MdEmail, MdPhone } from 'react-icons/md';
 
@@ -16,7 +15,7 @@ const CandidateDetailsModal = ({
     setDeleteCandidate,
     setDeleteModalVisibility
 }) => {
-    const { name, image, phone, email, designation, address, expectedSalary, skills, coverLetter, experience, resumeUrl } = viewCandidateDetails;
+    const { name, image, phone, email, designation, address, skills, coverLetter, experience, resumeUrl } = viewCandidateDetails;
 
     const defaultImg = "https://media.istockphoto.com/id/476085198/photo/businessman-silhouette-as-avatar-or-default-profile-picture.jpg?s=170667a&w=0&k=20&c=pbUvoKhdnGQ8IdDFqHYRm-m5zf51Ta6QUHERf9EU5FU=";
 
@@ -37,9 +36,6 @@ const CandidateDetailsModal = ({
                 }
             })
     }
-    const onClick = () => {
-
-    };
     return (
         <div>
             <React.Fragment>
