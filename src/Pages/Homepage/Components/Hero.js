@@ -18,10 +18,15 @@ const Hero = () => {
         </div>
         <div className='hidden lg:mt-0 lg:col-span-4 lg:flex'>
           <Swiper
-            autoplay={{
-              delay: 2500,
-            }}
+            loop={true}
+            // pagination={{
+            //   clickable: true,
+            //   dynamicBullets: true,
+            // }}
+            autoplay={{ delay: 2000 }}
+            grabCursor={true}
             modules={[Autoplay]}
+            className='mySwiper'
           >
             <SwiperSlide>
               <div>
