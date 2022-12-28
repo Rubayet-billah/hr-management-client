@@ -5,19 +5,22 @@ import EmployeeStatistics from './Components/EmployeeStatistics';
 import { AiOutlinePlus } from 'react-icons/ai';
 
 import { useQuery } from '@tanstack/react-query';
+import { useUtils } from '../../../contexts/UtilsProvider';
 import AddEmployeeModal from './Components/AddEmployeeModal';
 import DeleteEmployeeModal from './Components/DeleteEmployeeModal';
+import UpdateEmployeeModal from './Components/UpdateEmployeeModal';
 import ViewEmployeeModal from './Components/ViewEmployeeModal';
-import { useUtils } from '../../../contexts/UtilsProvider';
 
 const Employees = () => {
   const [addUserModalVisibility, setAddUserModalVisibility] = useState(false);
-
   const [viewModalVisibility, setViewModalVisibility] = useState(false);
+  const [updateModalVisibility, setUpdateModalVisibility] = useState(false);
+
   const [viewEmployee, setViewEmployee] = useState([]);
 
   const [deleteModalVisibility, setDeleteModalVisibility] = useState(false);
   const [deleteEmployee, setDeleteEmployee] = useState([]);
+  const [updateEmployee, setUpdateEmployee] = useState([]);
 
   const { data: employees = [], refetch } = useQuery({
     queryKey: [],
@@ -34,7 +37,7 @@ const Employees = () => {
 
   // Change title
   const { setDashboardTitle } = useUtils();
-  setDashboardTitle("Employees");
+  setDashboardTitle('Employees');
 
   return (
     <>
@@ -80,6 +83,8 @@ const Employees = () => {
                   setViewEmployee={setViewEmployee}
                   setDeleteEmployee={setDeleteEmployee}
                   setDeleteModalVisibility={setDeleteModalVisibility}
+                  setUpdateModalVisibility={setUpdateModalVisibility}
+                  setUpdateEmployee={setUpdateEmployee}
                 />
               ))}
             </tbody>
@@ -104,6 +109,12 @@ const Employees = () => {
         deleteModalVisibility={deleteModalVisibility}
         setDeleteModalVisibility={setDeleteModalVisibility}
         deleteEmployee={deleteEmployee}
+      />
+      <UpdateEmployeeModal
+        updateModalVisibility={updateModalVisibility}
+        setUpdateModalVisibility={setUpdateModalVisibility}
+        updateEmployee={updateEmployee}
+        refetch={refetch}
       />
     </>
   );
