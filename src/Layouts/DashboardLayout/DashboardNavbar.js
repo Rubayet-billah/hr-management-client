@@ -21,21 +21,21 @@ const DashboardNavbar = () => {
                 </Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse>
-                    <Navbar.Link href="#">
+                    <Navbar.Link href="#" className='mt-[3px]'>
                         <FaEnvelope />
                     </Navbar.Link>
-                    <Navbar.Link href="#">
+                    <Navbar.Link href="#" className='mt-[3px]'>
                         <BsFillBellFill />
                     </Navbar.Link>
-                    <Navbar.Link href="#">
+                    <Navbar.Link href="#" className='mt-[3px]'>
                         <FaUser />
                     </Navbar.Link>
-                    <Navbar.Link href="#">
+                    <Navbar.Link href="#" className='mt-[3px]'>
                         <button onClick={logOut}>
                             <FaSignOutAlt />
                         </button>
                     </Navbar.Link>
-                    <Navbar.Link href="#">
+                    <Navbar.Link>
                         {user?.email}
                     </Navbar.Link>
                 </Navbar.Collapse>
