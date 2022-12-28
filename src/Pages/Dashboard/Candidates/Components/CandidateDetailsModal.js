@@ -10,7 +10,9 @@ const CandidateDetailsModal = ({
     refetch,
     shorlistedRefetch
 }) => {
-    const { name, image, phone, email, designation, address, expectedSalary, coverLetter, experience, resumeUrl } = viewCandidateDetails
+    const { name, image, phone, email, designation, address, expectedSalary, coverLetter, experience, resumeUrl } = viewCandidateDetails;
+
+    const defaultImg = "https://media.istockphoto.com/id/476085198/photo/businessman-silhouette-as-avatar-or-default-profile-picture.jpg?s=170667a&w=0&k=20&c=pbUvoKhdnGQ8IdDFqHYRm-m5zf51Ta6QUHERf9EU5FU=";
 
     const handleShortList = (shortListedCandidate) => {
         fetch('http://localhost:5000/shortlistedCandidate', {
@@ -50,7 +52,7 @@ const CandidateDetailsModal = ({
                                         <div className="flex flex-col items-center pb-10">
                                             <img
                                                 className="mb-3 h-48 w-48 rounded-full shadow-lg"
-                                                src={image}
+                                                src={image ? image : defaultImg}
                                                 alt="applicant"
                                             />
                                             <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
