@@ -97,18 +97,7 @@ const Career = () => {
                 style={{ borderRadius: '2px' }}
               />
             </div>
-            <div>
-              <label className='text-bold' htmlFor='phoneNumber'>
-                Phone
-              </label>
-              <TextInput
-                id='phoneNumber'
-                {...register('phone', { required: true })}
-                type='number'
-                placeholder='Phone Number'
-                style={{ borderRadius: '2px' }}
-              />
-            </div>
+
             <div>
               <label className='text-bold' htmlFor='address'>
                 Address
