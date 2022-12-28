@@ -1,15 +1,42 @@
 import { Textarea, TextInput } from 'flowbite-react';
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { toast, Toaster } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import ReactSelect from 'react-select';
+import makeAnimated from 'react-select/animated';
+
 const Career = () => {
+  const animatedComponents = makeAnimated();
+  const skills = [
+    { value: 'React', label: 'React' },
+    { value: 'Node', label: 'Node' },
+    { value: 'Express', label: 'Express' },
+    { value: 'MongoDB', label: 'MongoDB' },
+    { value: 'JavaScript', label: 'JavaScript' },
+    { value: 'CSS', label: 'CSS' },
+    { value: 'Bootstrap', label: 'Bootstrap' },
+    { value: 'TailwindCSS', label: 'TailwindCSS' },
+    { value: 'Git', label: 'Git' },
+    { value: 'GitHub', label: 'GitHub' },
+  ];
+
+  const colorStyles = {
+    control: (styles) => ({
+      ...styles,
+      backgroundColor: '#F9FAFB',
+      borderRadius: '0.125rem',
+      paddingBlock: '0.125rem',
+    }),
+  };
+
   const location = useLocation();
   const job = location?.state?.job;
   const navigate = useNavigate();
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, control } = useForm();
+
   const handleApplierForm = (data) => {
-    fetch('https://hr-management-server.vercel.app/candidates', {
+    fetch('http://localhost:5000/candidates', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -94,91 +121,68 @@ const Career = () => {
                 style={{ borderRadius: '2px' }}
               />
             </div>
+
             <div>
-              <label className='text-bold' htmlFor='experience'>
-                Experience
+              <label className='text-bold'>Skills</label>
+              <Controller
+                control={control}
+                name='skills'
+                render={({ field: { onChange, ref } }) => (
+                  <ReactSelect
+                    className='rounded-full'
+                    components={animatedComponents}
+                    inputRef={ref}
+                    onChange={(val) => onChange(val.map((c) => c.value))}
+                    options={skills}
+                    isMulti
+                    styles={colorStyles}
+                  />
+                )}
+              />
+            </div>
+
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
+              <div>
+                <label className='text-bold' htmlFor='experience'>
+                  Experience
+                </label>
+                <TextInput
+                  id='experience'
+                  {...register('experience', { required: true })}
+                  type='number'
+                  placeholder='Experience'
+                  style={{ borderRadius: '2px' }}
+                />
+              </div>
+              <div>
+                <label className='text-bold' htmlFor='expectedSalary'>
+                  Expected Salary
+                </label>
+                <TextInput
+                  id='expectedSalary'
+                  {...register('expectedSalary', { required: true })}
+                  type='number'
+                  placeholder='Amount'
+                  style={{ borderRadius: '2px' }}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className='text-bold' htmlFor='resumeUrl'>
+                Resume Link
               </label>
               <TextInput
-                id='experience'
-                {...register('experience', { required: true })}
-                type='number'
-                placeholder='Experience'
+                id='resumeUrl'
+                {...register('resumeUrl', { required: true })}
+                type='text'
+                placeholder='Resume Link'
                 style={{ borderRadius: '2px' }}
               />
             </div>
+
             <div>
-              <label className='text-bold' htmlFor='expectedSalary'>
-                Expected Salary
-              </label>
-              <TextInput
-                id='expectedSalary'
-                {...register('expectedSalary', { required: true })}
-                type='number'
-                placeholder='Expected Salary'
-                style={{ borderRadius: '2px' }}
-              />
-            </div>
-            <div className='grid sm:grid-cols-2 gap-4'>
-              <div>
-                <label className='text-bold' htmlFor='linkedIn'>
-                  LinkedIn
-                </label>
-                <TextInput
-                  id='linkedIn'
-                  {...register('linkedIn', { required: true })}
-                  type='text'
-                  placeholder='LinkedIn Account Link'
-                  style={{ borderRadius: '2px' }}
-                />
-              </div>
-              <div>
-                <label className='text-bold' htmlFor='gitHub'>
-                  GitHub
-                </label>
-                <TextInput
-                  id='gitHub'
-                  {...register('gitHub', { required: true })}
-                  type='text'
-                  placeholder='GitHub Account Link'
-                  style={{ borderRadius: '2px' }}
-                />
-              </div>
-              <div>
-                <label className='text-bold' htmlFor='portfolio'>
-                  Portfolio
-                </label>
-                <TextInput
-                  id='portfolio'
-                  {...register('portfolio')}
-                  type='text'
-                  placeholder='Portfolio Link'
-                  style={{ borderRadius: '2px' }}
-                />
-              </div>
-              <div>
-                <label className='text-bold' htmlFor='resumeUrl'>
-                  ResumeUrl
-                </label>
-                <TextInput
-                  id='resumeUrl'
-                  {...register('resumeUrl', { required: true })}
-                  type='text'
-                  placeholder='Resume Link'
-                  style={{ borderRadius: '2px' }}
-                />
-              </div>
-            </div>
-            <div>
-              <h1>Why should we hire you?</h1>
-              <Textarea
-                {...register('hiringReason')}
-                placeholder='Add a Node...'
-                rows={4}
-                style={{ borderRadius: '2px' }}
-              />
-            </div>
-            <div>
-              <h1>CoverLetter</h1>
+              <h1>Cover Letter</h1>
               <Textarea
                 {...register('coverLetter', { required: true })}
                 placeholder='Add a Cover Letter...'

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { FiDelete } from 'react-icons/fi';
 import { FaEnvelope } from 'react-icons/fa';
 
-const ShortlistedCandidateRow = ({ shortlistedCandidate, handleDelete }) => {
+const ShortlistedCandidateRow = ({ shortlistedCandidate, setDeleteModalVisibility, setDeleteCandidate }) => {
 
 
     return (
@@ -34,10 +34,13 @@ const ShortlistedCandidateRow = ({ shortlistedCandidate, handleDelete }) => {
                 ${shortlistedCandidate.expectedSalary}
             </Table.Cell>
             <Table.Cell>
-                <a href={`mailto:${shortlistedCandidate.email}`}><FaEnvelope /></a>
                 <button onClick={() => { }} className='text-lg mr-3'>
+                    <a href={`mailto:${shortlistedCandidate.email}`}><FaEnvelope /></a>
                 </button>
-                <button onClick={() => { handleDelete(shortlistedCandidate) }} className='text-lg text-red-600'>
+                <button onClick={() => {
+                    setDeleteCandidate(shortlistedCandidate);
+                    setDeleteModalVisibility(true);
+                }} className='text-lg text-red-600'>
                     <FiDelete />
                 </button>
             </Table.Cell>

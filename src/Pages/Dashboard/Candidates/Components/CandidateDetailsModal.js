@@ -1,7 +1,10 @@
 import { Button, Card, Modal } from 'flowbite-react';
 import React from 'react';
 import { toast } from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { AiFillTool } from 'react-icons/ai';
+import { IoLocation } from 'react-icons/io5';
+import { MdEmail, MdPhone } from 'react-icons/md';
+
 
 const CandidateDetailsModal = ({
     viewCandidateDetails,
@@ -10,7 +13,9 @@ const CandidateDetailsModal = ({
     refetch,
     shorlistedRefetch
 }) => {
-    const { name, image, phone, email, designation, address, expectedSalary, coverLetter, experience, resumeUrl } = viewCandidateDetails
+    const { name, image, phone, email, designation, address, expectedSalary, coverLetter, experience, resumeUrl } = viewCandidateDetails;
+
+    const defaultImg = "https://media.istockphoto.com/id/476085198/photo/businessman-silhouette-as-avatar-or-default-profile-picture.jpg?s=170667a&w=0&k=20&c=pbUvoKhdnGQ8IdDFqHYRm-m5zf51Ta6QUHERf9EU5FU=";
 
     const handleShortList = (shortListedCandidate) => {
         fetch('http://localhost:5000/shortlistedCandidate', {
@@ -50,7 +55,7 @@ const CandidateDetailsModal = ({
                                         <div className="flex flex-col items-center pb-10">
                                             <img
                                                 className="mb-3 h-48 w-48 rounded-full shadow-lg"
-                                                src={image}
+                                                src={image ? image : defaultImg}
                                                 alt="applicant"
                                             />
                                             <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
@@ -60,11 +65,11 @@ const CandidateDetailsModal = ({
                                                 {designation}
                                             </span>
                                             <div className="my-4 grid md:grid-cols-2 gap-x-5 gap-y-3 lg:mt-6 w-full">
-                                                <p>Email: {email}</p>
-                                                <p>Phone: {phone}</p>
-                                                <p>Address: {address}</p>
-                                                <p>Experience: {experience}+ years</p>
-                                                <p className='md:col-span-2'>Cover Letter: {coverLetter}</p>
+                                                <p className='flex items-center'><MdEmail className='mr-2 text-xl' /> {email}</p>
+                                                <p className='flex items-center'><MdPhone className='mr-2 text-xl' /> {phone}</p>
+                                                <p className='flex items-center'><IoLocation className='mr-2 md:mr-1 text-xl md:-translate-x-[2px]' /> {address}</p>
+                                                <p className='flex items-center'><AiFillTool className='mr-2 text-xl' /> {experience}+ years</p>
+                                                <p className='md:col-span-2'><span className='font-medium'>Cover Letter</span> <br />{coverLetter}</p>
 
                                             </div>
                                             <a href={resumeUrl} target='_blank' rel="noreferrer">

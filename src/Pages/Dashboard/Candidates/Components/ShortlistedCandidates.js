@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { Table } from 'flowbite-react';
 import React, { useState } from 'react';
+import { toast } from 'react-hot-toast';
 import DeleteModal from '../../../../components/Modals/DeleteModal';
 import ShortlistedCandidateRow from './ShortlistedCandidateRow';
 
@@ -8,9 +9,17 @@ const ShortlistedCandidates = ({ shortlistedCandidates }) => {
     const [deleteCandidate, setDeleteCandidate] = useState({})
     const [deleteModalVisibility, setDeleteModalVisibility] = useState(false)
 
-    const handleDelete = (shortlistedCandidate) => {
-        setDeleteModalVisibility(true)
-        setDeleteCandidate(shortlistedCandidate)
+    const handleDelete = () => {
+        fetch(`http://localhost:5000/shortlistedCandidate/${deleteCandidate._id}`, {
+            method: 'DELETE',
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setDeleteModalVisibility(false)
+                toast.success('delete')
+            })
     }
 
     return (
@@ -46,7 +55,6 @@ const ShortlistedCandidates = ({ shortlistedCandidates }) => {
                             shortlistedCandidate={shortlistedCandidate}
                             setDeleteModalVisibility={setDeleteModalVisibility}
                             setDeleteCandidate={setDeleteCandidate}
-                            handleDelete={handleDelete}
                         />)
                     }
 
