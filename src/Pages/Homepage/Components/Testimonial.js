@@ -6,7 +6,7 @@ const Testimonial = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch('/reviews.json')
+    fetch('/data/reviews.json')
       .then((res) => res.json())
       .then((result) => setReviews(result));
   }, []);

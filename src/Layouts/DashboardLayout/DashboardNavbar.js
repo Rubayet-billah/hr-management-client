@@ -22,13 +22,13 @@ const DashboardNavbar = () => {
                 <Navbar.Toggle />
                 <Navbar.Collapse>
                     <Navbar.Link href="#" className='mt-[3px]'>
-                        <FaEnvelope />
+                        <button><FaEnvelope /></button>
                     </Navbar.Link>
                     <Navbar.Link href="#" className='mt-[3px]'>
-                        <BsFillBellFill />
+                        <button><BsFillBellFill /></button>
                     </Navbar.Link>
                     <Navbar.Link href="#" className='mt-[3px]'>
-                        <FaUser />
+                        <button><FaUser /></button>
                     </Navbar.Link>
                     <Navbar.Link href="#" className='mt-[3px]'>
                         <button onClick={logOut}>

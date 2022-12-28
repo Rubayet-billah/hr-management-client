@@ -1,7 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import { Table } from 'flowbite-react';
 import React, { useEffect, useState } from 'react';
-import { Toaster } from 'react-hot-toast';
+import { toast, Toaster } from 'react-hot-toast';
+import DeleteModal from '../../../components/Modals/DeleteModal';
 import Spinner from '../../../components/Spinner';
 import { useUtils } from '../../../contexts/UtilsProvider';
 import CandidateDetailsModal from './Components/CandidateDetailsModal';
@@ -28,20 +29,35 @@ const Candidates = () => {
         }
     })
 
-    console.log('shortlisted', shortlistedCandidates)
-    console.log('candidates', candidates)
-
-    // To use tab toggle state
-    const [showShortlistedCandidate, setShowShortlistedCandidates] = useState(false)
-    // to set the quantity of all shortlisted candidate
-    // const [shortlistedCandidates, setShortlistedCandidate] = useState([])
-
-    const [candidateDetailsModalVisibility, setCandidateDetailsModalVisibility] = useState(false)
-    const [viewCandidateDetails, setViewCandidateDetails] = useState({})
-
     // Change title
     const { setDashboardTitle } = useUtils();
     setDashboardTitle("Candidates");
+
+    // To use tab toggle state
+    const [showShortlistedCandidate, setShowShortlistedCandidates] = useState(false)
+    // View candidate modal states
+    const [candidateDetailsModalVisibility, setCandidateDetailsModalVisibility] = useState(false)
+    const [viewCandidateDetails, setViewCandidateDetails] = useState({})
+    // Delete candidate modal states
+    const [deleteModalVisibility, setDeleteModalVisibility] = useState(false)
+    const [deleteCandidate, setDeleteCandidate] = useState({})
+
+    const handleCandidateDelete = () => {
+        fetch(`http://localhost:5000/candidates/${deleteCandidate._id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    toast.success(`${deleteCandidate.name} deleted successfully.`)
+                    setCandidateDetailsModalVisibility(false)
+                    setDeleteModalVisibility(false)
+                    refetch();
+                }
+            })
+    }
+
+
 
     if (candidatesLoading || shortlistedLoading) {
         return <Spinner />
@@ -71,7 +87,7 @@ const Candidates = () => {
                         Address
                     </Table.HeadCell>
                     <Table.HeadCell>
-                        Phone
+                        Skills
                     </Table.HeadCell>
                     <Table.HeadCell>
                         Experience (y)
@@ -92,9 +108,19 @@ const Candidates = () => {
 
 
                 </Table.Body>
-            </Table> : <ShortlistedCandidates shortlistedCandidates={shortlistedCandidates} />
+            </Table> : <ShortlistedCandidates
+                shortlistedCandidates={shortlistedCandidates}
+                shorlistedRefetch={shorlistedRefetch}
+            />
             }
 
+            <DeleteModal
+                deleteModalVisibility={deleteModalVisibility}
+                setDeleteModalVisibility={setDeleteModalVisibility}
+                handleDelete={handleCandidateDelete}
+                deleteItemName={deleteCandidate.name}
+
+            />
 
             <CandidateDetailsModal
                 viewCandidateDetails={viewCandidateDetails}
@@ -102,6 +128,8 @@ const Candidates = () => {
                 setCandidateDetailsModalVisibility={setCandidateDetailsModalVisibility}
                 refetch={refetch}
                 shorlistedRefetch={shorlistedRefetch}
+                setDeleteCandidate={setDeleteCandidate}
+                setDeleteModalVisibility={setDeleteModalVisibility}
             />
             <Toaster></Toaster>
         </div>

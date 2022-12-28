@@ -1,9 +1,13 @@
 import { Table } from 'flowbite-react';
 import React from 'react';
 
-const CandidateRow = ({ candidate, setViewCandidateDetails, setCandidateDetailsModalVisibility }) => {
+const CandidateRow = ({
+    candidate,
+    setViewCandidateDetails,
+    setCandidateDetailsModalVisibility,
+}) => {
 
-
+    console.log(candidate.skill)
     return (
         <Table.Row
             onClick={() => {
@@ -23,7 +27,9 @@ const CandidateRow = ({ candidate, setViewCandidateDetails, setCandidateDetailsM
                 {candidate.address}
             </Table.Cell>
             <Table.Cell>
-                {candidate.phone}
+                <div className='flex flex-wrap w-fit'>
+                    {candidate?.skills?.slice(0, 3)?.map((skill, idx) => <span key={idx} className='p-1 bg-blue-400 text-white rounded-sm mr-1'>{skill} </span>)}
+                </div>
             </Table.Cell>
             <Table.Cell>
                 {candidate.experience}

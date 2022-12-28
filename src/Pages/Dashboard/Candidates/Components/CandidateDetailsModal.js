@@ -1,16 +1,21 @@
 import { Button, Card, Modal } from 'flowbite-react';
 import React from 'react';
 import { toast } from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { AiFillTool } from 'react-icons/ai';
+import { IoLocation } from 'react-icons/io5';
+import { MdEmail, MdPhone } from 'react-icons/md';
+
 
 const CandidateDetailsModal = ({
     viewCandidateDetails,
     candidateDetailsModalVisibility,
     setCandidateDetailsModalVisibility,
     refetch,
-    shorlistedRefetch
+    shorlistedRefetch,
+    setDeleteCandidate,
+    setDeleteModalVisibility
 }) => {
-    const { name, image, phone, email, designation, address, expectedSalary, coverLetter, experience, resumeUrl } = viewCandidateDetails;
+    const { name, image, phone, email, designation, address, skills, coverLetter, experience, resumeUrl } = viewCandidateDetails;
 
     const defaultImg = "https://media.istockphoto.com/id/476085198/photo/businessman-silhouette-as-avatar-or-default-profile-picture.jpg?s=170667a&w=0&k=20&c=pbUvoKhdnGQ8IdDFqHYRm-m5zf51Ta6QUHERf9EU5FU=";
 
@@ -31,9 +36,6 @@ const CandidateDetailsModal = ({
                 }
             })
     }
-    const onClick = () => {
-
-    };
     return (
         <div>
             <React.Fragment>
@@ -47,7 +49,7 @@ const CandidateDetailsModal = ({
                     <Modal.Body>
                         <div className="space-y-6">
                             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                <div className="">
+                                <div className="max-h-[70vh] overflow-y-scroll">
                                     <Card className='border-0 shadow-none'>
                                         <div className="flex flex-col items-center pb-10">
                                             <img
@@ -62,11 +64,18 @@ const CandidateDetailsModal = ({
                                                 {designation}
                                             </span>
                                             <div className="my-4 grid md:grid-cols-2 gap-x-5 gap-y-3 lg:mt-6 w-full">
-                                                <p>Email: {email}</p>
-                                                <p>Phone: {phone}</p>
-                                                <p>Address: {address}</p>
-                                                <p>Experience: {experience}+ years</p>
-                                                <p className='md:col-span-2'>Cover Letter: {coverLetter}</p>
+                                                <p className='flex items-center'><MdEmail className='mr-2 text-xl' /> {email}</p>
+                                                <p className='flex items-center'><MdPhone className='mr-2 text-xl' /> {phone || '01784589564'}</p>
+                                                <p className='flex items-center'><IoLocation className='mr-2 md:mr-1 text-xl md:-translate-x-[2px]' /> {address}</p>
+                                                <p className='flex items-center'><AiFillTool className='mr-2 text-xl' /> {experience}+ years</p>
+                                                <div className='md:col-span-2'><span className='font-medium'>Skills</span> <br />
+                                                    <p className='grid grid-cols-1 md:grid-cols-3'>
+                                                        {
+                                                            skills?.map((skill, idx) => <li key={idx}>{skill}</li>)
+                                                        }
+                                                    </p>
+                                                </div>
+                                                <p className='md:col-span-2'><span className='font-medium'>Cover Letter</span> <br />{coverLetter}</p>
 
                                             </div>
                                             <a href={resumeUrl} target='_blank' rel="noreferrer">
@@ -83,15 +92,19 @@ const CandidateDetailsModal = ({
                             Shortlist
                         </Button>
                         <Button
-                            color="gray"
-                            onClick={onClick}
+                            color="failure"
+                            onClick={() => {
+                                setDeleteCandidate(viewCandidateDetails)
+                                setDeleteModalVisibility(true)
+                            }
+                            }
                         >
                             Decline
                         </Button>
                     </Modal.Footer>
                 </Modal>
             </React.Fragment>
-        </div>
+        </div >
     );
 };
 

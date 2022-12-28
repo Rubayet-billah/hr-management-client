@@ -13,6 +13,7 @@ const Payroll = () => {
     },
   });
 
+  // Change title
   const { setDashboardTitle } = useUtils();
   setDashboardTitle('Payroll');
 
