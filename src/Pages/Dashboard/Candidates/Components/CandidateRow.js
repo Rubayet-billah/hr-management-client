@@ -1,6 +1,5 @@
 import { Table } from 'flowbite-react';
 import React from 'react';
-import { FiDelete } from 'react-icons/fi';
 
 const CandidateRow = ({
     candidate,
