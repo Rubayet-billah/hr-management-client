@@ -1,7 +1,10 @@
+import { PDFDownloadLink } from '@react-pdf/renderer';
 import React, { useState } from 'react';
 import { BiMinusCircle, BiPlusCircle } from 'react-icons/bi';
+import Pdf from '../../../../components/PdfFile/Pdf';
 
 const EmployeeRow = ({ employee, refetch }) => {
+  console.log(employee);
   const { fullName, role, department, email, salary, absent } = employee;
   const [isLoading, setIsLoading] = useState(false);
 
@@ -29,10 +32,6 @@ const EmployeeRow = ({ employee, refetch }) => {
           refetch();
         }
       });
-  };
-
-  const handleProcessSalary = () => {
-    console.log('Salary Processed');
   };
 
   return (
@@ -75,9 +74,32 @@ const EmployeeRow = ({ employee, refetch }) => {
       <td className='py-4 px-6'>{salary - Math.ceil((salary / 30) * absent)}</td>
       <td className='py-4 px-6'>
         <div className='flex'>
-          <button onClick={handleProcessSalary} className='btn bg-red-500 text-black py-2 px-3 rounded-md'>
-            Process
-          </button>
+          <PDFDownloadLink
+            document={
+              <Pdf
+                fullName={fullName}
+                role={role}
+                department={department}
+                salary={salary}
+                absent={absent}
+                deduction={Math.ceil((salary / 30) * absent)}
+                netPayable={salary - Math.ceil((salary / 30) * absent)}
+              />
+            }
+            fileName={`pay_slip_${fullName}`.toLowerCase()}
+          >
+            {({ loading }) =>
+              loading ? (
+                <button disabled className='bg-blue-700 text-white px-3 py-2 rounded-sm text-sm hover:bg-blue-800'>
+                  Loading Document
+                </button>
+              ) : (
+                <button className='bg-blue-700 text-white px-3 py-2 rounded-sm text-sm hover:bg-blue-800'>
+                  Print Pay Slip
+                </button>
+              )
+            }
+          </PDFDownloadLink>
         </div>
       </td>
     </tr>

@@ -37,7 +37,7 @@ const Payroll = () => {
                   Salary
                 </th>
                 <th scope='col' className='py-3 px-6'>
-                  Deduction Amount
+                  Deduction
                 </th>
                 <th scope='col' className='py-3 px-6'>
                   Net Payable

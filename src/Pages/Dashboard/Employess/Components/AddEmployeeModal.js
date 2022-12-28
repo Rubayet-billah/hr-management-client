@@ -81,11 +81,11 @@ const AddEmployeeModal = ({ addUserModalVisibility, setAddUserModalVisibility, r
                   <Label htmlFor='department' value='Department' />
                 </div>
                 <Select {...register('department')} id='department' required={true}>
-                  <option value='web development'>Web Development</option>
-                  <option value='creativity and design'>Creativity And Design</option>
-                  <option value='management'>Management</option>
-                  <option value='marketing'>Marketing</option>
-                  <option value='others'>Others</option>
+                  <option value='Web Development'>Web Development</option>
+                  <option value='Creativity And Design'>Creativity And Design</option>
+                  <option value='Management'>Management</option>
+                  <option value='Marketing'>Marketing</option>
+                  <option value='Others'>Others</option>
                 </Select>
               </div>
 
@@ -94,11 +94,11 @@ const AddEmployeeModal = ({ addUserModalVisibility, setAddUserModalVisibility, r
                   <Label htmlFor='role' value='Role' />
                 </div>
                 <Select {...register('role')} id='role' required={true}>
-                  <option value='front-end developer'>Front-End Developer</option>
-                  <option value='back-end developer'>Back-End Developer</option>
-                  <option value='full stack developer'>Full Stack Developer</option>
-                  <option value='app developer'>App Developer</option>
-                  <option value='SQA engineer'>SQA Engineer</option>
+                  <option value='Front-End Developer'>Front-End Developer</option>
+                  <option value='Back-End Developer'>Back-End Developer</option>
+                  <option value='Full Stack Developer'>Full Stack Developer</option>
+                  <option value='App Developer'>App Developer</option>
+                  <option value='SQA Engineer'>SQA Engineer</option>
                 </Select>
               </div>
 
