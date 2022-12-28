@@ -8,6 +8,8 @@ const EmployeeRow = ({
   setViewModalVisibility,
   setDeleteEmployee,
   setDeleteModalVisibility,
+  setUpdateModalVisibility,
+  setUpdateEmployee,
 }) => {
   const { fullName, email, phone, department, role, joiningDate } = employee;
 
@@ -49,7 +51,12 @@ const EmployeeRow = ({
             />
           </button>
           <button className='text-lg mr-2'>
-            <BiEdit />
+            <BiEdit
+              onClick={() => {
+                setUpdateModalVisibility(true);
+                setUpdateEmployee(employee);
+              }}
+            />
           </button>
           <button onClick={() => deleteModalOpen(employee)} className='text-lg text-red-600'>
             <FiDelete />

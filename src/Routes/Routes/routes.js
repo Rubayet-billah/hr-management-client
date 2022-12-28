@@ -12,7 +12,8 @@ import Home from "../../Pages/Homepage/Home/Home";
 import Payroll from "../../Pages/Dashboard/Payroll/Payroll";
 import Accounts from "../../Pages/Dashboard/Accounts/Accounts";
 import AdminRoute from "../AdminRoute/AdminRoute";
-import Career from "../../Pages/Career/Career";
+import Careers from "../../Pages/Careers/Careers";
+import Career from "../../Pages/Careers/Career";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/careers",
+        element: <Careers></Careers>,
       },
       {
         path: "/career",

@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { useUtils } from '../../../../contexts/UtilsProvider';
-import Career from '../../../Career/Career';
 import AddDepartment from './AddDepartment';
 import DeleteDepartmentModal from './DeleteDepartmentModal';
 import DepartmentRow from './DepartmentRow';
 import DepartmentStatistics from './DepartmentStatistics';
 import UpdateDepartmentHead from './UpdateDepartmentHead';
-
 
 const Departments = () => {
     const [addUserModalVisibility, setAddUserModalVisibility] = useState(false);
@@ -97,7 +95,6 @@ const Departments = () => {
                 viewDepartmentsDeleteModal={viewDepartmentsDeleteModal}
             />
             <Toaster />
-            <Career></Career>
         </>
     );
 };
