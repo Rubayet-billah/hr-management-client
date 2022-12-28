@@ -15,6 +15,7 @@ import AdminRoute from "../AdminRoute/AdminRoute";
 import Careers from "../../Pages/Careers/Careers";
 import Career from "../../Pages/Careers/Career";
 import ErrorPage from "../../Shared/error/ErrorPage";
+import Events from "../../Pages/Dashboard/Events/Events";
 
 const router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/holidays",
         element: <Holidays></Holidays>,
+      },
+      {
+        path: "/dashboard/events",
+        element: <Events></Events>,
       },
     ],
   },

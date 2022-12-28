@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { AiOutlineDashboard } from 'react-icons/ai';
 import { BsHandThumbsUp } from 'react-icons/bs';
-import { FaDollarSign } from 'react-icons/fa';
+import { FaDollarSign, FaRegCalendarAlt, FaUmbrellaBeach } from 'react-icons/fa';
 import { FcDepartment } from 'react-icons/fc';
 import { FiUsers } from 'react-icons/fi';
 import { ImUserTie } from 'react-icons/im';
@@ -113,13 +113,27 @@ const DashboardLayout = () => {
                 className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'
               >
                 {open ? (
-                  <RiAdminLine className={`w-5 h-5 text-green-900`} />
+                  <RiAdminLine className={`w-5 h-5 text-pink-500`} />
                 ) : (
                   <Tooltip content='Admins' placement='right' style='light'>
-                    <RiAdminLine className={`w-5 h-5 text-green-900`} />
+                    <RiAdminLine className={`w-5 h-5 text-pink-500`} />
                   </Tooltip>
                 )}
                 <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Admins</h1>
+              </Link>
+              <Link
+                to='/dashboard/events'
+                onClick={() => setOpen(false)}
+                className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'
+              >
+                {open ? (
+                  <FaRegCalendarAlt className={`w-5 h-5 text-slate-500`} />
+                ) : (
+                  <Tooltip content='Events' placement='right' style='light'>
+                    <FaRegCalendarAlt className={`w-5 h-5 text-slate-500`} />
+                  </Tooltip>
+                )}
+                <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Events</h1>
               </Link>
               <Link
                 to='/dashboard/holidays'
@@ -127,10 +141,10 @@ const DashboardLayout = () => {
                 className='flex items-center gap-3 hover:bg-gray-200 rounded-lg mb-3 p-2'
               >
                 {open ? (
-                  <BsHandThumbsUp className={`w-5 h-5 text-slate-700`} />
+                  <FaUmbrellaBeach className={`w-5 h-5 text-orange-400`} />
                 ) : (
                   <Tooltip content='Holidays' placement='right' style='light'>
-                    <BsHandThumbsUp className={`w-5 h-5 text-slate-700`} />
+                    <FaUmbrellaBeach className={`w-5 h-5 text-orange-400`} />
                   </Tooltip>
                 )}
                 <h1 className={`origin-left ${!open && 'scale-0'} duration-200 font-medium`}>Holidays</h1>

@@ -2,13 +2,12 @@ import { Table, TextInput } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 import Btn from "../../../components/Btn";
 import { useUtils } from "../../../contexts/UtilsProvider";
-import Calender from "./Calender";
 import HolidayRows from "./HolidayRows";
 
 const Holidays = () => {
   const [holidayList, setHolidayLinst] = useState([]);
   useEffect(() => {
-    fetch("/Holidays.json")
+    fetch("/data/holidays.json")
       .then((res) => res.json())
       .then((data) => setHolidayLinst(data));
   }, []);
@@ -18,9 +17,8 @@ const Holidays = () => {
   setDashboardTitle("Holidays");
 
   return (
-    <section className="bg-white p-8 rounded-lg">
-      <Calender />
-      {/* <div className="w-2/6 lg:flex md:flex  gap-2 mb-8 hidden mt-10">
+    <section>
+      <div className="w-2/6 lg:flex md:flex  gap-2 mb-8  hidden">
         <TextInput
           className="w-full"
           type="search"
@@ -43,7 +41,7 @@ const Holidays = () => {
         {holidayList.map((holidays) => (
           <HolidayRows key={holidays.id} holidays={holidays}></HolidayRows>
         ))}
-      </Table> */}
+      </Table>
     </section>
   );
 };

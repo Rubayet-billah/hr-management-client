@@ -98,7 +98,7 @@ const AddEmployeeModal = ({ addUserModalVisibility, setAddUserModalVisibility, r
                   <option value='back-end developer'>Back-End Developer</option>
                   <option value='full stack developer'>Full Stack Developer</option>
                   <option value='app developer'>App Developer</option>
-                  <option value='sqa engineer'>SQA Engineer</option>
+                  <option value='SQA engineer'>SQA Engineer</option>
                 </Select>
               </div>
 
