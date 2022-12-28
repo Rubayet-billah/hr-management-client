@@ -10,7 +10,7 @@ const CandidateDetailsModal = ({
     refetch,
     shorlistedRefetch
 }) => {
-    const { name, image, phone, email, designation, address, expectedSalary, experience, resumeUrl } = viewCandidateDetails
+    const { name, image, phone, email, designation, address, expectedSalary, coverLetter, experience, resumeUrl } = viewCandidateDetails
 
     const handleShortList = (shortListedCandidate) => {
         fetch('http://localhost:5000/shortlistedCandidate', {
@@ -59,11 +59,13 @@ const CandidateDetailsModal = ({
                                             <span className="text-sm text-gray-500 dark:text-gray-400">
                                                 {designation}
                                             </span>
-                                            <div className="my-4 grid md:grid-cols-2 gap-x-5 lg:mt-6">
+                                            <div className="my-4 grid md:grid-cols-2 gap-x-5 gap-y-3 lg:mt-6 w-full">
                                                 <p>Email: {email}</p>
                                                 <p>Phone: {phone}</p>
                                                 <p>Address: {address}</p>
                                                 <p>Experience: {experience}+ years</p>
+                                                <p className='md:col-span-2'>Cover Letter: {coverLetter}</p>
+
                                             </div>
                                             <a href={resumeUrl} target='_blank' rel="noreferrer">
                                                 <Button>View Resume</Button>

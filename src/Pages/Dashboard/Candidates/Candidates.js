@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Table } from 'flowbite-react';
 import React, { useEffect, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
+import Spinner from '../../../components/Spinner';
 import { useUtils } from '../../../contexts/UtilsProvider';
 import CandidateDetailsModal from './Components/CandidateDetailsModal';
 import CandidateRow from './Components/CandidateRow';
@@ -9,7 +10,7 @@ import CandidateStatistics from './Components/CandidateStatistics';
 import ShortlistedCandidates from './Components/ShortlistedCandidates';
 
 const Candidates = () => {
-    const { data: candidates = [], refetch } = useQuery({
+    const { data: candidates = [], refetch, isLoading: candidatesLoading } = useQuery({
         queryKey: ['candidates'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/candidates');
@@ -18,7 +19,7 @@ const Candidates = () => {
         }
     })
 
-    const { data: shortlistedCandidates = [], refetch: shorlistedRefetch } = useQuery({
+    const { data: shortlistedCandidates = [], refetch: shorlistedRefetch, isLoading: shortlistedLoading } = useQuery({
         queryKey: ['shortlistedCandidate'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/shortlistedCandidate');
@@ -41,6 +42,10 @@ const Candidates = () => {
     // Change title
     const { setDashboardTitle } = useUtils();
     setDashboardTitle("Candidates");
+
+    if (candidatesLoading || shortlistedLoading) {
+        return <Spinner />
+    }
 
     return (
         <div>

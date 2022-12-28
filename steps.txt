@@ -19,3 +19,30 @@ Apllicants information
     "resumeUrl": "https://drive.google.com/file/d/1V8r_viLpTSHNcx10_cIsy3Reox-S6_WR/view"
 },
 
+{
+  "name": "Runayet Billah",
+  "image": "https://pbs.twimg.com/profile_images/1180270588393889792/W8K4E3I__400x400.jpg",
+  "phone": "555-555-1212",
+  "email": "rubayetbillah909@gmail.com",
+  "designation": "Software Engineer",
+  "jobType":"Full Time",
+  "applyDate":"04 Jan 2019",
+  "address": "123 Main Street, Anytown USA 12345",
+  "expectedSalary": 75000,
+  "linkedIn":"https://www.linkedin.com/in/rubayet-billah/",
+  "gitHub":"https://github.com/Rubayet-billah", 
+  "portfolio":"https://helpful-speculoos-1507e0.netlify.app/",
+  "coverLetter": "Dear Hiring Manager,
+
+I am excited to apply for the Software Engineer position at your company. With a degree in Computer Science and 3 years of experience as a software engineer, I believe I have the skills and experience necessary to excel in this role.
+
+In my current position, I have gained experience working on a wide range of projects, including designing and implementing new features, debugging and troubleshooting issues, and collaborating with cross-functional teams. I am comfortable working with a variety of programming languages and frameworks, and I am always eager to learn new technologies.
+
+I am confident that my skills and experience make me a strong candidate for this position. Thank you for considering my application. I look forward to the opportunity to join your team and contribute to the success of your company.
+
+Sincerely,
+Alice Smith",
+  "experience": "2",
+  "resumeUrl": "https://drive.google.com/file/d/1V8r_viLpTSHNcx10_cIsy3Reox-S6_WR/view"
+}
+
