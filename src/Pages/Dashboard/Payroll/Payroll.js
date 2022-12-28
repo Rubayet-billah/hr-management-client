@@ -7,7 +7,7 @@ const Payroll = () => {
   // const [absent, setAbsent] = useState
 
   useEffect(() => {
-    fetch("/employees.json")
+    fetch("/data/employees.json")
       .then((res) => res.json())
       .then((data) => setEmployees(data));
   }, []);

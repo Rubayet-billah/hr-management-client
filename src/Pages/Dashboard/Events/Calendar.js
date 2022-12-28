@@ -10,7 +10,7 @@ import DeleteModal from "../../../components/Modals/DeleteModal";
 // import "@fullcalendar/core/main.css";
 // import "@fullcalendar/daygrid/main.css";
 
-export default function Calender() {
+export default function Calendar() {
     const { data: events = [], refetch } = useQuery({
         queryKey: ['events'],
         queryFn: () => fetch('http://localhost:5000/events')
