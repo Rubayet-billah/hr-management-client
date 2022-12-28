@@ -6,7 +6,10 @@ import automaticIcon from '../../../assets/icons/system.png';
 const Features = () => {
   return (
     <div className='container mx-auto px-2 py-16'>
-      <h2 className='text-center text-3xl font-bold'>Why Stuff Deck is the Best HR Software!</h2>
+      <div className='text-center mb-6'>
+        <h2 className='text-3xl font-bold mb-1'>Why Stuff Deck is the Best HR Software!</h2>
+        <p>Our HR Management Software Main Features.</p>
+      </div>
 
       <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 mt-12'>
         <div className='text-center bg-gray-100 px-6 py-9 shadow-lg rounded-lg'>

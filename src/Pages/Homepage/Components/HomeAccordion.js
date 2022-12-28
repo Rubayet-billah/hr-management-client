@@ -30,7 +30,10 @@ const HomeAccordion = () => {
 
   return (
     <div className='container mx-auto px-2 py-12'>
-      <h3 className='text-center text-3xl font-bold'>Why Stuff Deck?</h3>
+      <div className='text-center mb-6'>
+        <h3 className='text-4xl font-bold mb-1'>Why Stuff Deck?</h3>
+        <p>Here Is Some FAQ.</p>
+      </div>
       <div className='max-w-5xl mx-auto mt-12'>
         <Accordion alwaysOpen>
           {accordionData.map((data) => (
