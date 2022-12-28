@@ -50,7 +50,7 @@ const Admins = () => {
     return (
         <section>
             <div className='bg-white mb-5 p-5 flex gap-5 rounded-lg'>
-                <div className='w-2/6 flex gap-2'>
+                <div className='hidden sm:flex w-3/6 lg:w-2/6 gap-2'>
                     <TextInput
                         className='w-full'
                         type="search"
