@@ -46,7 +46,7 @@ const Employees = () => {
   const handleSearch = (e) => {
     const searchString = e.target.searchString.value;
     e.preventDefault();
-    const filterData = employeesData.filter((employeeData) =>
+    const filterData = employees.filter((employeeData) =>
       employeeData.fullName.toLowerCase().includes(searchString.toLowerCase())
     );
     setEmployeesData(filterData);
