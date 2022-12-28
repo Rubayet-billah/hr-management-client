@@ -16,7 +16,7 @@ const CandidateDetailsModal = ({
     setDeleteCandidate,
     setDeleteModalVisibility
 }) => {
-    const { name, image, phone, email, designation, address, expectedSalary, coverLetter, experience, resumeUrl } = viewCandidateDetails;
+    const { name, image, phone, email, designation, address, expectedSalary, skills, coverLetter, experience, resumeUrl } = viewCandidateDetails;
 
     const defaultImg = "https://media.istockphoto.com/id/476085198/photo/businessman-silhouette-as-avatar-or-default-profile-picture.jpg?s=170667a&w=0&k=20&c=pbUvoKhdnGQ8IdDFqHYRm-m5zf51Ta6QUHERf9EU5FU=";
 
@@ -72,6 +72,13 @@ const CandidateDetailsModal = ({
                                                 <p className='flex items-center'><MdPhone className='mr-2 text-xl' /> {phone}</p>
                                                 <p className='flex items-center'><IoLocation className='mr-2 md:mr-1 text-xl md:-translate-x-[2px]' /> {address}</p>
                                                 <p className='flex items-center'><AiFillTool className='mr-2 text-xl' /> {experience}+ years</p>
+                                                <div className='md:col-span-2'><span className='font-medium'>Skills</span> <br />
+                                                    <p className='grid grid-cols-1 md:grid-cols-3'>
+                                                        {
+                                                            skills?.map((skill, idx) => <li key={idx}>{skill}</li>)
+                                                        }
+                                                    </p>
+                                                </div>
                                                 <p className='md:col-span-2'><span className='font-medium'>Cover Letter</span> <br />{coverLetter}</p>
 
                                             </div>

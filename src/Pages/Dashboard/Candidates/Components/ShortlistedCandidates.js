@@ -5,7 +5,7 @@ import { toast } from 'react-hot-toast';
 import DeleteModal from '../../../../components/Modals/DeleteModal';
 import ShortlistedCandidateRow from './ShortlistedCandidateRow';
 
-const ShortlistedCandidates = ({ shortlistedCandidates }) => {
+const ShortlistedCandidates = ({ shortlistedCandidates, shorlistedRefetch }) => {
     const [deleteCandidate, setDeleteCandidate] = useState({})
     const [deleteModalVisibility, setDeleteModalVisibility] = useState(false)
 
@@ -16,9 +16,11 @@ const ShortlistedCandidates = ({ shortlistedCandidates }) => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                setDeleteModalVisibility(false)
-                toast.success('delete')
+                if (data.deletedCount > 0) {
+                    setDeleteModalVisibility(false)
+                    shorlistedRefetch()
+                    toast.success('delete')
+                }
             })
     }
 
