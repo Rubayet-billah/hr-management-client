@@ -17,9 +17,9 @@ const Home = () => {
       <HomeAccordion />
       <Testimonial />
       <Pricing />
+      <Newsletter />
       <Partners />
       <DevsTeam />
-      <Newsletter />
       <Contact />
     </main>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Partners = () => {
     return (
-        <div className='container mx-auto px-2 py-12'>
+        <div className='container mx-auto px-2 py-20'>
             <div className='text-center mb-8'>
                 <h3 className='text-4xl font-bold mb-1'>Sponsors and Partners</h3>
             </div>
