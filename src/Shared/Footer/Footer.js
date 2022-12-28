@@ -1,11 +1,12 @@
 import { Footer } from 'flowbite-react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FooterArea = () => {
   return (
     <Footer>
       <div className="w-full">
-        <div className="bg-gray-100 rounded-none">
+        <div className="border-t rounded-none">
           <div className='container mx-auto grid w-full grid-cols-2 gap-8 py-8 md:grid-cols-4'>
             <div>
               <Footer.Title title="Company" />
@@ -13,9 +14,9 @@ const FooterArea = () => {
                 <Footer.Link href="#">
                   About
                 </Footer.Link>
-                <Footer.Link href="#">
+                <Link to="/careers" className='hover:underline'>
                   Careers
-                </Footer.Link>
+                </Link>
                 <Footer.Link href="#">
                   Brand Center
                 </Footer.Link>
@@ -56,52 +57,30 @@ const FooterArea = () => {
               </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Title title="download" />
+              <Footer.Title title="services" />
               <Footer.LinkGroup col={true}>
                 <Footer.Link href="#">
-                  iOS
+                  Pricing
                 </Footer.Link>
                 <Footer.Link href="#">
-                  Android
+                  Newsletter
                 </Footer.Link>
                 <Footer.Link href="#">
-                  Windows
+                  Team
                 </Footer.Link>
                 <Footer.Link href="#">
-                  MacOS
+                  Testimonials
                 </Footer.Link>
               </Footer.LinkGroup>
             </div>
           </div>
         </div>
-        <div className="w-full text-center bg-gray-200 py-6 px-4 sm:flex sm:items-center sm:justify-between">
+        <div className="w-full text-center border-t py-6 px-4 flex justify-center">
           <Footer.Copyright
-            href="#"
-            by="Flowbite™"
-            year={2022}
+            href="/"
+            by="Staff Deck™"
+            year={new Date().getFullYear()}
           />
-          {/* <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-            <Footer.Icon
-              href="#"
-              icon={BsFacebook}
-            />
-            <Footer.Icon
-              href="#"
-              icon={BsInstagram}
-            />
-            <Footer.Icon
-              href="#"
-              icon={BsTwitter}
-            />
-            <Footer.Icon
-              href="#"
-              icon={BsGithub}
-            />
-            <Footer.Icon
-              href="#"
-              icon={BsDribbble}
-            />
-          </div> */}
         </div>
       </div>
     </Footer>
