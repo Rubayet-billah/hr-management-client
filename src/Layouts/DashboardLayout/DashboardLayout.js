@@ -18,12 +18,14 @@ const DashboardLayout = () => {
   return (
     <div className='bg-[#EDEFF3]'>
       <div
-        className={`${open ? 'w-64 left-0' : 'w-20 -left-20 md:left-0'
-          } duration-100 bg-white border-r h-screen fixed top-0 z-50`}
+        className={`${
+          open ? 'w-64 left-0' : 'w-20 -left-20 md:left-0'
+        } duration-100 bg-white border-r h-screen fixed top-0 z-50`}
       >
         <div
-          className={`absolute cursor-pointer right-0 translate-x-1/2 top-9 p-2 border-2 bg-red-700 text-white rounded-full ${open && 'rotate-180'
-            } duration-300`}
+          className={`absolute cursor-pointer right-0 translate-x-1/2 top-9 p-2 border-2 bg-red-700 text-white rounded-full ${
+            open && 'rotate-180'
+          } duration-300`}
           onClick={() => setOpen(!open)}
         >
           <SlArrowRight className='w-4 h-4' />
