@@ -8,7 +8,7 @@
 
 - Rubayet Billah
 - Tarekul Islam
-- MD.Badsha Fahadh
+- MD Badsha Fahadh
 - Maruf Hossain
 - Rajib Das
 - Naem Hossain
