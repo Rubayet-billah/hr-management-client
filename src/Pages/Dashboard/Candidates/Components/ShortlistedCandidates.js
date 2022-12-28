@@ -1,21 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
 import { Table } from 'flowbite-react';
-import React from 'react';
+import React, { useState } from 'react';
+import DeleteModal from '../../../../components/Modals/DeleteModal';
 import ShortlistedCandidateRow from './ShortlistedCandidateRow';
 
 const ShortlistedCandidates = ({ shortlistedCandidates }) => {
+    const [deleteCandidate, setDeleteCandidate] = useState({})
+    const [deleteModalVisibility, setDeleteModalVisibility] = useState(false)
 
-    // const { data: shortlistedCandidates = [], refetch: shorlistedRefetch } = useQuery({
-    //     queryKey: [],
-    //     queryFn: async () => {
-    //         const res = await fetch('http://localhost:5000/shortlistedCandidate');
-    //         const data = await res.json();
-    //         console.log(data)
-    //         setShortlistedCandidate(data)
-    //         return data
-    //     }
-    // })
-
+    const handleDelete = (shortlistedCandidate) => {
+        setDeleteModalVisibility(true)
+        setDeleteCandidate(shortlistedCandidate)
+    }
 
     return (
         <div>
@@ -39,18 +35,30 @@ const ShortlistedCandidates = ({ shortlistedCandidates }) => {
                     <Table.HeadCell>
                         Expected Salary
                     </Table.HeadCell>
+                    <Table.HeadCell>
+                        Actions
+                    </Table.HeadCell>
                 </Table.Head>
                 <Table.Body className="divide-y">
                     {
                         shortlistedCandidates?.map(shortlistedCandidate => <ShortlistedCandidateRow
                             key={shortlistedCandidate._id}
                             shortlistedCandidate={shortlistedCandidate}
+                            setDeleteModalVisibility={setDeleteModalVisibility}
+                            setDeleteCandidate={setDeleteCandidate}
+                            handleDelete={handleDelete}
                         />)
                     }
 
 
                 </Table.Body>
             </Table>
+            <DeleteModal
+                setDeleteModalVisibility={setDeleteModalVisibility}
+                deleteModalVisibility={deleteModalVisibility}
+                handleDelete={handleDelete}
+                deleteItemName={deleteCandidate.name}
+            />
         </div>
     );
 };

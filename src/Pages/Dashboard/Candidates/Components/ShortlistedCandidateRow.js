@@ -1,7 +1,11 @@
-import { Button, Table } from 'flowbite-react';
-import React from 'react';
+import { Table } from 'flowbite-react';
+import React, { useState } from 'react';
+import { FiDelete } from 'react-icons/fi';
+import { FaEnvelope } from 'react-icons/fa';
 
-const ShortlistedCandidateRow = ({ shortlistedCandidate }) => {
+const ShortlistedCandidateRow = ({ shortlistedCandidate, handleDelete }) => {
+
+
     return (
         <Table.Row
             onClick={() => {
@@ -23,14 +27,19 @@ const ShortlistedCandidateRow = ({ shortlistedCandidate }) => {
             <Table.Cell>
                 {shortlistedCandidate.phone}
             </Table.Cell>
-            {/* <Table.Cell>
+            <Table.Cell>
                 {shortlistedCandidate.experience}
-            </Table.Cell> */}
+            </Table.Cell>
             <Table.Cell>
                 ${shortlistedCandidate.expectedSalary}
             </Table.Cell>
             <Table.Cell>
-                <Button>Call for Interview</Button>
+                <a href={`mailto:${shortlistedCandidate.email}`}><FaEnvelope /></a>
+                <button onClick={() => { }} className='text-lg mr-3'>
+                </button>
+                <button onClick={() => { handleDelete(shortlistedCandidate) }} className='text-lg text-red-600'>
+                    <FiDelete />
+                </button>
             </Table.Cell>
         </Table.Row>
     );
