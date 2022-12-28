@@ -1,4 +1,4 @@
-import { Table } from 'flowbite-react';
+import { Button, Table } from 'flowbite-react';
 import React from 'react';
 
 const ShortlistedCandidateRow = ({ shortlistedCandidate }) => {
@@ -23,11 +23,14 @@ const ShortlistedCandidateRow = ({ shortlistedCandidate }) => {
             <Table.Cell>
                 {shortlistedCandidate.phone}
             </Table.Cell>
-            <Table.Cell>
+            {/* <Table.Cell>
                 {shortlistedCandidate.experience}
-            </Table.Cell>
+            </Table.Cell> */}
             <Table.Cell>
                 ${shortlistedCandidate.expectedSalary}
+            </Table.Cell>
+            <Table.Cell>
+                <Button>Call for Interview</Button>
             </Table.Cell>
         </Table.Row>
     );
