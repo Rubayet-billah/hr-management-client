@@ -1,6 +1,6 @@
-import { Spinner } from 'flowbite-react';
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
+import Spinner from '../../components/Spinner';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const AdminRoute = ({ children }) => {
@@ -8,7 +8,7 @@ const AdminRoute = ({ children }) => {
     const location = useLocation()
 
     if (loading) {
-        return <Spinner></Spinner>
+        return <Spinner />
     }
     if (user?.uid) {
         return children;

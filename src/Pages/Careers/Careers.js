@@ -8,7 +8,7 @@ const jobs = [
         _id: "2187",
         title: "Back End Developer",
         salary: "4,000-10,000 /month",
-        Description: <>
+        Description: `
             Backend Engineer | Europe | Fully Remote
             <br />
             <br />
@@ -43,13 +43,13 @@ const jobs = [
             – Base Salary + Equity<br />
             <br />
             If you are interested or know someone who may be, please reach out with an updated CV
-        </>
+        `
     },
     {
         _id: "2193",
         title: "Senior Frontend Engineer",
         salary: "$170k /year",
-        Description: <>
+        Description: `
             Senior Frontend Engineer (Web3) – Fully Remote – Perm
             <br />
             <br />
@@ -66,9 +66,8 @@ const jobs = [
             – Experience building scalable applications<br />
             – This role is open to web3-native candidates or web2 engineers with a passion for the space.<br />
             <br />
-            <br />
             This is a remote role open to US candidates, offering up to $170k + equity. Apply today to find out more!
-        </>
+        `
     },
 ]
 
@@ -79,7 +78,7 @@ const Careers = () => {
             <div className='grid lg:grid-cols-2 gap-8'>
                 {
                     jobs.map(job => (
-                        <div className='bg-gray-200 p-5 rounded-lg relative'>
+                        <div key={job._id} className='bg-gray-200 p-5 rounded-lg relative'>
                             <div className='flex justify-between'>
                                 <div>
                                     <h2 className='text-xl font-bold'>{job.title}</h2>

@@ -38,9 +38,7 @@ const Career = () => {
                 </div>
             </div>
             <div className='container mx-auto px-2 py-12 grid grid-cols-1 lg:grid-cols-6 gap-12'>
-                <div className='lg:col-span-4 text-lg'>
-                    {job?.Description}
-                </div>
+                <div dangerouslySetInnerHTML={{ __html: job?.Description }} className='lg:col-span-4 text-lg' />
                 <div className='lg:col-span-2'>
                     <p className='text-3xl font-semibold mb-4'>Apply for this role:</p>
                     <form onSubmit={handleSubmit(handleApplierForm)} className="flex flex-col gap-4">
