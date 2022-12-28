@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import UtilsProvider from './contexts/UtilsProvider';
-import './index.css';
+import './styles/index.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';

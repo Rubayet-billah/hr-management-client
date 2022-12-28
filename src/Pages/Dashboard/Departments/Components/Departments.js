@@ -16,7 +16,7 @@ const Departments = () => {
     const [viewDepartmentsDeleteModal, setViewDepartmentsDeleteModal] = useState(false)
     const [deletedDepartment, setDeletedDepartment] = useState({})
     useEffect(() => {
-        fetch('/Department.json')
+        fetch('/data/department.json')
             .then((res) => res.json())
             .then((data) => setDepartments(data));
     }, []);

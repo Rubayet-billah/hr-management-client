@@ -1,7 +1,11 @@
 import { Table } from 'flowbite-react';
 import React from 'react';
 
-const CandidateRow = ({ candidate, setViewCandidateDetails, setCandidateDetailsModalVisibility }) => {
+const CandidateRow = ({
+    candidate,
+    setViewCandidateDetails,
+    setCandidateDetailsModalVisibility,
+}) => {
 
 
     return (
