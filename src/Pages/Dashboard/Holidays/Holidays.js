@@ -1,5 +1,6 @@
-import { Table } from "flowbite-react";
+import { Table, TextInput } from "flowbite-react";
 import React, { useEffect, useState } from "react";
+import Btn from "../../../components/Btn";
 import { useUtils } from "../../../contexts/UtilsProvider";
 import HolidayRows from "./HolidayRows";
 
@@ -16,17 +17,32 @@ const Holidays = () => {
   setDashboardTitle("Holidays");
 
   return (
-    <Table>
-      <Table.Head>
-        <Table.HeadCell>DAY</Table.HeadCell>
-        <Table.HeadCell>DATE</Table.HeadCell>
-        <Table.HeadCell>HOLIDAY</Table.HeadCell>
-      </Table.Head>
+    <section>
+      <div className="w-2/6 lg:flex md:flex  gap-2 mb-8  hidden">
+        <TextInput
+          className="w-full"
+          type="search"
+          id="search"
+          placeholder="Search Your Holiday"
+          required={true}
+          sizing="sm"
+        />
+        <Btn color="blue" className="w-fit px-4">
+          Search
+        </Btn>
+      </div>
+      <Table>
+        <Table.Head>
+          <Table.HeadCell>DAY</Table.HeadCell>
+          <Table.HeadCell>DATE</Table.HeadCell>
+          <Table.HeadCell>HOLIDAY</Table.HeadCell>
+        </Table.Head>
 
-      {holidayList.map((holidays) => (
-        <HolidayRows key={holidays.id} holidays={holidays}></HolidayRows>
-      ))}
-    </Table>
+        {holidayList.map((holidays) => (
+          <HolidayRows key={holidays.id} holidays={holidays}></HolidayRows>
+        ))}
+      </Table>
+    </section>
   );
 };
 
