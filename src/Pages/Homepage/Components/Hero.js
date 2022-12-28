@@ -1,12 +1,8 @@
-import { Autoplay, Pagination } from 'swiper';
+import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import one from '../../../assets/Banner/one.webp';
 import three from '../../../assets/Banner/three.png';
 import two from '../../../assets/Banner/two.png';
-
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import 'swiper/css/pagination';
 
 const Hero = () => {
   const heroImages = [
@@ -39,14 +35,10 @@ const Hero = () => {
           <Swiper
             spaceBetween={0}
             loop={true}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true,
-            }}
             slidesPerView={1}
             autoplay={{ delay: 2000 }}
             grabCursor={true}
-            modules={[Autoplay, Pagination]}
+            modules={[Autoplay]}
             className='mySwiper'
           >
             {heroImages.map((heroImage) => (
