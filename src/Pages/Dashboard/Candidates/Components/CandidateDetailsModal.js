@@ -89,14 +89,14 @@ const CandidateDetailsModal = ({
                             Shortlist
                         </Button>
                         <Button
-                            color="gray"
+                            color="failure"
                             onClick={() => {
                                 setDeleteCandidate(viewCandidateDetails)
                                 setDeleteModalVisibility(true)
                             }
                             }
                         >
-                            <FiDelete />
+                            Decline
                         </Button>
                     </Modal.Footer>
                 </Modal>

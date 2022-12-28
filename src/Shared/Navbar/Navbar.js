@@ -9,37 +9,36 @@ const NAvbar = () => {
     <div className='bg-white border-b'>
       <div className='container mx-auto px-2'>
         <Navbar className='bg-transparent !px-0 !py-5' fluid={true} rounded={true}>
-          <Navbar.Brand>
-            <Link to="/">
-              <span className='self-center whitespace-nowrap text-2xl font-bold dark:text-white'>
-                <span className='bg-blue-500 text-white px-2 py-1 rounded'>Staff</span> Deck
-              </span>
-            </Link>
-          </Navbar.Brand>
+          {/* <Navbar.Brand> */}
+          <Link to="/">
+            <span className='self-center whitespace-nowrap text-2xl font-bold dark:text-white'>
+              <span className='bg-blue-500 text-white px-2 py-1 rounded'>Staff</span> Deck
+            </span>
+          </Link>
+          {/* </Navbar.Brand> */}
           <Navbar.Toggle />
           <Navbar.Collapse className='!items-center'>
-            <Navbar.Link>
-              <Link to='/'>Home</Link>
-            </Navbar.Link>
+
+            <Link to='/'>Home</Link>
+
             {
-              user?.uid && <Navbar.Link>
-                <Link to='/dashboard'>Dashboard</Link>
-              </Navbar.Link>
+              user?.uid &&
+              <Link to='/dashboard'>Dashboard</Link>
+
             }
 
-            <Navbar.Link>
-              <Link to='/careers'>Careers</Link>
-            </Navbar.Link>
-            <Navbar.Link href='/'>
-              <Link to='/'>About</Link>
-            </Navbar.Link>
-            <Navbar.Link href='/'>
-              <Link to='/'>Services</Link>
-            </Navbar.Link>
+            <Link to='/careers'>Careers</Link>
+
+
+            <Link to='/'>About</Link>
+
+
+            <Link to='/'>Services</Link>
+
             {
-              !user && <Navbar.Link href='/login'>
-                <Link to='/login'>Login</Link>
-              </Navbar.Link>
+              !user &&
+              <Link to='/login'>Login</Link>
+
             }
           </Navbar.Collapse>
         </Navbar>
