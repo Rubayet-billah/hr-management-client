@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 160,
+    marginTop: 140,
   },
 
   signature: {
