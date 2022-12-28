@@ -1,6 +1,7 @@
 import { curveCardinal } from 'd3-shape';
 import React, { useContext } from 'react';
 import candidates from '../../assets/dashboard/candidates.png';
+import employeesImg from '../../assets/dashboard/employees.png';
 import holidays from '../../assets/dashboard/holidays.png';
 import payroll from '../../assets/dashboard/payroll.png';
 
@@ -103,7 +104,7 @@ const Dashboard = () => {
       <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 mt-5'>
         <Link to='/dashboard/employees' className='bg-white rounded-lg shadow'>
           <div className='flex flex-col items-center hover:scale-110 duration-300 overflow-hidden p-8'>
-            <img className='w-8 h-8' src={employees} alt='Employees' />
+            <img className='w-8 h-8' src={employeesImg} alt='Employees' />
             <p>Employees</p>
           </div>
         </Link>
