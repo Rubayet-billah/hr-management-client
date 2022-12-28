@@ -1,7 +1,12 @@
 import { Table } from 'flowbite-react';
 import React from 'react';
+import { FiDelete } from 'react-icons/fi';
 
-const CandidateRow = ({ candidate, setViewCandidateDetails, setCandidateDetailsModalVisibility }) => {
+const CandidateRow = ({
+    candidate,
+    setViewCandidateDetails,
+    setCandidateDetailsModalVisibility,
+}) => {
 
 
     return (

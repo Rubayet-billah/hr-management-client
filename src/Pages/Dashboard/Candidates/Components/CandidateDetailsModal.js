@@ -2,6 +2,7 @@ import { Button, Card, Modal } from 'flowbite-react';
 import React from 'react';
 import { toast } from 'react-hot-toast';
 import { AiFillTool } from 'react-icons/ai';
+import { FiDelete } from 'react-icons/fi';
 import { IoLocation } from 'react-icons/io5';
 import { MdEmail, MdPhone } from 'react-icons/md';
 
@@ -11,7 +12,9 @@ const CandidateDetailsModal = ({
     candidateDetailsModalVisibility,
     setCandidateDetailsModalVisibility,
     refetch,
-    shorlistedRefetch
+    shorlistedRefetch,
+    setDeleteCandidate,
+    setDeleteModalVisibility
 }) => {
     const { name, image, phone, email, designation, address, expectedSalary, coverLetter, experience, resumeUrl } = viewCandidateDetails;
 
@@ -87,14 +90,18 @@ const CandidateDetailsModal = ({
                         </Button>
                         <Button
                             color="gray"
-                            onClick={onClick}
+                            onClick={() => {
+                                setDeleteCandidate(viewCandidateDetails)
+                                setDeleteModalVisibility(true)
+                            }
+                            }
                         >
-                            Decline
+                            <FiDelete />
                         </Button>
                     </Modal.Footer>
                 </Modal>
             </React.Fragment>
-        </div>
+        </div >
     );
 };
 
