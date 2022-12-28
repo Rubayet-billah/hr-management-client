@@ -1,3 +1,9 @@
+import { Autoplay } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import one from '../../../assets/Banner/one.webp';
+import two from '../../../assets/Banner/two.png';
+import three from '../../../assets/Banner/three.png';
+
 const Hero = () => {
   return (
     <section class='container mx-auto px-2'>
@@ -10,15 +16,45 @@ const Hero = () => {
             Modernize your HR, Manage your hiring, Onboarding, Employee Data, and HR Workflows in one place.
           </p>
         </div>
-        <div class='hidden lg:mt-0 lg:col-span-4 lg:flex'>
-          <img
-            className='w-full'
-            src='https://website-assets-fw.freshworks.com/attachments/cksdn5uaf01quprg0w6fvkl6v-freshteam-smart-hr-software-by-freshworks.one-half.webp'
-            alt='hero'
-          />
+        <div className='hidden lg:mt-0 lg:col-span-4 lg:flex'>
+          <Swiper
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay]}
+          >
+            <SwiperSlide>
+              <div>
+                <img
+                  className='w-full'
+                  src={one}
+                  alt='hero'
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div>
+                <img
+                  className='w-full'
+                  src={two}
+                  alt='hero'
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div>
+                <img
+                  className='w-full'
+                  src={three}
+                  alt='hero'
+                />
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 export default Hero;
