@@ -3,9 +3,9 @@ import { Button, Label, Textarea, TextInput } from 'flowbite-react';
 const Contact = () => {
   return (
     <div className='container mx-auto px-2 py-12'>
-      <div className='text-center'>
-        <h2 className='text-3xl font-bold text-gray-800 mb-2'>Contact Us</h2>
-        <p className='text-gray-600 mb-6'>Please Leave Your Message</p>
+      <div className='text-center mb-6'>
+        <h2 className='text-4xl font-bold text-gray-800 mb-1'>Contact Us</h2>
+        <p className='text-gray-600'>Please Leave Your Message</p>
       </div>
 
       <form className='max-w-4xl mx-auto'>

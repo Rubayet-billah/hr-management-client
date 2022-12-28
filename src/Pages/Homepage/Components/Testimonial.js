@@ -1,7 +1,6 @@
+import { useEffect, useState } from 'react';
 import { Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-import { useEffect, useState } from 'react';
 
 const Testimonial = () => {
   const [reviews, setReviews] = useState([]);
