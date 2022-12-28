@@ -7,7 +7,7 @@ const FooterArea = () => {
     <Footer>
       <div className="w-full">
         <div className="border-t rounded-none">
-          <div className='container mx-auto grid w-full grid-cols-2 gap-8 py-8 md:grid-cols-4'>
+          <div className='container px-5 lg:px-0 mx-auto grid w-full grid-cols-2 gap-8 py-8 md:grid-cols-4'>
             <div>
               <Footer.Title title="Company" />
               <Footer.LinkGroup col={true}>

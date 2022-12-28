@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 import image_hr from "../../../assets/loginPage/slider2.svg";
+import { Spinner } from "flowbite-react";
 
 const Login = () => {
   const {
@@ -13,7 +13,7 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const { signIn, loading } = useContext(AuthContext);
+  const { signIn, loading, setLoading } = useContext(AuthContext);
 
   const [loginError, setLoginError] = useState("");
 
@@ -28,20 +28,10 @@ const Login = () => {
     const { email, password } = data;
     signIn(email, password)
       .then((result) => {
-        const user = result.user;
-
-        console.log(user);
-        toast("Successfully user login", {
-          icon: "👏",
-          style: {
-            borderRadius: "10px",
-            background: "#333",
-            color: "#fff",
-          },
-        });
         navigate(from, { replace: true });
       })
       .catch((error) => {
+        setLoading(false);
         console.log(error.massage);
         setLoginError(error.message);
       });
@@ -101,8 +91,9 @@ const Login = () => {
                 className="btn mb-3 mt-5 text-white  bg-blue-700  hover:bg-blue-800 rounded-lg w-full py-2"
                 value="Login"
                 type="submit"
+                disabled={loading}
               >
-                Login
+                {loading ? <span className="animate-pulse"><Spinner /></span> : 'Login'}
               </button>
             </form>
             <div>
