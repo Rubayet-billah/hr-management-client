@@ -1,6 +1,7 @@
 import DevsCard from './DevsCard';
 
 import badsha from '../../../assets/devs/Md.Badsha fahadh.jpg';
+import maruf from '../../../assets/devs/Md-Maruf-Hossain.jpg';
 
 const devs = [
   {
@@ -44,12 +45,11 @@ const devs = [
   },
   {
     id: 5,
-    name: 'Maruf Bro',
-    position: 'Web Developer',
-    image:
-      'https://images.unsplash.com/photo-1594030546818-b2636c8501dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cG90cmFpdHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60',
-    githubLink: '/',
-    linkedInLink: '/',
+    name: 'Md Maruf Hossain',
+    position: 'Full Stack Developer',
+    image: maruf,
+    githubLink: 'https://github.com/mickeymaruf',
+    linkedInLink: 'https://www.linkedin.com/in/mickeymaruf/',
     skills: ['html, css, javascript, react, node, mongoDB'],
   },
   {

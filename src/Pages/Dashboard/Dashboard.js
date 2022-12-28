@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { curveCardinal } from 'd3-shape';
 import employees from '../../assets/dashboard/employees.png';
 import candidates from '../../assets/dashboard/candidates.png';
@@ -30,6 +30,7 @@ import Btn from '../../components/Btn';
 import { Link } from 'react-router-dom';
 import { useUtils } from '../../contexts/UtilsProvider';
 import { FcDepartment } from 'react-icons/fc';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const data = [
     {
@@ -84,9 +85,11 @@ const Dashboard = () => {
     const { setDashboardTitle } = useUtils();
     setDashboardTitle("Dashboard");
 
+    const { user } = useContext(AuthContext);
+
     return (
         <>
-            <h3 className='text-3xl'>Welcome Jason Porter!</h3>
+            <h3 className='text-3xl'>Welcome {user?.displayName}!</h3>
             <small className='text-xs'>Measure How Fast You’re Growing Monthly Recurring Revenue. Learn More</small>
             <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 mt-5'>
                 <Link to="/dashboard/employees" className='bg-white rounded-lg shadow'>
