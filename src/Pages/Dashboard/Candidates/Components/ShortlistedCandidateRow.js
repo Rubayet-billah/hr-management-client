@@ -10,10 +10,9 @@ const ShortlistedCandidateRow = ({ shortlistedCandidate }) => {
             }}
             className="bg-white dark:border-gray-700 dark:bg-gray-800">
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                <div className='flex items-center'>
-                    <img className="w-10 h-10 rounded-full" src={shortlistedCandidate.image} alt="Rounded avatar" />
-                    <span className='ml-2'>{shortlistedCandidate.name}</span>
-                </div>
+                {/* <img className="w-10 h-10 rounded-full" src={shortlistedCandidate.image} alt="Rounded avatar" /> */}
+                <span className='text-base font-semibold'>{shortlistedCandidate.name}</span>
+                <p className='text-gray-400'>{shortlistedCandidate.email}</p>
             </Table.Cell>
             <Table.Cell>
                 {shortlistedCandidate.designation}
