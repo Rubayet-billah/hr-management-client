@@ -12,7 +12,7 @@ const NAvbar = () => {
           <Navbar.Brand>
             <Link to="/">
               <span className='self-center whitespace-nowrap text-2xl font-bold dark:text-white'>
-                <span className='bg-blue-500 text-white px-2 py-1 rounded'>Stuff</span> Deck
+                <span className='bg-blue-500 text-white px-2 py-1 rounded'>Staff</span> Deck
               </span>
             </Link>
           </Navbar.Brand>
@@ -28,7 +28,7 @@ const NAvbar = () => {
             }
 
             <Navbar.Link>
-              <Link to='/career'>Career</Link>
+              <Link to='/careers'>Careers</Link>
             </Navbar.Link>
             <Navbar.Link href='/'>
               <Link to='/'>About</Link>
@@ -36,9 +36,11 @@ const NAvbar = () => {
             <Navbar.Link href='/'>
               <Link to='/'>Services</Link>
             </Navbar.Link>
-            <Navbar.Link href='/login'>
-              <Link to='/login'>Login</Link>
-            </Navbar.Link>
+            {
+              !user && <Navbar.Link href='/login'>
+                <Link to='/login'>Login</Link>
+              </Navbar.Link>
+            }
           </Navbar.Collapse>
         </Navbar>
       </div>

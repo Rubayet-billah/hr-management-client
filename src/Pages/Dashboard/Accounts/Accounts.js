@@ -1,25 +1,29 @@
 import { Progress, Select, Textarea, TextInput } from 'flowbite-react';
-import React from 'react';
+import React, { useContext } from 'react';
 import { SlCalender } from 'react-icons/sl';
 import { TfiWorld } from 'react-icons/tfi';
 import Btn from '../../../components/Btn';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { useUtils } from '../../../contexts/UtilsProvider';
+import avatar from '../../../assets/icons/avatar.png';
 
 const Accounts = () => {
     // Change title
     const { setDashboardTitle } = useUtils();
     setDashboardTitle("Account Settings");
 
+    const { user } = useContext(AuthContext);
+
     return (
         <section className='accounts grid grid-cols-12 gap-5 items-start'>
             <div className='col-span-12 lg:col-span-4 bg-white rounded shadow text-sm'>
                 <div className='flex items-center gap-2 p-2 border-b'>
                     <div>
-                        <img src="https://media.licdn.com/dms/image/C5603AQHtyb_sj3wslA/profile-displayphoto-shrink_800_800/0/1663162296906?e=1677110400&v=beta&t=bcuOvt-ePwvXWj7C6PPhDRCdjuVA7qwpDXABJuCoIhc" alt="" className="w-16 h-16 mx-auto rounded" />
+                        <img src={user?.photoURL || avatar} alt="Profile pic" className="w-16 h-16 mx-auto rounded" />
                     </div>
                     <div>
-                        <p className='font-medium'>Deborah Cox</p>
-                        <p>Webdeveloper</p>
+                        <p className='font-medium'>{user?.displayName}</p>
+                        <p>Admin</p>
                     </div>
                 </div>
                 <div className='p-4 border-b'>
@@ -47,20 +51,6 @@ const Accounts = () => {
                 <div className='bg-white rounded shadow p-5 mb-5'>
                     <p className='text-primary text-sm mb-4'>GENERAL SETTINGS</p>
                     <form className="flex flex-col gap-4">
-                        <div className='grid grid-cols-2 gap-2'>
-                            <TextInput
-                                type="text"
-                                placeholder="First Name"
-                                required={true}
-                                sizing="sm"
-                            />
-                            <TextInput
-                                type="text"
-                                placeholder="Last Name"
-                                required={true}
-                                sizing="sm"
-                            />
-                        </div>
                         <div className='grid grid-cols-3 gap-2'>
                             <Select
                                 required={true}
@@ -141,7 +131,7 @@ const Accounts = () => {
                             <TextInput
                                 type="text"
                                 required={true}
-                                defaultValue="Maruf"
+                                defaultValue={user?.displayName}
                                 sizing="sm"
                             />
                             <TextInput
@@ -149,7 +139,7 @@ const Accounts = () => {
                                 placeholder="Email"
                                 required={true}
                                 sizing="sm"
-                                defaultValue="maruf@gamil.com"
+                                defaultValue={user?.email}
                                 disabled
                                 className="bg-gray-200 rounded"
                             />
