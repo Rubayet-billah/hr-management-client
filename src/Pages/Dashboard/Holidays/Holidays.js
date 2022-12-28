@@ -20,7 +20,7 @@ const Holidays = () => {
   return (
     <section className="bg-white p-8 rounded-lg">
       <Calender />
-      <div className="w-2/6 lg:flex md:flex  gap-2 mb-8 hidden mt-10">
+      {/* <div className="w-2/6 lg:flex md:flex  gap-2 mb-8 hidden mt-10">
         <TextInput
           className="w-full"
           type="search"
@@ -43,7 +43,7 @@ const Holidays = () => {
         {holidayList.map((holidays) => (
           <HolidayRows key={holidays.id} holidays={holidays}></HolidayRows>
         ))}
-      </Table>
+      </Table> */}
     </section>
   );
 };

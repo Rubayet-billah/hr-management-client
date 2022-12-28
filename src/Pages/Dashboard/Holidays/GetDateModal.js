@@ -17,8 +17,11 @@ const GetDateModal = ({ viewModalVisibility, setViewModalVisibility, eventDate, 
         })
             .then(res => res.json())
             .then(data => {
-                setViewModalVisibility(false);
-                refetch();
+                if (data.insertedId) {
+                    setViewModalVisibility(false);
+                    e.target.reset();
+                    refetch();
+                }
             });
     }
 

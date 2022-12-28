@@ -5,6 +5,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from '@fullcalendar/interaction';
 import GetDateModal from "./GetDateModal";
 import { useQuery } from '@tanstack/react-query';
+import DeleteModal from "../../../components/Modals/DeleteModal";
 
 // import "@fullcalendar/core/main.css";
 // import "@fullcalendar/daygrid/main.css";
@@ -17,7 +18,9 @@ export default function Calender() {
     })
 
     const [viewModalVisibility, setViewModalVisibility] = useState(false);
+    const [deleteModalVisibility, setDeleteModalVisibility] = useState(false);
     const [eventDate, setEventDate] = useState(false);
+    const [deleteEvent, setDeleteEvent] = useState(null);
 
     const handleDayClick = (info) => {
         setViewModalVisibility(true);
@@ -25,7 +28,24 @@ export default function Calender() {
     }
 
     const handleEventClick = (eventDate) => {
-        console.log(eventDate);
+        setDeleteModalVisibility(true);
+        setDeleteEvent({
+            _id: eventDate.event?._def?.extendedProps?._id,
+            title: eventDate.event?._def.title
+        })
+    }
+
+    const handleDelete = () => {
+        fetch(`http://localhost:5000/events/${deleteEvent?._id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    setDeleteModalVisibility(false);
+                    refetch();
+                }
+            });
     }
 
     return (
@@ -44,6 +64,13 @@ export default function Calender() {
                 setViewModalVisibility={setViewModalVisibility}
                 eventDate={eventDate}
                 refetch={refetch}
+            />
+
+            <DeleteModal
+                setDeleteModalVisibility={setDeleteModalVisibility}
+                deleteModalVisibility={deleteModalVisibility}
+                handleDelete={handleDelete}
+                deleteItemName={deleteEvent?.title}
             />
         </div>
     );
