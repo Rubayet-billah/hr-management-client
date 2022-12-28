@@ -23,7 +23,7 @@ const Employees = () => {
   const [deleteEmployee, setDeleteEmployee] = useState([]);
   const [updateEmployee, setUpdateEmployee] = useState([]);
 
-  const [employeesData, setEmployeesData] = useState({});
+  const [employeesData, setEmployeesData] = useState([]);
 
   const { data: employees = [], refetch } = useQuery({
     queryKey: [],
