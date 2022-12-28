@@ -1,15 +1,16 @@
 import DevsCard from './DevsCard';
 
-import badsha from '../../../assets/devs/Md.Badsha fahadh.jpg';
 import maruf from '../../../assets/devs/Md-Maruf-Hossain.jpg';
+import badsha from '../../../assets/devs/Md.Badsha fahadh.jpg';
+import rubayet from '../../../assets/devs/rubayet_billah.jpg';
+import tarek from '../../../assets/devs/tarekul_islam.jpg';
 
 const devs = [
   {
     id: 1,
     name: 'Tarekul Islam',
-    position: 'Web Developer',
-    image:
-      'https://images.unsplash.com/photo-1592790807458-d7980c141d90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cG90cmFpdHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60',
+    position: 'Full Stack Developer',
+    image: tarek,
     githubLink: '/',
     linkedInLink: '/',
     skills: ['html, css, javascript, react, node, mongoDB'],
@@ -18,8 +19,7 @@ const devs = [
     id: 2,
     name: 'Rubayet Billah',
     position: 'Tech Lead',
-    image:
-      'https://images.unsplash.com/photo-1592790807458-d7980c141d90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cG90cmFpdHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60',
+    image: rubayet,
     githubLink: '/',
     linkedInLink: '/',
     skills: ['html, css, javascript, react, node, mongoDB'],
