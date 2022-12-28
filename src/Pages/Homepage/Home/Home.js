@@ -1,4 +1,5 @@
 import React from 'react';
+import Contact from '../Components/Contact';
 import DevsTeam from '../Components/DevsTeam';
 import Features from '../Components/Features';
 import Hero from '../Components/Hero';
@@ -15,8 +16,9 @@ const Home = () => {
       <HomeAccordion />
       <Testimonial />
       <Pricing />
-      <DevsTeam />
       <Newsletter />
+      <DevsTeam />
+      <Contact />
     </main>
   );
 };
