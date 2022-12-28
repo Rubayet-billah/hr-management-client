@@ -19,8 +19,7 @@ const Hero = () => {
         <div className='hidden lg:mt-0 lg:col-span-4 lg:flex'>
           <Swiper
             autoplay={{
-              delay: 1500,
-              disableOnInteraction: false,
+              delay: 2500,
             }}
             modules={[Autoplay]}
           >

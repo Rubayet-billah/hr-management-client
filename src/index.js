@@ -7,6 +7,7 @@ import UtilsProvider from './contexts/UtilsProvider';
 import './index.css';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById('root'));
