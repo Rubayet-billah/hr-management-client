@@ -14,11 +14,8 @@ import {
   AreaChart,
   Bar,
   CartesianGrid,
-  Cell,
   ComposedChart,
   Line,
-  Pie,
-  PieChart,
   PolarAngleAxis,
   PolarGrid,
   PolarRadiusAxis,
@@ -36,37 +33,37 @@ import Departments from './Statistics/Departments';
 
 const data = [
   {
-    name: 'Page A',
+    name: 'July',
     uv: 590,
     pv: 800,
     amt: 1400,
   },
   {
-    name: 'Page B',
+    name: 'Aug',
     uv: 868,
     pv: 967,
     amt: 1506,
   },
   {
-    name: 'Page C',
+    name: 'Sept',
     uv: 1397,
     pv: 1098,
     amt: 989,
   },
   {
-    name: 'Page D',
+    name: 'Oct',
     uv: 1480,
     pv: 1200,
     amt: 1228,
   },
   {
-    name: 'Page E',
+    name: 'Nov',
     uv: 1520,
     pv: 1108,
     amt: 1100,
   },
   {
-    name: 'Page F',
+    name: 'Dec',
     uv: 1400,
     pv: 680,
     amt: 1700,
@@ -222,9 +219,9 @@ const Dashboard = () => {
             </RadarChart>
           </ResponsiveContainer>
           <h2 className='text-3xl mt-3'>
-            124,301 <span className='text-sm'>+3.7%</span>
+            124,301 <span className='text-sm'>+8.6%</span>
           </h2>
-          <p className='text-xs'>Lorem Ipsum is simply dummy text</p>
+          <p className='text-xs'>Employee satisfaction is the key to growth.</p>
           <p className='text-xs mt-2 text-red-400'>Read more</p>
         </div>
         <div className='lg:col-span-4 bg-white rounded-lg p-5 shadow'>
