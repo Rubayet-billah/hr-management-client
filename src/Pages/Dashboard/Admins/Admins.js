@@ -31,7 +31,6 @@ const Admins = () => {
         })
             .then((res) => res.json())
             .then(data => {
-                console.log(data);
                 if (data.deletedCount > 0) {
                     setDeleteModalVisibility(false);
                     toast.success(`${deleteAdmin.firstName} deleted`);

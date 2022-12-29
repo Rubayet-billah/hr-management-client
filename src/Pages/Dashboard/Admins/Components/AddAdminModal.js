@@ -14,7 +14,6 @@ const AddAdminModal = ({ addAdminModalVisibility, setAddAdminModalVisibility, re
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         setError(null);
-        console.log(data);
         const { firstName, lastName, email, phone, password, repeatPassword } = data;
         if (password !== repeatPassword) {
             setError("Password didn't match");
@@ -24,7 +23,6 @@ const AddAdminModal = ({ addAdminModalVisibility, setAddAdminModalVisibility, re
             .then(result => {
                 updateSecondaryAuth({ displayName: firstName + " " + lastName })
                     .then(() => {
-                        console.log(result.user);
                         secondaryAuthSignOut();
                         setAddAdminModalVisibility(false);
                         setLoading(false);
@@ -40,7 +38,6 @@ const AddAdminModal = ({ addAdminModalVisibility, setAddAdminModalVisibility, re
                         })
                             .then(res => res.json())
                             .then(data => {
-                                console.log(data);
                                 if (data.insertedId) {
                                     refetch();
                                 }

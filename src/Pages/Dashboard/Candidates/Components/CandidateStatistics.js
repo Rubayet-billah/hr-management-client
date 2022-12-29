@@ -8,8 +8,7 @@ const CandidateStatistics = ({
   setShowShortlistedCandidates,
   refetch,
 }) => {
-  console.log(candidates, 'juel hossain');
-  console.log(shortlistedCandidates, 'jhankar vai');
+
   return (
     <div>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-8'>
@@ -18,9 +17,8 @@ const CandidateStatistics = ({
             setShowShortlistedCandidates(false);
             refetch();
           }}
-          className={`${
-            showShortlistedCandidate ? '' : 'border-blue-600 border-b-4 '
-          }bg-white hover:bg-gray-100 py-6 px-10 rounded-lg flex items-center justify-between cursor-pointer`}
+          className={`${showShortlistedCandidate ? '' : 'border-blue-600 border-b-4 '
+            }bg-white hover:bg-gray-100 py-6 px-10 rounded-lg flex items-center justify-between cursor-pointer`}
         >
           <div>
             <p className='text-gray-500'>Total Candidates</p>
@@ -32,9 +30,8 @@ const CandidateStatistics = ({
           onClick={() => {
             setShowShortlistedCandidates(true);
           }}
-          className={`${
-            !showShortlistedCandidate ? '' : 'border-blue-600 border-b-4 '
-          }bg-white hover:bg-gray-100 py-6 px-10 rounded-lg flex items-center justify-between cursor-pointer`}
+          className={`${!showShortlistedCandidate ? '' : 'border-blue-600 border-b-4 '
+            }bg-white hover:bg-gray-100 py-6 px-10 rounded-lg flex items-center justify-between cursor-pointer`}
         >
           <div>
             <p className='text-gray-500'>Shortlisted Candidate</p>

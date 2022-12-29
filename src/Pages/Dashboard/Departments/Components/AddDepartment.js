@@ -19,9 +19,8 @@ const AddDepartment = ({ addUserModalVisibility, setAddUserModalVisibility }) =>
         })
             .then((res) => res.json())
             .then((data) => {
-                if (data.acknowledged) {
+                if (data.insertedId) {
                     toast.success('Department Added Successfully ')
-                    console.log('Success:', data);
                 }
 
             })
