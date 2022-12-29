@@ -48,7 +48,12 @@ const Candidates = () => {
         })
             .then(res => res.json())
             .then(data => {
-                toast.success(deleteCandidate.name)
+                if (data.deletedCount > 0) {
+                    toast.success(`${deleteCandidate.name} deleted successfully.`)
+                    setCandidateDetailsModalVisibility(false)
+                    setDeleteModalVisibility(false)
+                    refetch();
+                }
             })
     }
 
@@ -82,7 +87,7 @@ const Candidates = () => {
                         Address
                     </Table.HeadCell>
                     <Table.HeadCell>
-                        Phone
+                        Skills
                     </Table.HeadCell>
                     <Table.HeadCell>
                         Experience (y)
@@ -103,7 +108,10 @@ const Candidates = () => {
 
 
                 </Table.Body>
-            </Table> : <ShortlistedCandidates shortlistedCandidates={shortlistedCandidates} />
+            </Table> : <ShortlistedCandidates
+                shortlistedCandidates={shortlistedCandidates}
+                shorlistedRefetch={shorlistedRefetch}
+            />
             }
 
             <DeleteModal

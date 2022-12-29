@@ -7,7 +7,7 @@ const CandidateRow = ({
     setCandidateDetailsModalVisibility,
 }) => {
 
-
+    console.log(candidate.skill)
     return (
         <Table.Row
             onClick={() => {
@@ -27,7 +27,9 @@ const CandidateRow = ({
                 {candidate.address}
             </Table.Cell>
             <Table.Cell>
-                {candidate.phone}
+                <div className='flex flex-wrap w-fit'>
+                    {candidate?.skills?.slice(0, 3)?.map((skill, idx) => <span key={idx} className='p-1 bg-blue-400 text-white rounded-sm mr-1'>{skill} </span>)}
+                </div>
             </Table.Cell>
             <Table.Cell>
                 {candidate.experience}
