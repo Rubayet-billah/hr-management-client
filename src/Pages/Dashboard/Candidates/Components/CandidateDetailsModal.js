@@ -4,6 +4,7 @@ import { toast } from 'react-hot-toast';
 import { AiFillTool } from 'react-icons/ai';
 import { IoLocation } from 'react-icons/io5';
 import { MdEmail, MdPhone } from 'react-icons/md';
+import defaultImg from '../../../../assets/icons/userImg.jpg'
 
 
 const CandidateDetailsModal = ({
@@ -17,7 +18,6 @@ const CandidateDetailsModal = ({
 }) => {
     const { name, image, phone, email, designation, address, skills, coverLetter, experience, resumeUrl } = viewCandidateDetails;
 
-    const defaultImg = "https://media.istockphoto.com/id/476085198/photo/businessman-silhouette-as-avatar-or-default-profile-picture.jpg?s=170667a&w=0&k=20&c=pbUvoKhdnGQ8IdDFqHYRm-m5zf51Ta6QUHERf9EU5FU=";
 
     const handleShortList = (shortListedCandidate) => {
         fetch('http://localhost:5000/shortlistedCandidate', {

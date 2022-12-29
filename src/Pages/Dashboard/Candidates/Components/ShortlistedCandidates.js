@@ -38,9 +38,6 @@ const ShortlistedCandidates = ({ shortlistedCandidates, shorlistedRefetch }) => 
                         Address
                     </Table.HeadCell>
                     <Table.HeadCell>
-                        Phone
-                    </Table.HeadCell>
-                    <Table.HeadCell>
                         Experience (y)
                     </Table.HeadCell>
                     <Table.HeadCell>

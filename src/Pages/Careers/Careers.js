@@ -69,6 +69,30 @@ const jobs = [
             This is a remote role open to US candidates, offering up to $170k + equity. Apply today to find out more!
         `,
   },
+  {
+    _id: '2199',
+    title: 'MERN Developer',
+    salary: '12,000-25,000 /month',
+    Description: `
+            MERN Developer (Web3) – Fully Remote – Perm
+            <br />
+            <br />
+            Plexus have recently partnered with an NFT analytics firm that are revolutionizing NFT analysis. Their on-chain products are providing much-needed market insights for NFT holders.
+            <br />
+            <br />
+            They’re looking for a MERN Developer to join the team:
+            <br />
+            – 3+ years’ frontend experience<br />
+            – Start-up experience<br />
+            – Experience building out react applications<br />
+            – React, Next, Redux, Typescript, Styled Components<br />
+            – Ethers.js/web3js experience<br />
+            – Experience building scalable applications<br />
+            – This role is open to web3-native candidates or web2 engineers with a passion for the space.<br />
+            <br />
+            This is a remote role open to US candidates, offering up to $170k + equity. Apply today to find out more!
+        `,
+  },
 ];
 
 const Careers = () => {
