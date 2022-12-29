@@ -9,13 +9,13 @@ const DashboardNavbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const { dashboardTitle } = useUtils();
     return (
-        <div className='dashboard-nav text-center md:border-b border-white py-4'>
+        <div className='dashboard-nav text-center border-b border-white py-4'>
             <Navbar
                 fluid={true}
                 className="bg-inherit"
             >
                 <Navbar.Brand>
-                    <span className="self-center whitespace-nowrap text-primary dark:text-white">
+                    <span className="self-center whitespace-nowrap text-primary dark:text-white font-medium">
                         {dashboardTitle || "Dashboard"}
                     </span>
                 </Navbar.Brand>

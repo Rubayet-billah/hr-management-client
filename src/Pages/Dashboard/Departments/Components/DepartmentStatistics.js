@@ -26,7 +26,7 @@ const DepartmentStatistics = ({ departments }) => {
             <div className='bg-white py-6 px-10 rounded-lg flex items-center justify-between'>
                 <div>
                     <p className='text-gray-500'>Female</p>
-                    <p className='text-3xl font-medium text-gray-700'>80</p>
+                    <p className='text-3xl font-medium text-gray-700'>123</p>
                 </div>
                 <BiBarChart className='text-5xl text-gray-700' />
             </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts';
 import Btn from '../../../components/Btn';
 
@@ -11,6 +12,8 @@ const Departments = () => {
     }, []);
 
     const COLORS = ['#0088FE', '#F87171', '#FFBB28', '#FF8042', '#00C49F'];
+
+    const totalEmployees = departments.reduce((prev, current) => prev + current.totalEmployee, 0);
 
     return (
         <>
@@ -26,12 +29,12 @@ const Departments = () => {
             </ResponsiveContainer>
             <div>
                 <h2 className='text-3xl'>
-                    {departments.reduce((prev, current) => prev + current.totalEmployee, 0)} <span className='text-sm'>+3.7%</span>
+                    {totalEmployees} <span className='text-sm'>+3.7%</span>
                 </h2>
-                <p className='text-xs'>Lorem Ipsum is simply dummy text</p>
-                <p className='text-xs text-red-400'>Read more</p>
+                <p className='text-xs'>Total departments <span className="font-medium">{departments.length}</span> & employees <span className="font-medium">{totalEmployees}</span>.</p>
+                <Link to="/dashboard/departments" className='text-xs text-red-400'>View All</Link>
             </div>
-            <Btn color='blue'>View More</Btn>
+            <Link to="/dashboard/departments"><Btn color='blue'>View More</Btn></Link>
         </>
     );
 };
