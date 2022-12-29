@@ -17,7 +17,7 @@ const Chart = ({ employees }) => {
         return {
             name: employee?.fullName?.split(" ")[0],
             salary: employee?.salary,
-            deduction: Math.ceil((employee?.salary / 30) * employee?.absent)
+            deduction: -(Math.ceil((employee?.salary / 30) * employee?.absent))
         }
     })
 
