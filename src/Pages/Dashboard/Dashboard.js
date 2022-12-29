@@ -14,11 +14,8 @@ import {
   AreaChart,
   Bar,
   CartesianGrid,
-  Cell,
   ComposedChart,
   Line,
-  Pie,
-  PieChart,
   PolarAngleAxis,
   PolarGrid,
   PolarRadiusAxis,
@@ -32,53 +29,47 @@ import {
 import Btn from '../../components/Btn';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { useUtils } from '../../contexts/UtilsProvider';
+import Departments from './Statistics/Departments';
 
 const data = [
   {
-    name: 'Page A',
+    name: 'July',
     uv: 590,
     pv: 800,
     amt: 1400,
   },
   {
-    name: 'Page B',
+    name: 'Aug',
     uv: 868,
     pv: 967,
     amt: 1506,
   },
   {
-    name: 'Page C',
+    name: 'Sept',
     uv: 1397,
     pv: 1098,
     amt: 989,
   },
   {
-    name: 'Page D',
+    name: 'Oct',
     uv: 1480,
     pv: 1200,
     amt: 1228,
   },
   {
-    name: 'Page E',
+    name: 'Nov',
     uv: 1520,
     pv: 1108,
     amt: 1100,
   },
   {
-    name: 'Page F',
+    name: 'Dec',
     uv: 1400,
     pv: 680,
     amt: 1700,
   },
 ];
 
-const data2 = [
-  { name: 'Group A', value: 400 },
-  { name: 'Group B', value: 300 },
-  { name: 'Group C', value: 300 },
-  { name: 'Group D', value: 200 },
-];
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 const cardinal = curveCardinal.tension(0.2);
 
 const Dashboard = () => {
@@ -160,24 +151,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div className='col-span-12 sm:col-span-6 md:col-span-5 lg:col-span-3 bg-white rounded-lg p-5 text-center flex flex-col justify-between shadow'>
-          <h3 className='font-medium text-left'>REVENUE</h3>
-          <ResponsiveContainer width='100%' height={200}>
-            <PieChart>
-              <Pie data={data2} innerRadius={60} outerRadius={80} fill='#8884d8' paddingAngle={5} dataKey='value'>
-                {data2.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                ))}
-              </Pie>
-            </PieChart>
-          </ResponsiveContainer>
-          <div>
-            <h2 className='text-3xl'>
-              124,301 <span className='text-sm'>+3.7%</span>
-            </h2>
-            <p className='text-xs'>Lorem Ipsum is simply dummy text</p>
-            <p className='text-xs text-red-400'>Read more</p>
-          </div>
-          <Btn color='blue'>View More</Btn>
+          <Departments />
         </div>
         <div className='col-span-12 sm:col-span-6 lg:col-span-3 bg-white rounded-lg p-5 flex flex-col justify-between shadow'>
           <h3 className='font-medium text-left mb-4'>MY BALANCE</h3>
@@ -245,9 +219,9 @@ const Dashboard = () => {
             </RadarChart>
           </ResponsiveContainer>
           <h2 className='text-3xl mt-3'>
-            124,301 <span className='text-sm'>+3.7%</span>
+            124,301 <span className='text-sm'>+8.6%</span>
           </h2>
-          <p className='text-xs'>Lorem Ipsum is simply dummy text</p>
+          <p className='text-xs'>Employee satisfaction is the key to growth.</p>
           <p className='text-xs mt-2 text-red-400'>Read more</p>
         </div>
         <div className='lg:col-span-4 bg-white rounded-lg p-5 shadow'>

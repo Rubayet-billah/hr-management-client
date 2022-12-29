@@ -9,36 +9,24 @@ const NAvbar = () => {
     <div className='bg-white border-b'>
       <div className='container mx-auto px-2'>
         <Navbar className='bg-transparent !px-0 !py-5' fluid={true} rounded={true}>
-          {/* <Navbar.Brand> */}
           <Link to="/">
             <span className='self-center whitespace-nowrap text-2xl font-bold dark:text-white'>
               <span className='bg-blue-500 text-white px-2 py-1 rounded'>Staff</span> Deck
             </span>
           </Link>
-          {/* </Navbar.Brand> */}
           <Navbar.Toggle />
-          <Navbar.Collapse className='!items-center'>
-
-            <Link to='/'>Home</Link>
-
+          <Navbar.Collapse className='flex flex-col bg-lime-100 md:bg-inherit mt-5 md:mt-0 pb-5 md:pb-0 justify-center text-center !items-center'>
+            <Link className='hover:text-blue-500' to='/'>Home</Link>
             {
               user?.uid &&
-              <Link to='/dashboard'>Dashboard</Link>
-
+              <Link className='hover:text-blue-500 mt-4 md:mt-0' to='/dashboard'>Dashboard</Link>
             }
-
-            <Link to='/careers'>Careers</Link>
-
-
-            <Link to='/'>About</Link>
-
-
-            <Link to='/'>Services</Link>
-
+            <Link className='hover:text-blue-500 mt-4 md:mt-0' to='/careers'>Careers</Link>
+            <Link className='hover:text-blue-500 mt-4 md:mt-0' to='/'>About</Link>
+            <Link className='hover:text-blue-500 mt-4 md:mt-0' to='/'>Services</Link>
             {
               !user &&
-              <Link to='/login'>Login</Link>
-
+              <Link className='hover:text-blue-500 mt-4 md:mt-0' to='/login'>Login</Link>
             }
           </Navbar.Collapse>
         </Navbar>

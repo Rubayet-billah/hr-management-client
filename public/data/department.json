@@ -3,30 +3,30 @@
         "fname": "Rubayet",
         "lname": "Billah",
         "dept": "Web development",
-        "totalEmployee": 40
+        "totalEmployee": 54
     },
     {
         "fname": "MD. Nayeem",
         "lname": "Islam",
         "dept": "Management",
-        "totalEmployee": 60
+        "totalEmployee": 45
     },
     {
         "fname": "Fahad",
         "lname": "Mridha",
         "dept": "Backend Development",
-        "totalEmployee": 50
+        "totalEmployee": 36
     },
     {
         "fname": "Maruf",
         "lname": "",
         "dept": "Hiring Management",
-        "totalEmployee": 30
+        "totalEmployee": 28
     },
     {
         "fname": "Tarekul",
         "lname": "Islam",
         "dept": "FontEnd Development",
-        "totalEmployee": 20
+        "totalEmployee": 80
     }
 ]
