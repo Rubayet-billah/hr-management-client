@@ -10,6 +10,7 @@ const Career = () => {
   const animatedComponents = makeAnimated();
   const skills = [
     { value: 'React', label: 'React' },
+    { value: 'Redux', label: 'Redux' },
     { value: 'Node', label: 'Node' },
     { value: 'Express', label: 'Express' },
     { value: 'MongoDB', label: 'MongoDB' },
