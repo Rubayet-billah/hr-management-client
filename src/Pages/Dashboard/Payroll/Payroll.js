@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { useUtils } from '../../../contexts/UtilsProvider';
+import Chart from './Components/Chart';
 import EmployeeRow from './Components/EmployeeRow';
 
 const Payroll = () => {
@@ -20,6 +21,9 @@ const Payroll = () => {
   return (
     <>
       <div className='min-h-screen'>
+        <div className='h-80 bg-white mb-10'>
+          <Chart employees={employees} />
+        </div>
         <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
           <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
             <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
@@ -30,7 +34,6 @@ const Payroll = () => {
                 <th scope='col' className='py-3 px-6'>
                   Position
                 </th>
-
                 <th scope='col' className='py-3 px-6'>
                   No. of Absent
                 </th>

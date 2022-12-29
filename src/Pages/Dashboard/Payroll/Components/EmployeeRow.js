@@ -4,7 +4,6 @@ import { BiMinusCircle, BiPlusCircle } from 'react-icons/bi';
 import Pdf from '../../../../components/PdfFile/Pdf';
 
 const EmployeeRow = ({ employee, refetch }) => {
-  console.log(employee);
   const { fullName, role, department, email, salary, absent } = employee;
   const [isLoading, setIsLoading] = useState(false);
 
