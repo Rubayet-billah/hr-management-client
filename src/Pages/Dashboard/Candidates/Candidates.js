@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { Table } from 'flowbite-react';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { toast, Toaster } from 'react-hot-toast';
 import DeleteModal from '../../../components/Modals/DeleteModal';
 import Spinner from '../../../components/Spinner';
@@ -56,8 +56,6 @@ const Candidates = () => {
                 }
             })
     }
-
-
 
     if (candidatesLoading || shortlistedLoading) {
         return <Spinner />
