@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
   role: {
     fontSize: 14,
     marginBottom: 4,
+    textTransform: 'capitalize',
   },
   month: {
     fontSize: 14,
@@ -80,16 +81,33 @@ const styles = StyleSheet.create({
   },
 });
 
-const Pdf = ({ fullName, role, department, salary, absent, deduction, netPayable }) => {
+const monthNames = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
+const Pdf = ({ fullName, role, salary, absent, deduction, netPayable }) => {
   return (
     <Document>
       <Page size='A4' style={styles.page}>
         <View style={styles.section}>
           <Text style={styles.company}>STAFF DECK</Text>
-          <Text style={styles.tagline}>YOUR TAGLINE HERE</Text>
+          <Text style={styles.tagline}>Ultimate HR Management Solution.</Text>
           <Text style={styles.fullName}>Employee Name: {fullName}</Text>
           <Text style={styles.role}>Designation: {role}</Text>
-          <Text style={styles.month}>Month: {'December'}</Text>
+          <Text style={styles.month}>
+            Salary Month: {monthNames[new Date().getMonth()]}/{new Date().getFullYear()}
+          </Text>
 
           <Text style={styles.salaryInfoHeading}>Salary Info</Text>
           <View style={styles.flexBetween}>
@@ -114,7 +132,7 @@ const Pdf = ({ fullName, role, department, salary, absent, deduction, netPayable
             </View>
             <View></View>
             <View style={styles.signature}>
-              <Text style={styles.signatureName}>Finance Admin</Text>
+              <Text style={styles.signatureName}>Accountant</Text>
             </View>
           </View>
         </View>
