@@ -270,7 +270,7 @@ const Dashboard = () => {
             </tr>
           </thead>
           <tbody>
-            {employees.map((employee) => (
+            {employees.slice(0, 5).map((employee) => (
               <tr
                 key={employee._id}
                 className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'

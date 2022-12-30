@@ -41,7 +41,7 @@ const UpdateEmployeeModal = ({ updateModalVisibility, setUpdateModalVisibility, 
       <Modal.Header />
       <Modal.Body>
         <div className='px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8'>
-          <h3 className='text-xl mb-4 font-medium text-gray-900 dark:text-white'>Add New Employee</h3>
+          <h3 className='text-xl mb-4 font-medium text-gray-900 dark:text-white'>Update Employee Info</h3>
           <form onSubmit={handleSubmit(handleEmployeeUpdate)}>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
               <div>
@@ -93,9 +93,9 @@ const UpdateEmployeeModal = ({ updateModalVisibility, setUpdateModalVisibility, 
                   <Label htmlFor='department' value='Department' />
                 </div>
                 <Select {...register('department')} id='department' required={true}>
-                  <option value='Web Development'>Web Development</option>
-                  <option value='Creativity And Design'>Creativity And Design</option>
-                  <option value='Management'>Management</option>
+                  <option value='IT'>IT</option>
+                  <option value='Accounts'>Accounts</option>
+                  <option value='Human Resource'>Human Resource</option>
                   <option value='Marketing'>Marketing</option>
                   <option value='Others'>Others</option>
                 </Select>
@@ -112,6 +112,15 @@ const UpdateEmployeeModal = ({ updateModalVisibility, setUpdateModalVisibility, 
                   <option value='Full Stack Developer'>Full Stack Developer</option>
                   <option value='App Developer'>App Developer</option>
                   <option value='SQA Engineer'>SQA Engineer</option>
+                  <option value='Network Engineer'>Network Engineer</option>
+                  <option value='HR Manager'>HR Manager</option>
+                  <option value='Executive HR'>Executive HR</option>
+                  <option value='Finance Officer'>Finance Officer</option>
+                  <option value='Cashier'>Cashier</option>
+                  <option value='Marketing Officer'>Marketing Officer</option>
+                  <option value='Marketing Manager'>Marketing Manager</option>
+                  <option value='Junior Officer'>Junior Officer</option>
+                  <option value='Executive Officer'>Executive Officer</option>
                 </Select>
               </div>
 

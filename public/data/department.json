@@ -1,32 +1,32 @@
 [
-    {
-        "fname": "Rubayet",
-        "lname": "Billah",
-        "dept": "Web development",
-        "totalEmployee": 54
-    },
-    {
-        "fname": "MD. Nayeem",
-        "lname": "Islam",
-        "dept": "Management",
-        "totalEmployee": 45
-    },
-    {
-        "fname": "Fahad",
-        "lname": "Mridha",
-        "dept": "Backend Development",
-        "totalEmployee": 36
-    },
-    {
-        "fname": "Maruf",
-        "lname": "",
-        "dept": "Hiring Management",
-        "totalEmployee": 28
-    },
-    {
-        "fname": "Tarekul",
-        "lname": "Islam",
-        "dept": "FontEnd Development",
-        "totalEmployee": 80
-    }
+  {
+    "fname": "Rubayet",
+    "lname": "Billah",
+    "dept": "IT",
+    "totalEmployee": 15
+  },
+  {
+    "fname": "Naem",
+    "lname": "Hossain",
+    "dept": "Accounts",
+    "totalEmployee": 5
+  },
+  {
+    "fname": "Fahad",
+    "lname": "Mridha",
+    "dept": "Backend Development",
+    "totalEmployee": 9
+  },
+  {
+    "fname": "Maruf",
+    "lname": "Hussain",
+    "dept": "Marketing",
+    "totalEmployee": 8
+  },
+  {
+    "fname": "Rajib",
+    "lname": "Das",
+    "dept": "Others",
+    "totalEmployee": 12
+  }
 ]

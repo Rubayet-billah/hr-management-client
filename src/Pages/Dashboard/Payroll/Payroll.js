@@ -40,7 +40,7 @@ const Payroll = () => {
                   Name
                 </th>
                 <th scope='col' className='py-3 px-6'>
-                  Position
+                  Designation
                 </th>
                 <th scope='col' className='py-3 px-6'>
                   No. of Absent
