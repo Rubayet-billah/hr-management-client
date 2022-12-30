@@ -7,7 +7,7 @@ import HolidayRows from "./HolidayRows";
 const Holidays = () => {
   const [holidayList, setHolidayLinst] = useState([]);
   useEffect(() => {
-    fetch("/data/holidays.json")
+    fetch("http://localhost:5000/holidays")
       .then((res) => res.json())
       .then((data) => setHolidayLinst(data));
   }, []);
