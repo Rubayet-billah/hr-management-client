@@ -5,7 +5,7 @@ const HolidayRows = ({ holidays }) => {
   return (
     <>
       <Table.Body className="divide-y">
-        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+        <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800 border border-collapse">
           <Table.Cell className="whitespace-nowrap  font-medium text-gray-900 dark:text-white">
             {holidays.day}
           </Table.Cell>

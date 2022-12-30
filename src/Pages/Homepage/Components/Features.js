@@ -12,22 +12,22 @@ const Features = () => {
       </div>
 
       <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 mt-12'>
-        <div className='text-center bg-gray-100 px-6 py-9 shadow-lg rounded-lg'>
+        <div className='text-center bg-gray-100 px-6 py-9 shadow-lg rounded-lg hover:-translate-y-3 duration-300'>
           <img className='h-32 mx-auto' src={automaticIcon} alt='icon' />
           <h4 className='font-bold mt-8'>Automatic Repetitive Routines</h4>
           <p className='text-gray-600 mt-1'>Reduce recruiter workload significantly.</p>
         </div>
-        <div className='text-center bg-gray-100 px-6 py-9 shadow-lg rounded-lg'>
+        <div className='text-center bg-gray-100 px-6 py-9 shadow-lg rounded-lg hover:-translate-y-3 duration-300'>
           <img className='h-32 mx-auto' src={onboardIcon} alt='icon' />
           <h4 className='font-bold mt-8'>Onboard Faster</h4>
           <p className='text-gray-600 mt-1'>Cut down on new hire onboarding queries.</p>
         </div>
-        <div className='text-center bg-gray-100 px-6 py-9 shadow-lg rounded-lg'>
+        <div className='text-center bg-gray-100 px-6 py-9 shadow-lg rounded-lg hover:-translate-y-3 duration-300'>
           <img className='h-32 mx-auto' src={organizeIcon} alt='icon' />
           <h4 className='font-bold mt-8'>Organize Data Better</h4>
           <p className='text-gray-600 mt-1'>Securely store all employee data and files.</p>
         </div>
-        <div className='text-center bg-gray-100 px-6 py-9 shadow-lg rounded-lg'>
+        <div className='text-center bg-gray-100 px-6 py-9 shadow-lg rounded-lg hover:-translate-y-3 duration-300'>
           <img className='h-32 mx-auto' src={calendarIcon} alt='icon' />
           <h4 className='font-bold mt-8'>Manage Time Off Easier</h4>
           <p className='text-gray-600 mt-1'>Track and report time-off and absence.</p>

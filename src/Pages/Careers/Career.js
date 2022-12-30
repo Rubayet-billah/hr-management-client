@@ -48,7 +48,7 @@ const Career = () => {
       .then((data) => {
         if (data.acknowledged) {
           toast.success('Apply successfully done');
-          navigate('/');
+          navigate('/careers');
         }
       })
       .catch((error) => {
