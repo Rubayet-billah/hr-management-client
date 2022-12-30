@@ -1,12 +1,14 @@
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import React, { useState } from 'react';
 import { BiMinusCircle, BiPlusCircle } from 'react-icons/bi';
+import { useDispatch } from 'react-redux';
 import Pdf from '../../../../components/PdfFile/Pdf';
+import { fetchEmployees } from '../../../../features/employees/employeesSlice';
 
-const EmployeeRow = ({ employee, refetch }) => {
-  console.log(employee);
+const EmployeeRow = ({ employee }) => {
   const { fullName, role, department, email, salary, absent } = employee;
   const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
 
   const handleIncrementAbsent = (employee) => {
     setIsLoading(true);
@@ -16,7 +18,7 @@ const EmployeeRow = ({ employee, refetch }) => {
       .then((result) => {
         setIsLoading(false);
         if (result.modifiedCount) {
-          refetch();
+          dispatch(fetchEmployees());
         }
       });
   };
@@ -29,7 +31,7 @@ const EmployeeRow = ({ employee, refetch }) => {
       .then((result) => {
         setIsLoading(false);
         if (result.modifiedCount) {
-          refetch();
+          dispatch(fetchEmployees());
         }
       });
   };

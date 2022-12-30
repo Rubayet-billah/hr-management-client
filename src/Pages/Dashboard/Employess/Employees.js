@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import EmployeeRow from './Components/EmployeeRow';
-import EmployeeStatistics from './Components/EmployeeStatistics';
-
-import { AiOutlinePlus } from 'react-icons/ai';
-
-import { useQuery } from '@tanstack/react-query';
 import { Button, TextInput } from 'flowbite-react';
+import React, { useEffect, useState } from 'react';
+import { AiOutlinePlus } from 'react-icons/ai';
+import { useDispatch, useSelector } from 'react-redux';
 import { useUtils } from '../../../contexts/UtilsProvider';
+import { fetchEmployees } from '../../../features/employees/employeesSlice';
 import AddEmployeeModal from './Components/AddEmployeeModal';
 import DeleteEmployeeModal from './Components/DeleteEmployeeModal';
+import EmployeeRow from './Components/EmployeeRow';
+import EmployeeStatistics from './Components/EmployeeStatistics';
 import UpdateEmployeeModal from './Components/UpdateEmployeeModal';
 import ViewEmployeeModal from './Components/ViewEmployeeModal';
 
@@ -25,15 +24,16 @@ const Employees = () => {
 
   const [employeesData, setEmployeesData] = useState([]);
 
-  const { data: employees = [], refetch } = useQuery({
-    queryKey: [],
-    queryFn: async () => {
-      const res = await fetch('http://localhost:5000/employees');
-      const data = await res.json();
-      setEmployeesData(data);
-      return data;
-    },
-  });
+  const { employees } = useSelector((state) => state.employees);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchEmployees());
+  }, []);
+
+  useEffect(() => {
+    setEmployeesData(employees);
+  }, [employees]);
 
   const addHandler = () => {
     setAddUserModalVisibility(true);
@@ -123,7 +123,6 @@ const Employees = () => {
       </div>
 
       <AddEmployeeModal
-        refetch={refetch}
         addUserModalVisibility={addUserModalVisibility}
         setAddUserModalVisibility={setAddUserModalVisibility}
       />
@@ -135,7 +134,6 @@ const Employees = () => {
       />
 
       <DeleteEmployeeModal
-        refetch={refetch}
         deleteModalVisibility={deleteModalVisibility}
         setDeleteModalVisibility={setDeleteModalVisibility}
         deleteEmployee={deleteEmployee}
@@ -144,7 +142,6 @@ const Employees = () => {
         updateModalVisibility={updateModalVisibility}
         setUpdateModalVisibility={setUpdateModalVisibility}
         updateEmployee={updateEmployee}
-        refetch={refetch}
       />
     </>
   );

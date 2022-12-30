@@ -2,6 +2,8 @@ import DevsCard from './DevsCard';
 
 import maruf from '../../../assets/devs/Md-Maruf-Hossain.jpg';
 import badsha from '../../../assets/devs/Md.Badsha fahadh.jpg';
+import naem from '../../../assets/devs/naem.jpg';
+import rajib from '../../../assets/devs/rajib.jpeg';
 import rubayet from '../../../assets/devs/rubayet_billah.jpg';
 import tarek from '../../../assets/devs/tarekul_islam.jpg';
 
@@ -26,10 +28,9 @@ const devs = [
   },
   {
     id: 3,
-    name: 'Nayeem Islam',
-    position: 'Web Developer',
-    image:
-      'https://images.unsplash.com/photo-1592790807458-d7980c141d90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cG90cmFpdHxlbnwwfDJ8MHx8&auto=format&fit=crop&w=500&q=60',
+    name: 'Naem Hossain',
+    position: 'MERN Stack Developer',
+    image: naem,
     githubLink: '/',
     linkedInLink: '/',
     skills: ['html, css, javascript, react, node, mongoDB'],
@@ -37,7 +38,7 @@ const devs = [
   {
     id: 4,
     name: 'Md. Badsha Fahadh',
-    position: 'Web Developer',
+    position: 'Full Stack Developer',
     image: badsha,
     githubLink: '/',
     linkedInLink: '/',
@@ -46,7 +47,7 @@ const devs = [
   {
     id: 5,
     name: 'Md Maruf Hossain',
-    position: 'Full Stack Developer',
+    position: 'Software Engineer',
     image: maruf,
     githubLink: 'https://github.com/mickeymaruf',
     linkedInLink: 'https://www.linkedin.com/in/mickeymaruf/',
@@ -55,9 +56,8 @@ const devs = [
   {
     id: 6,
     name: 'Rajib Das',
-    position: 'Web Developer',
-    image:
-      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cG90cmFpdHxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60',
+    position: 'Back-End Developer',
+    image: rajib,
     githubLink: '/',
     linkedInLink: '/',
     skills: ['html, css, javascript, react, node, mongoDB'],

@@ -1,11 +1,15 @@
 import { Button, Modal } from 'flowbite-react';
 import { toast } from 'react-hot-toast';
 import { HiOutlineExclamationCircle } from 'react-icons/hi';
+import { useDispatch } from 'react-redux';
+import { fetchEmployees } from '../../../../features/employees/employeesSlice';
 
-const DeleteEmployeeModal = ({ setDeleteModalVisibility, deleteModalVisibility, deleteEmployee, refetch }) => {
+const DeleteEmployeeModal = ({ setDeleteModalVisibility, deleteModalVisibility, deleteEmployee }) => {
   const deleteModalClose = () => {
     setDeleteModalVisibility(false);
   };
+
+  const dispatch = useDispatch();
 
   const handleDelete = (employeeData) => {
     const id = employeeData._id;
@@ -14,7 +18,7 @@ const DeleteEmployeeModal = ({ setDeleteModalVisibility, deleteModalVisibility, 
       .then((result) => {
         if (result.acknowledged) {
           deleteModalClose();
-          refetch();
+          dispatch(fetchEmployees());
           toast.success('Employee Deleted!');
         }
       });

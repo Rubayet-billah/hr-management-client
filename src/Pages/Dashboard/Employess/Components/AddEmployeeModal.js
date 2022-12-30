@@ -1,8 +1,11 @@
 import { Button, Label, Modal, Select, TextInput } from 'flowbite-react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { fetchEmployees } from '../../../../features/employees/employeesSlice';
 
-const AddEmployeeModal = ({ addUserModalVisibility, setAddUserModalVisibility, refetch }) => {
+const AddEmployeeModal = ({ addUserModalVisibility, setAddUserModalVisibility }) => {
   const { register, handleSubmit } = useForm();
+  const dispatch = useDispatch();
 
   const addModalClose = () => {
     setAddUserModalVisibility(false);
@@ -19,7 +22,7 @@ const AddEmployeeModal = ({ addUserModalVisibility, setAddUserModalVisibility, r
       .then((result) => {
         if (result.acknowledged) {
           addModalClose();
-          refetch();
+          dispatch(fetchEmployees());
         }
       });
   };

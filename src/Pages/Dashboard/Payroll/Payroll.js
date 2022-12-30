@@ -1,17 +1,25 @@
-import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useUtils } from '../../../contexts/UtilsProvider';
+import { fetchEmployees } from '../../../features/employees/employeesSlice';
 import EmployeeRow from './Components/EmployeeRow';
 
 const Payroll = () => {
-  const { data: employees = [], refetch } = useQuery({
-    queryKey: [],
-    queryFn: async () => {
-      const res = await fetch('http://localhost:5000/employees');
-      const data = await res.json();
-      return data;
-    },
-  });
+  // const { data: employees = [], refetch } = useQuery({
+  //   queryKey: [],
+  //   queryFn: async () => {
+  //     const res = await fetch('http://localhost:5000/employees');
+  //     const data = await res.json();
+  //     return data;
+  //   },
+  // });
+
+  const { employees } = useSelector((state) => state.employees);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchEmployees());
+  }, []);
 
   // Change title
   const { setDashboardTitle } = useUtils();
@@ -50,7 +58,7 @@ const Payroll = () => {
             </thead>
             <tbody>
               {employees.map((employee) => (
-                <EmployeeRow key={employee._id} employee={employee} refetch={refetch} />
+                <EmployeeRow key={employee._id} employee={employee} />
               ))}
             </tbody>
           </table>
