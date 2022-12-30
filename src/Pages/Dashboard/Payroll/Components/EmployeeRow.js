@@ -1,12 +1,15 @@
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import React, { useState } from 'react';
 import { BiMinusCircle, BiPlusCircle } from 'react-icons/bi';
+import { useDispatch } from 'react-redux';
+import defaultImg from '../../../../assets/icons/userImg.jpg';
 import Pdf from '../../../../components/PdfFile/Pdf';
-import defaultImg from '../../../../assets/icons/userImg.jpg'
+import { fetchEmployees } from '../../../../features/employees/employeesSlice';
 
-const EmployeeRow = ({ employee, refetch }) => {
+const EmployeeRow = ({ employee }) => {
   const { fullName, role, department, email, salary, absent, image } = employee;
   const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
 
   const handleIncrementAbsent = (employee) => {
     setIsLoading(true);
@@ -16,7 +19,7 @@ const EmployeeRow = ({ employee, refetch }) => {
       .then((result) => {
         setIsLoading(false);
         if (result.modifiedCount) {
-          refetch();
+          dispatch(fetchEmployees());
         }
       });
   };
@@ -29,7 +32,7 @@ const EmployeeRow = ({ employee, refetch }) => {
       .then((result) => {
         setIsLoading(false);
         if (result.modifiedCount) {
-          refetch();
+          dispatch(fetchEmployees());
         }
       });
   };
@@ -38,7 +41,7 @@ const EmployeeRow = ({ employee, refetch }) => {
     <tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'>
       <th scope='row' className='flex items-center py-4 px-6 text-gray-900 whitespace-nowrap dark:text-white'>
         <div className='flex items-center'>
-          <img className="w-10 h-10 rounded-full" src={image || defaultImg} alt="Rounded avatar" />
+          <img className='w-10 h-10 rounded-full' src={image || defaultImg} alt='Rounded avatar' />
           <div className='ml-3'>
             <div className='text-base font-semibold'>{fullName}</div>
             <div className='font-normal text-gray-500'>{email}</div>
