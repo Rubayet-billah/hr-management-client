@@ -8,8 +8,6 @@ const CandidateStatistics = ({
   setShowShortlistedCandidates,
   refetch,
 }) => {
-  console.log(candidates, 'juel hossain');
-  console.log(shortlistedCandidates, 'jhankar vai');
   return (
     <div>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-8'>

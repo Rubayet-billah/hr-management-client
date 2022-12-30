@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { AiOutlinePlus } from 'react-icons/ai';
+import { useDispatch, useSelector } from 'react-redux';
 import { useUtils } from '../../../../contexts/UtilsProvider';
+import { fetchEmployees } from '../../../../features/employees/employeesSlice';
 import AddDepartment from './AddDepartment';
 import DeleteDepartmentModal from './DeleteDepartmentModal';
 import DepartmentRow from './DepartmentRow';
@@ -9,94 +11,93 @@ import DepartmentStatistics from './DepartmentStatistics';
 import UpdateDepartmentHead from './UpdateDepartmentHead';
 
 const Departments = () => {
-    const [addUserModalVisibility, setAddUserModalVisibility] = useState(false);
-    const [addDepartmentHeadModalVisibility, setAddDepartmentHeadModalVisibility] = useState(false);
-    const [departments, setDepartments] = useState([])
+  const [addUserModalVisibility, setAddUserModalVisibility] = useState(false);
+  const [addDepartmentHeadModalVisibility, setAddDepartmentHeadModalVisibility] = useState(false);
+  const [departments, setDepartments] = useState([]);
 
-    const [viewDepartmentsDeleteModal, setViewDepartmentsDeleteModal] = useState(false)
-    const [deletedDepartment, setDeletedDepartment] = useState({})
-    useEffect(() => {
-        fetch('/data/department.json')
-            .then((res) => res.json())
-            .then((data) => setDepartments(data));
-    }, []);
+  const [viewDepartmentsDeleteModal, setViewDepartmentsDeleteModal] = useState(false);
+  const [deletedDepartment, setDeletedDepartment] = useState({});
+  useEffect(() => {
+    fetch('/data/department.json')
+      .then((res) => res.json())
+      .then((data) => setDepartments(data));
+  }, []);
 
-    const handleAddDepartment = () => {
-        setAddUserModalVisibility(true);
-    }
+  const { employees } = useSelector((state) => state.employees);
+  const dispatch = useDispatch();
 
-    // Change title
-    const { setDashboardTitle } = useUtils();
-    setDashboardTitle("Departments");
+  useEffect(() => {
+    dispatch(fetchEmployees());
+  }, []);
 
-    return (
-        <>
-            <div>
-                <div className='flex justify-end mb-6'>
-                    <button
-                        onClick={handleAddDepartment}
-                        type='button'
-                        className='flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'
-                    >
-                        <AiOutlinePlus className='mr-2 text-white' /> Add Department
-                    </button>
-                </div>
-                <DepartmentStatistics
-                    departments={departments}
-                ></DepartmentStatistics>
+  const handleAddDepartment = () => {
+    setAddUserModalVisibility(true);
+  };
 
-                <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
-                    <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
-                        <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
-                            <tr>
-                                <th scope='col' className='py-3 px-6'>
-                                    DEPARTMENT NAME
-                                </th>
-                                <th scope='col' className='py-3 px-6'>
-                                    DEPARTMENT HEAD
-                                </th>
+  // Change title
+  const { setDashboardTitle } = useUtils();
+  setDashboardTitle('Departments');
 
-                                <th>
-                                    TOTAL EMPLOYEE
-                                </th>
-                                <th>
-                                    Action
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {departments.map((departments, idx) => (
-                                <DepartmentRow
-                                    key={idx}
-                                    departments={departments}
-                                    setViewDepartmentsDeleteModal={setViewDepartmentsDeleteModal}
-                                    setDeletedDepartment={setDeletedDepartment}
-                                    setAddDepartmentHeadModalVisibility={setAddDepartmentHeadModalVisibility}
-                                />
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+  return (
+    <>
+      <div>
+        <div className='flex justify-end mb-6'>
+          <button
+            onClick={handleAddDepartment}
+            type='button'
+            className='flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded text-sm px-4 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800'
+          >
+            <AiOutlinePlus className='mr-2 text-white' /> Add Department
+          </button>
+        </div>
+        <DepartmentStatistics employees={employees}></DepartmentStatistics>
 
-            <AddDepartment
-                addUserModalVisibility={addUserModalVisibility}
-                setAddUserModalVisibility={setAddUserModalVisibility}
-            />
-            <UpdateDepartmentHead
-                addDepartmentHeadModalVisibility={addDepartmentHeadModalVisibility}
-                setAddDepartmentHeadModalVisibility={setAddDepartmentHeadModalVisibility}
-            >
+        <div className='overflow-x-auto relative shadow-md sm:rounded-lg'>
+          <table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
+            <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
+              <tr>
+                <th scope='col' className='py-3 px-6'>
+                  DEPARTMENT NAME
+                </th>
+                <th scope='col' className='py-3 px-6'>
+                  DEPARTMENT HEAD
+                </th>
 
-            </UpdateDepartmentHead>
-            <DeleteDepartmentModal
-                deletedDepartment={deletedDepartment}
-                setViewDepartmentsDeleteModal={setViewDepartmentsDeleteModal}
-                viewDepartmentsDeleteModal={viewDepartmentsDeleteModal}
-            />
-            <Toaster />
-        </>
-    );
+                <th>TOTAL EMPLOYEE</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {departments.map((departments, idx) => (
+                <DepartmentRow
+                  key={idx}
+                  departments={departments}
+                  setViewDepartmentsDeleteModal={setViewDepartmentsDeleteModal}
+                  setDeletedDepartment={setDeletedDepartment}
+                  setAddDepartmentHeadModalVisibility={setAddDepartmentHeadModalVisibility}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <AddDepartment
+        addUserModalVisibility={addUserModalVisibility}
+        setAddUserModalVisibility={setAddUserModalVisibility}
+      />
+      <UpdateDepartmentHead
+        addDepartmentHeadModalVisibility={addDepartmentHeadModalVisibility}
+        setAddDepartmentHeadModalVisibility={setAddDepartmentHeadModalVisibility}
+      ></UpdateDepartmentHead>
+      <DeleteDepartmentModal
+        deletedDepartment={deletedDepartment}
+        setViewDepartmentsDeleteModal={setViewDepartmentsDeleteModal}
+        viewDepartmentsDeleteModal={viewDepartmentsDeleteModal}
+      />
+      <Toaster />
+    </>
+  );
 };
 
 export default Departments;

@@ -84,9 +84,9 @@ const AddEmployeeModal = ({ addUserModalVisibility, setAddUserModalVisibility })
                   <Label htmlFor='department' value='Department' />
                 </div>
                 <Select {...register('department')} id='department' required={true}>
-                  <option value='Web Development'>Web Development</option>
-                  <option value='Creativity And Design'>Creativity And Design</option>
-                  <option value='Management'>Management</option>
+                  <option value='IT'>IT</option>
+                  <option value='Accounts'>Accounts</option>
+                  <option value='Human Resource'>Human Resource</option>
                   <option value='Marketing'>Marketing</option>
                   <option value='Others'>Others</option>
                 </Select>
@@ -102,6 +102,15 @@ const AddEmployeeModal = ({ addUserModalVisibility, setAddUserModalVisibility })
                   <option value='Full Stack Developer'>Full Stack Developer</option>
                   <option value='App Developer'>App Developer</option>
                   <option value='SQA Engineer'>SQA Engineer</option>
+                  <option value='Network Engineer'>Network Engineer</option>
+                  <option value='HR Manager'>HR Manager</option>
+                  <option value='Executive HR'>Executive HR</option>
+                  <option value='Finance Officer'>Finance Officer</option>
+                  <option value='Cashier'>Cashier</option>
+                  <option value='Marketing Officer'>Marketing Officer</option>
+                  <option value='Marketing Manager'>Marketing Manager</option>
+                  <option value='Junior Officer'>Junior Officer</option>
+                  <option value='Executive Officer'>Executive Officer</option>
                 </Select>
               </div>
 

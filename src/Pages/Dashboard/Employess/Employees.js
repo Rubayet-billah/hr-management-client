@@ -94,7 +94,7 @@ const Employees = () => {
                   Phone
                 </th>
                 <th scope='col' className='py-3 px-6'>
-                  Role
+                  Designation
                 </th>
                 <th scope='col' className='py-3 px-6'>
                   Joining Date
