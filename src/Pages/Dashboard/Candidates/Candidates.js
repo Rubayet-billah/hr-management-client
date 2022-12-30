@@ -14,7 +14,7 @@ const Candidates = () => {
     const { data: candidates = [], refetch, isLoading: candidatesLoading } = useQuery({
         queryKey: ['candidates'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/candidates');
+            const res = await fetch('https://hr-management-server.vercel.app/candidates');
             const data = await res.json();
             return data
         }
@@ -23,7 +23,7 @@ const Candidates = () => {
     const { data: shortlistedCandidates = [], refetch: shorlistedRefetch, isLoading: shortlistedLoading } = useQuery({
         queryKey: ['shortlistedCandidate'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/shortlistedCandidate');
+            const res = await fetch('https://hr-management-server.vercel.app/shortlistedCandidate');
             const data = await res.json();
             return data
         }
@@ -43,7 +43,7 @@ const Candidates = () => {
     const [deleteCandidate, setDeleteCandidate] = useState({})
 
     const handleCandidateDelete = () => {
-        fetch(`http://localhost:5000/candidates/${deleteCandidate._id}`, {
+        fetch(`https://hr-management-server.vercel.app/candidates/${deleteCandidate._id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

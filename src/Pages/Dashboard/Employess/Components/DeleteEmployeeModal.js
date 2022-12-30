@@ -13,7 +13,7 @@ const DeleteEmployeeModal = ({ setDeleteModalVisibility, deleteModalVisibility, 
 
   const handleDelete = (employeeData) => {
     const id = employeeData._id;
-    fetch(`http://localhost:5000/employees/${id}`, { method: 'DELETE' })
+    fetch(`https://hr-management-server.vercel.app/employees/${id}`, { method: 'DELETE' })
       .then((res) => res.json())
       .then((result) => {
         if (result.acknowledged) {

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { FiDelete } from 'react-icons/fi';
 import { FaEnvelope } from 'react-icons/fa';
 import defaultImg from '../../../../assets/icons/userImg.jpg'
+import { toast } from 'react-hot-toast';
 
 const ShortlistedCandidateRow = ({ shortlistedCandidate, setDeleteModalVisibility, setDeleteCandidate }) => {
 
@@ -39,8 +40,8 @@ const ShortlistedCandidateRow = ({ shortlistedCandidate, setDeleteModalVisibilit
                 ${shortlistedCandidate.expectedSalary}
             </Table.Cell>
             <Table.Cell>
-                <button onClick={() => { }} className='text-lg mr-3'>
-                    <a href={`mailto:${shortlistedCandidate.email}`}><FaEnvelope /></a>
+                <button onClick={() => { toast.success('Email has been sent') }} className='text-lg mr-3'>
+                    <FaEnvelope />
                 </button>
                 <button onClick={() => {
                     setDeleteCandidate(shortlistedCandidate);

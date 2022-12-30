@@ -14,7 +14,7 @@ const EmployeeRow = ({ employee }) => {
   const handleIncrementAbsent = (employee) => {
     setIsLoading(true);
     const { _id, absent } = employee;
-    fetch(`http://localhost:5000/employees/absent/${_id}?action=increment&value=${absent}`, { method: 'PATCH' })
+    fetch(`https://hr-management-server.vercel.app/employees/absent/${_id}?action=increment&value=${absent}`, { method: 'PATCH' })
       .then((res) => res.json())
       .then((result) => {
         setIsLoading(false);
@@ -27,7 +27,7 @@ const EmployeeRow = ({ employee }) => {
   const handleDecrementAbsent = (employee) => {
     setIsLoading(true);
     const { _id, absent } = employee;
-    fetch(`http://localhost:5000/employees/absent/${_id}?action=decrement&value=${absent}`, { method: 'PATCH' })
+    fetch(`https://hr-management-server.vercel.app/employees/absent/${_id}?action=decrement&value=${absent}`, { method: 'PATCH' })
       .then((res) => res.json())
       .then((result) => {
         setIsLoading(false);

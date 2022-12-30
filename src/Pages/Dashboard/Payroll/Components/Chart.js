@@ -40,8 +40,8 @@ const Chart = ({ employees }) => {
                 <Tooltip />
                 <ReferenceLine y={0} stroke="#000" />
                 <Brush dataKey="name" height={30} stroke="#8884d8" />
-                <Bar dataKey="salary" fill="#087857" />
-                <Bar dataKey="deduction" fill="#C81E1E" />
+                <Bar dataKey="salary" fill="#3b82f6" />
+                <Bar dataKey="deduction" fill="#f43f5e" />
             </BarChart>
         </ResponsiveContainer>
     );

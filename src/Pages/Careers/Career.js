@@ -37,7 +37,7 @@ const Career = () => {
   const { register, handleSubmit, control } = useForm();
 
   const handleApplierForm = (data) => {
-    fetch('http://localhost:5000/candidates', {
+    fetch('https://hr-management-server.vercel.app/candidates', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

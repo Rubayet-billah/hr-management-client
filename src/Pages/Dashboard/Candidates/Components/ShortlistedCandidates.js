@@ -10,7 +10,7 @@ const ShortlistedCandidates = ({ shortlistedCandidates, shorlistedRefetch }) => 
     const [deleteModalVisibility, setDeleteModalVisibility] = useState(false)
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/shortlistedCandidate/${deleteCandidate._id}`, {
+        fetch(`https://hr-management-server.vercel.app/shortlistedCandidate/${deleteCandidate._id}`, {
             method: 'DELETE',
 
         })

@@ -5,7 +5,7 @@ const GetDateModal = ({ viewModalVisibility, setViewModalVisibility, eventDate, 
         e.preventDefault();
         const title = e.target?.event?.value;
 
-        fetch('http://localhost:5000/events', {
+        fetch('https://hr-management-server.vercel.app/events', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

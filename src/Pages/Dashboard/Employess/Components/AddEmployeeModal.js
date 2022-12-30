@@ -12,6 +12,7 @@ const AddEmployeeModal = ({ addUserModalVisibility, setAddUserModalVisibility })
   };
 
   const handleEmployeeAdd = (employeeData) => {
+    console.log(employeeData);
     fetch('http://localhost:5000/employees', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

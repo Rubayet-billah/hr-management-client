@@ -82,7 +82,7 @@ const Dashboard = () => {
   const { data: employees = [] } = useQuery({
     queryKey: [],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5000/employees');
+      const res = await fetch('https://hr-management-server.vercel.app/employees');
       const data = await res.json();
       return data;
     },

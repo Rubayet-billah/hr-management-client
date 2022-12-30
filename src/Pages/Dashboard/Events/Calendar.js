@@ -13,7 +13,7 @@ import DeleteModal from "../../../components/Modals/DeleteModal";
 export default function Calendar() {
     const { data: events = [], refetch } = useQuery({
         queryKey: ['events'],
-        queryFn: () => fetch('http://localhost:5000/events')
+        queryFn: () => fetch('https://hr-management-server.vercel.app/events')
             .then(res => res.json())
     })
 
@@ -36,7 +36,7 @@ export default function Calendar() {
     }
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/events/${deleteEvent?._id}`, {
+        fetch(`https://hr-management-server.vercel.app/events/${deleteEvent?._id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
