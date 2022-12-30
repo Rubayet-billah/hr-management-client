@@ -7,7 +7,7 @@ import HolidayRows from "./HolidayRows";
 const Holidays = () => {
   const [holidayList, setHolidayLinst] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/holidays")
+    fetch("https://hr-management-server.vercel.app/holidays")
       .then((res) => res.json())
       .then((data) => setHolidayLinst(data));
   }, []);

@@ -2,7 +2,7 @@ import axios from 'axios';
 const { createSlice, createAsyncThunk } = require('@reduxjs/toolkit');
 
 export const fetchEmployees = createAsyncThunk('employees/fetchEmployees', async () => {
-  const res = await axios.get('http://localhost:5000/employees');
+  const res = await axios.get('https://hr-management-server.vercel.app/employees');
   return res.data;
 });
 

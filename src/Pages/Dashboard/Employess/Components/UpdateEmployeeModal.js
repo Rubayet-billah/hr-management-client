@@ -21,7 +21,7 @@ const UpdateEmployeeModal = ({ updateModalVisibility, setUpdateModalVisibility, 
   }, [updateEmployee, reset]);
 
   const handleEmployeeUpdate = (employeesUpdatedData) => {
-    fetch(`http://localhost:5000/employees`, {
+    fetch(`https://hr-management-server.vercel.app/employees`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(employeesUpdatedData),

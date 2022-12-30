@@ -13,7 +13,7 @@ const AddEmployeeModal = ({ addUserModalVisibility, setAddUserModalVisibility })
 
   const handleEmployeeAdd = (employeeData) => {
     console.log(employeeData);
-    fetch('http://localhost:5000/employees', {
+    fetch('https://hr-management-server.vercel.app/employees', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(employeeData),

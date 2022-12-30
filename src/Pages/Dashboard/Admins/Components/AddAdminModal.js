@@ -29,7 +29,7 @@ const AddAdminModal = ({ addAdminModalVisibility, setAddAdminModalVisibility, re
                         setAddAdminModalVisibility(false);
                         setLoading(false);
                         // SAVE ADMIN TO DB
-                        fetch('http://localhost:5000/admins', {
+                        fetch('https://hr-management-server.vercel.app/admins', {
                             method: "POST",
                             headers: {
                                 "content-type": "application/json"
