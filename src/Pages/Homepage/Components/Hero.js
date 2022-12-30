@@ -1,8 +1,10 @@
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import one from '../../../assets/Banner/one.webp';
-import three from '../../../assets/Banner/three.png';
-import two from '../../../assets/Banner/two.png';
+import one from '../../../assets/hero/hr.png';
+import two from '../../../assets/hero/hr1.png';
+import three from '../../../assets/hero/hr2.png';
+import four from '../../../assets/hero/hr3.png';
+import five from '../../../assets/hero/hr4.png';
 
 const Hero = () => {
   const heroImages = [
@@ -17,6 +19,14 @@ const Hero = () => {
     {
       id: 3,
       image: three,
+    },
+    {
+      id: 4,
+      image: four,
+    },
+    {
+      id: 5,
+      image: five,
     },
   ];
 
