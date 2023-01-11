@@ -43,7 +43,7 @@ const Payroll = () => {
                   Designation
                 </th>
                 <th scope='col' className='py-3 px-6'>
-                  No. of Absent
+                  No. of Absent (Day)
                 </th>
                 <th scope='col' className='py-3 px-6'>
                   Salary
