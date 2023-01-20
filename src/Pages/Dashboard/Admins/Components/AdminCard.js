@@ -6,7 +6,7 @@ import { GoMarkGithub } from 'react-icons/go';
 import avatar from '../../../../assets/icons/avatar.png'
 
 const AdminCard = ({ setDeleteModalVisibility, setDeleteAdmin, setViewModalVisibility, setViewAdmin, admin }) => {
-    const { firstName, lastName, image, email } = admin;
+    const { firstName, lastName, image, email, isSuperAdmin } = admin;
     const deleteModalOpen = () => {
         setDeleteModalVisibility(true);
         setDeleteAdmin(admin);
@@ -16,11 +16,11 @@ const AdminCard = ({ setDeleteModalVisibility, setDeleteAdmin, setViewModalVisib
         setViewAdmin(admin);
     }
     return (
-        <div className="flex flex-col justify-center p-6 shadow-md rounded-xl px-12 bg-white relative">
+        <div className={`flex flex-col justify-center p-6 shadow-md rounded-xl px-12 relative ${isSuperAdmin ? 'bg-green-100' : 'bg-white'}`}>
             <img src={image || avatar} alt="" className="w-20 h-20 mx-auto rounded-full border p-1 aspect-square" />
             <div className="text-center">
                 <div className="my-2">
-                    <h2 className="font-semibold">{firstName +" "+ lastName}</h2>
+                    <h2 className="font-semibold">{firstName + " " + lastName}</h2>
                     <p className="text-sm">{email}</p>
                 </div>
                 <div className="flex justify-center pt-2 space-x-4 align-center text-gray-500">
