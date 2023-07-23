@@ -57,6 +57,7 @@ const Login = () => {
                   placeholder="Enter email"
                   type="email"
                   className="input  rounded input-bordered w-full mt-2 "
+                  defaultValue="demo@staffdeck.com"
                 />
                 {errors.email && (
                   <p className="text-red-600 text-sm mt-1">{errors.email?.message}</p>
@@ -81,6 +82,7 @@ const Login = () => {
                   placeholder="password"
                   type="password"
                   className="input rounded input-bordered w-full "
+                  defaultValue="123123"
                 />
                 {errors.password && (
                   <p className="text-red-600 text-sm mt-1">{errors.password?.message}</p>
