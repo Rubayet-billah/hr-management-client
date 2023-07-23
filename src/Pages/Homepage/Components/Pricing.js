@@ -3,7 +3,7 @@ import { BsCheckCircleFill } from 'react-icons/bs';
 
 const Pricing = () => {
   return (
-    <div className='container mx-auto px-2 py-12'>
+    <div className='container mx-auto px-5 md:px-0 py-12'>
       <div className='text-center mb-8'>
         <h3 className='text-4xl font-bold mb-1'>Our Pricing Plans</h3>
         <p className='capitalize'>Every plan starts with a 14-day free trail. No Credit card Require.</p>

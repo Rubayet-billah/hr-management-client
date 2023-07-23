@@ -2,7 +2,7 @@ import React from 'react';
 
 const Partners = () => {
   return (
-    <div className='container mx-auto px-2 py-12'>
+    <div className='container mx-auto px-5 md:px-0 py-12'>
       <div className='text-center mb-8'>
         <h3 className='text-4xl font-bold mb-1'>Our Partners</h3>
         <p className='capitalize'>We are integrated with the below partners and more.</p>

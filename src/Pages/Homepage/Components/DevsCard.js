@@ -9,12 +9,18 @@ const DevsCard = ({ dev }) => {
         <p className='text-sm text-gray-600'>{dev.position}</p>
 
         <div className='flex gap-2 items-center mt-4 text-xl'>
-          <a href={dev.linkedInLink} target='_blank' rel="noreferrer">
-            <AiFillLinkedin />
-          </a>
-          <a href={dev.githubLink} target='_blank' rel="noreferrer">
-            <AiOutlineGithub />
-          </a>
+          {dev.linkedInLink ? (
+            <a href={dev.linkedInLink} target='_blank' rel="noreferrer">
+              <AiFillLinkedin className='text-blue-700' />
+            </a>) : (
+            <AiFillLinkedin className='text-gray-400' />
+          )}
+          {dev.githubLink ? (
+            <a href={dev.githubLink} target='_blank' rel="noreferrer">
+              <AiOutlineGithub />
+            </a>) : (
+            <AiOutlineGithub className='text-gray-400' />
+          )}
         </div>
       </div>
     </div>
