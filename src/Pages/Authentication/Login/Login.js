@@ -23,7 +23,6 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/dashboard";
 
   const handleLogin = (data) => {
-    console.log(data);
     setLoginError("");
     const { email, password } = data;
     signIn(email, password)
