@@ -15,18 +15,18 @@ const NAvbar = () => {
             </span>
           </Link>
           <Navbar.Toggle />
-          <Navbar.Collapse className='flex flex-col bg-lime-100 md:bg-inherit mt-5 md:mt-0 pb-5 md:pb-0 justify-center text-center !items-center'>
-            <Link className='hover:text-blue-500' to='/'>Home</Link>
+          <Navbar.Collapse className='flex flex-col bg-lime-100 md:bg-inherit mt-5 md:mt-0 pb-5 md:pb-0 !justify-center text-center !items-center'>
+            <Link className='hover:text-blue-500 py-2' to='/'>Home</Link>
             {
               user?.uid &&
-              <Link className='hover:text-blue-500 mt-4 md:mt-0' to='/dashboard'>Dashboard</Link>
+              <Link className='hover:text-blue-500 mt-4 md:mt-0 py-2' to='/dashboard'>Dashboard</Link>
             }
-            <Link className='hover:text-blue-500 mt-4 md:mt-0' to='/careers'>Careers</Link>
-            <Link className='hover:text-blue-500 mt-4 md:mt-0' to='/'>About</Link>
-            <Link className='hover:text-blue-500 mt-4 md:mt-0' to='/'>Services</Link>
+            <Link className='hover:text-blue-500 mt-4 md:mt-0 py-2' to='/careers'>Careers</Link>
+            <Link className='hover:text-blue-500 mt-4 md:mt-0 py-2' to='/'>About</Link>
+            <Link className='hover:text-blue-500 mt-4 md:mt-0 py-2' to='/'>Services</Link>
             {
               !user &&
-              <Link className='hover:text-blue-500 mt-4 md:mt-0' to='/login'>Login</Link>
+              <Link className='bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 md:mt-0' to='/login'>Login</Link>
             }
           </Navbar.Collapse>
         </Navbar>

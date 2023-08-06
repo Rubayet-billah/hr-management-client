@@ -2,7 +2,7 @@ import { Button } from 'flowbite-react';
 
 const NewsLetter = () => {
   return (
-    <section className='bg-white py-12'>
+    <section className='bg-white px-5 md:px-0 py-12'>
       <div className='container mx-auto px-2'>
         <div className='max-w-2xl mx-auto'>
           <div className='text-center'>

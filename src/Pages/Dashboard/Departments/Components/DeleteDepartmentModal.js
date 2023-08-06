@@ -9,7 +9,7 @@ const DeleteDepartmentModal = ({
 }) => {
 
     const deleteDepartment = (data) => {
-        console.log(data)
+        // 
     }
     return (
         <Modal show={viewDepartmentsDeleteModal} size='md' popup={true} onClose={() => {

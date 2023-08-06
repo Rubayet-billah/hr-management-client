@@ -13,8 +13,8 @@ const devs = [
     name: 'Tarekul Islam',
     position: 'Full Stack Developer',
     image: tarek,
-    githubLink: '/',
-    linkedInLink: '/',
+    githubLink: '',
+    linkedInLink: '',
     skills: ['html, css, javascript, react, node, mongoDB'],
   },
   {
@@ -22,8 +22,8 @@ const devs = [
     name: 'Rubayet Billah',
     position: 'Tech Lead',
     image: rubayet,
-    githubLink: '/',
-    linkedInLink: '/',
+    githubLink: '',
+    linkedInLink: '',
     skills: ['html, css, javascript, react, node, mongoDB'],
   },
   {
@@ -31,8 +31,8 @@ const devs = [
     name: 'Naem Hossain',
     position: 'MERN Stack Developer',
     image: naem,
-    githubLink: '/',
-    linkedInLink: '/',
+    githubLink: '',
+    linkedInLink: '',
     skills: ['html, css, javascript, react, node, mongoDB'],
   },
   {
@@ -40,8 +40,8 @@ const devs = [
     name: 'Md. Badsha Fahadh',
     position: 'Full Stack Developer',
     image: badsha,
-    githubLink: '/',
-    linkedInLink: '/',
+    githubLink: '',
+    linkedInLink: '',
     skills: ['html, css, javascript, react, node, mongoDB'],
   },
   {
@@ -58,21 +58,21 @@ const devs = [
     name: 'Rajib Das',
     position: 'Back-End Developer',
     image: rajib,
-    githubLink: '/',
-    linkedInLink: '/',
+    githubLink: '',
+    linkedInLink: '',
     skills: ['html, css, javascript, react, node, mongoDB'],
   },
 ];
 
 const DevsTeam = () => {
   return (
-    <div className='container mx-auto px-2 py-12'>
+    <div className='container mx-auto px-5 md:px-0 py-12'>
       <div className='text-center mb-8'>
         <h3 className='text-4xl font-bold mb-1'>Our Team</h3>
         <p className='capitalize'>Let's meet out creative developer team.</p>
       </div>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-12'>
         {devs.map((dev) => (
           <DevsCard key={dev.id} dev={dev} />
         ))}

@@ -8,7 +8,6 @@ const CandidateRow = ({
     setCandidateDetailsModalVisibility,
 }) => {
 
-    console.log(candidate.skill)
     return (
         <Table.Row
             onClick={() => {

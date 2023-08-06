@@ -31,7 +31,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className='container mx-auto px-2'>
+    <section className='container mx-auto px-5 md:px-0'>
       <div className='grid py-8 lg:py-16 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12 items-center min-h-[60vh]'>
         <div className='mr-auto lg:col-span-8'>
           <h1 className='max-w-2xl capitalize mb-4 text-3xl font-bold leading-none md:text-4xl xl:text-5xl dark:text-white'>
