@@ -67,22 +67,6 @@ Staff Deck is a comprehensive HR management software designed to streamline and 
 - Admins can update their information conveniently.
 - Improved account management and personalization options.
 
-<!-- ## Contributors
-
-- [Rubayet Billah](https://github.com/Rubayet-billah)
-- [Maruf Hossain](https://github.com/mickeymaruf)
-- [MD Badsha Fahadh](https://github.com/FahadMridha)
-- [Rajib Das](https://github.com/rajibdas-it)
-- [Tarekul Islam](https://github.com/itarek99)
-- [Naem Hossain](https://github.com/Naem-hossain) -->
-
 ## Contributors
 
 [<img title='Rubayet Billah' src='./src/assets/devs/rubayet_billah.jpg' style='width:30px; border-radius:50%;'>](https://github.com/Rubayet-billah) [<img title='Maruf Hossain' src='./src/assets/devs/Md-Maruf-Hossain.jpg' style='width:30px; border-radius:50%;'>](https://github.com/mickeymaruf) [<img title='MD Badsha Fahadh' src='./src/assets/devs/Md.Badsha fahadh.jpg' style='width:30px; border-radius:50%;'>](https://github.com/FahadMridha) [<img title='Rajib Das' src='./src/assets/devs/rajib.jpeg' style='width:30px; border-radius:50%;'>](https://github.com/rajibdas-it) [<img title='Tarekul Islam' src='./src/assets/devs/tarekul_islam.jpg' style='width:30px; border-radius:50%;'>](https://github.com/itarek99) [<img title='Naem Hossain' src='./src/assets/devs/naem.jpg' style='width:30px; border-radius:50%;'>](https://github.com/Naem-hossain)
-
-<a href="https://github.com/Rubayet-billah"><img title='Rubayet Billah' src='./src/assets/devs/rubayet_billah.jpg' style='width:30px; "border-radius":50%;'></a>
-<a href="https://github.com/mickeymaruf"><img title='Maruf Hossain' src='./src/assets/devs/Md-Maruf-Hossain.jpg' style='width:30px; border-radius:50%;'></a>
-<a href="https://github.com/FahadMridha"><img title='MD Badsha Fahadh' src='./src/assets/devs/Md.Badsha fahadh.jpg' style='width:30px; border-radius:50%;'></a>
-<a href="https://github.com/rajibdas-it"><img title='Rajib Das' src='./src/assets/devs/rajib.jpeg' style='width:30px; border-radius:50%;'></a>
-<a href="https://github.com/itarek99"><img title='Tarekul Islam' src='./src/assets/devs/tarekul_islam.jpg' style='width:30px; border-radius:50%;'></a>
-<a href="https://github.com/Naem-hossain"><img title='Naem Hossain' src='./src/assets/devs/naem.jpg' style='width:30px; border-radius:50%;'></a>
