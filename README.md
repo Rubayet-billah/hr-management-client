@@ -6,7 +6,7 @@
 
 **Testing Credentials:**
 
-- Email: admin@staff-deck.com
+- Email: demo@staffdeck.com
 - Password: 123123
 
 ## Project Overview
