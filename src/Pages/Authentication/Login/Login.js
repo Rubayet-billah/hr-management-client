@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 import image_hr from "../../../assets/loginPage/slider2.svg";
 import { Spinner } from "flowbite-react";
+import { credentials } from "../../../constants/constants";
 
 const Login = () => {
   const {
@@ -56,10 +57,12 @@ const Login = () => {
                   placeholder="Enter email"
                   type="email"
                   className="input  rounded input-bordered w-full mt-2 "
-                  defaultValue="demo@staffdeck.com"
+                  defaultValue={credentials.email}
                 />
                 {errors.email && (
-                  <p className="text-red-600 text-sm mt-1">{errors.email?.message}</p>
+                  <p className="text-red-600 text-sm mt-1">
+                    {errors.email?.message}
+                  </p>
                 )}
               </div>
               <div className="form-control w-full">
@@ -75,16 +78,19 @@ const Login = () => {
                     required: "Password is required",
                     minLength: {
                       value: 6,
-                      message: "password must be at least 6 charecters or longer",
+                      message:
+                        "password must be at least 6 charecters or longer",
                     },
                   })}
                   placeholder="password"
                   type="password"
                   className="input rounded input-bordered w-full "
-                  defaultValue="123123"
+                  defaultValue={credentials.password}
                 />
                 {errors.password && (
-                  <p className="text-red-600 text-sm mt-1">{errors.password?.message}</p>
+                  <p className="text-red-600 text-sm mt-1">
+                    {errors.password?.message}
+                  </p>
                 )}
               </div>
 
@@ -94,7 +100,13 @@ const Login = () => {
                 type="submit"
                 disabled={loading}
               >
-                {loading ? <span className="animate-pulse"><Spinner /></span> : 'Login'}
+                {loading ? (
+                  <span className="animate-pulse">
+                    <Spinner />
+                  </span>
+                ) : (
+                  "Login"
+                )}
               </button>
             </form>
             <div>
